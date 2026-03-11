@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股投資實戰課程 | 從零到精通的十週學習計畫</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            padding: 3rem 0 2rem;
+            border-bottom: 3px solid var(--ink);
+            position: relative;
+        }
+        
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .course-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .course-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+        
+        .course-meta {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        .header-accent {
+            width: 200px;
+            height: 200px;
+            background: var(--red);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--beige);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+        
+        /* Introduction Section */
+        .intro-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .intro-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .intro-text p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            color: var(--ink-light);
+        }
+        
+        .highlight-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-list {
+            list-style: none;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .highlight-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .highlight-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        /* Chapters Section */
+        .chapters-section {
+            padding: 4rem 0;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .chapters-grid {
+            display: grid;
+            gap: 0;
+        }
+        
+        .chapter-card {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            border-top: 1px solid var(--beige-dark);
+            padding: 2.5rem 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .chapter-card:hover {
+            background: var(--beige-dark);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .chapter-card:last-child {
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--red);
+            line-height: 1;
+            padding-top: 0.25rem;
+        }
+        
+        .chapter-content h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        
+        .chapter-description {
+            font-size: 1rem;
+            color: var(--ink-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .chapter-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .topic-tag {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            background: transparent;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            letter-spacing: 0.05em;
+        }
+        
+        .chapter-duration {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        .chapter-status {
+            position: absolute;
+            top: 2.5rem;
+            right: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .chapter-card:hover .chapter-status {
+            opacity: 1;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 3px solid var(--ink);
+            margin-top: 4rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-grid,
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-title {
+                font-size: 2.5rem;
+            }
+            
+            .header-accent {
+                width: 100%;
+                height: 120px;
+            }
+            
+            .chapter-card {
+                grid-template-columns: 80px 1fr;
+            }
+            
+            .chapter-number {
+                font-size: 2rem;
+            }
+            
+            .chapter-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-grid">
+                <div>
+                    <h1 class="course-title fade-in">美股投資實戰課程</h1>
+                    <p class="course-subtitle fade-in delay-1">從零到精通的十週學習計畫</p>
+                    <div class="course-meta fade-in delay-2">
+                        <div class="meta-item">
+                            <span class="meta-label">課程時長</span>
+                            <span class="meta-value">10 週 / 30 小時</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">難度等級</span>
+                            <span class="meta-value">初階到中階</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">學習模式</span>
+                            <span class="meta-value">線上自主學習</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-accent fade-in delay-3">10</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2 class="fade-in delay-1">為什麼選擇美股市場？</h2>
+                    <p class="fade-in delay-2">美國股市是全球最大、最成熟的資本市場，擁有最完善的監管制度與最豐富的投資標的。從科技巨頭到傳統產業，從成長股到價值股，美股提供了台股無法比擬的多元化投資機會。</p>
+                    <p class="fade-in delay-3">本課程將帶你從完全零基礎開始，系統性地建立美股投資知識體系，掌握選股策略、風險控制與長期獲利的關鍵技能。</p>
+                </div>
+                <div class="highlight-box fade-in delay-4">
+                    <h3>課程核心價值</h3>
+                    <ul class="highlight-list">
+                        <li>完整的美股市場認知框架</li>
+                        <li>實戰導向的選股與分析方法</li>
+                        <li>可執行的投資組合建構策略</li>
+                        <li>風險管理與心理素質培養</li>
+                        <li>長期穩定獲利的投資思維</li>
+                        <li>即時市場動態解讀能力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapters-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number fade-in">CURRICULUM</div>
+                <h2 class="section-title fade-in delay-1">十週完整課程規劃</h2>
+            </div>
+
+            <div class="chapters-grid">
+                <div class="chapter-card fade-in delay-1" onclick="window.location.href='chapter01.html'">
+                    <div class="chapter-number">01</div>
+                    <div class="chapter-content">
+                        <h3>美股市場基礎建構</h3>
+                        <p class="chapter-description">深入理解美股市場結構、交易機制、開戶流程與稅務規劃。掌握 NYSE、NASDAQ 的運作原理，了解美股與台股的本質差異。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">市場結構</span>
+                            <span class="topic-tag">交易機制</span>
+                            <span class="topic-tag">開戶實務</span>
+                            <span class="topic-tag">稅務規劃</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-2" onclick="window.location.href='chapter02.html'">
+                    <div class="chapter-number">02</div>
+                    <div class="chapter-content">
+                        <h3>財報閱讀與企業分析</h3>
+                        <p class="chapter-description">學習解讀美股 10-K、10-Q 財報，掌握損益表、資產負債表、現金流量表的分析技巧。理解 GAAP 會計準則與關鍵財務指標。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">財報結構</span>
+                            <span class="topic-tag">三大報表</span>
+                            <span class="topic-tag">財務比率</span>
+                            <span class="topic-tag">企業評價</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3.5 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-3" onclick="window.location.href='chapter03.html'">
+                    <div class="chapter-number">03</div>
+                    <div class="chapter-content">
+                        <h3>價值投資法則與選股策略</h3>
+                        <p class="chapter-description">深入巴菲特、葛拉漢的價值投資哲學，學習安全邊際概念、內在價值評估、護城河分析，建立長期投資思維框架。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">價值投資</span>
+                            <span class="topic-tag">安全邊際</span>
+                            <span class="topic-tag">護城河</span>
+                            <span class="topic-tag">選股模型</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-4" onclick="window.location.href='chapter04.html'">
+                    <div class="chapter-number">04</div>
+                    <div class="chapter-content">
+                        <h3>成長股投資與科技股分析</h3>
+                        <p class="chapter-description">掌握 FAAMG 等科技巨頭的投資邏輯，學習成長股評估方法、PEG 比率應用、產業趨勢判斷，抓住高成長機會。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">成長股</span>
+                            <span class="topic-tag">科技股</span>
+                            <span class="topic-tag">產業分析</span>
+                            <span class="topic-tag">估值模型</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-5" onclick="window.location.href='chapter05.html'">
+                    <div class="chapter-number">05</div>
+                    <div class="chapter-content">
+                        <h3>ETF 投資完整指南</h3>
+                        <p class="chapter-description">系統性學習 ETF 投資策略，從 SPY、QQQ 到產業型 ETF，理解費用率、追蹤誤差、配息政策，建構低成本投資組合。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">ETF 基礎</span>
+                            <span class="topic-tag">指數投資</span>
+                            <span class="topic-tag">產業 ETF</span>
+                            <span class="topic-tag">組合配置</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 2.5 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-1" onclick="window.location.href='chapter06.html'">
+                    <div class="chapter-number">06</div>
+                    <div class="chapter-content">
+                        <h3>技術分析與進出場時機</h3>
+                        <p class="chapter-description">學習 K 線圖、移動平均線、相對強弱指標等技術分析工具，掌握支撐壓力位判斷、趨勢辨識與交易訊號解讀。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">K 線理論</span>
+                            <span class="topic-tag">技術指標</span>
+                            <span class="topic-tag">型態分析</span>
+                            <span class="topic-tag">交易策略</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-2" onclick="window.location.href='chapter07.html'">
+                    <div class="chapter-number">07</div>
+                    <div class="chapter-content">
+                        <h3>投資組合建構與資產配置</h3>
+                        <p class="chapter-description">深入馬可維茲投資組合理論，學習風險分散、資產配置、再平衡策略，根據個人風險承受度建構最適組合。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">資產配置</span>
+                            <span class="topic-tag">風險分散</span>
+                            <span class="topic-tag">再平衡</span>
+                            <span class="topic-tag">組合優化</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-3" onclick="window.location.href='chapter08.html'">
+                    <div class="chapter-number">08</div>
+                    <div class="chapter-content">
+                        <h3>風險管理與停損策略</h3>
+                        <p class="chapter-description">建立完善的風險控制機制，學習倉位管理、停損停利設定、對沖策略運用，保護投資本金避免重大損失。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">風險控制</span>
+                            <span class="topic-tag">倉位管理</span>
+                            <span class="topic-tag">停損策略</span>
+                            <span class="topic-tag">對沖工具</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 2.5 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-4" onclick="window.location.href='chapter09.html'">
+                    <div class="chapter-number">09</div>
+                    <div class="chapter-content">
+                        <h3>總體經濟與市場週期判斷</h3>
+                        <p class="chapter-description">理解 Fed 政策、通膨數據、就業報告對股市的影響，學習經濟週期辨識、景氣指標解讀，掌握市場脈動。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">總體經濟</span>
+                            <span class="topic-tag">Fed 政策</span>
+                            <span class="topic-tag">經濟指標</span>
+                            <span class="topic-tag">市場週期</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+
+                <div class="chapter-card fade-in delay-5" onclick="window.location.href='chapter10.html'">
+                    <div class="chapter-number">10</div>
+                    <div class="chapter-content">
+                        <h3>投資心理學與長期致富之道</h3>
+                        <p class="chapter-description">克服貪婪恐懼、培養紀律投資習慣、建立投資日誌系統，學習成功投資者的心理素質與行為模式，實現長期穩定獲利。</p>
+                        <div class="chapter-topics">
+                            <span class="topic-tag">投資心理</span>
+                            <span class="topic-tag">行為金融</span>
+                            <span class="topic-tag">投資紀律</span>
+                            <span class="topic-tag">長期思維</span>
+                        </div>
+                        <div class="chapter-duration">⏱ 3 小時學習時長</div>
+                    </div>
+                    <div class="chapter-status">點擊進入</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑捲動效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 章節卡片懸停效果增強
+        document.querySelectorAll('.chapter-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(0.5rem)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

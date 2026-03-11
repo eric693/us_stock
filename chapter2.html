@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二章：財報閱讀與企業分析 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">2 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 02</div>
+            <h1 class="chapter-title">財報閱讀與企業分析</h1>
+            <p class="chapter-subtitle">學習解讀美股財報，掌握三大報表分析技巧，建立企業基本面評估能力</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">3.5 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">初階到中階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 美股財報體系 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、美股財報體系與取得方式</h2>
+                
+                <p class="section-text">財報是企業向投資人呈現經營成果的正式文件。美國證券交易委員會 (SEC) 要求所有上市公司定期提交標準化財務報告，確保資訊透明度。理解財報體系是進行基本面分析的第一步。</p>
+
+                <h3 class="section-subtitle">1.1 美股三大主要財報文件</h3>
+                
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">10-K 年度報告 (Annual Report)</div>
+                        <div class="definition-desc">每年提交一次，是最完整詳盡的財務報告。包含完整的財務報表、管理層討論與分析 (MD&A)、風險揭露、公司治理結構等。通常在財政年度結束後 60-90 天內提交。這是深入了解企業的最重要文件，長度通常超過 100 頁。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">10-Q 季度報告 (Quarterly Report)</div>
+                        <div class="definition-desc">每季提交一次，共三次 (第四季併入年報)。內容較 10-K 精簡，但仍包含完整的季度財務報表與營運概況更新。需在季度結束後 40-45 天內提交。投資人追蹤企業季度表現的主要依據。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">8-K 重大事件報告 (Current Report)</div>
+                        <div class="definition-desc">當發生重大事件時不定期提交，如併購、高層人事變動、重大合約簽訂、破產申請等。需在事件發生後 4 個營業日內提交。對於即時掌握企業重大變化極為重要。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">1.2 財報取得管道</h3>
+
+                <p class="section-text">美股財報取得極為便利，投資人可透過以下官方與第三方管道免費獲取：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">SEC EDGAR 系統</span>：美國證券交易委員會官方資料庫 (sec.gov/edgar)，所有上市公司財報的原始來源，資料最完整權威。</li>
+                    <li><span class="highlight-text">企業投資人關係網站</span>：多數企業官網設有 Investor Relations 專區，提供財報下載與法說會資料。</li>
+                    <li><span class="highlight-text">券商平台</span>：如 Interactive Brokers、Charles Schwab 等，在股票頁面直接提供財報連結。</li>
+                    <li><span class="highlight-text">財經資訊平台</span>：Yahoo Finance、Seeking Alpha、Bloomberg 等，提供整理後的財報摘要與分析。</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">閱讀財報的正確順序</div>
+                    <div class="info-box-text">對新手而言，完整閱讀一份 200 頁的 10-K 報告容易感到挫折。建議採用以下順序：</div>
+                    <div class="info-box-text">1. 先看財務報表數字 (損益表、資產負債表、現金流量表)<br>2. 閱讀 MD&A (Management Discussion and Analysis) 了解管理層觀點<br>3. 檢視風險因子 (Risk Factors) 了解企業面臨的挑戰<br>4. 最後才深入閱讀附註與其他細節</div>
+                </div>
+
+                <h3 class="section-subtitle">1.3 GAAP 會計準則基礎</h3>
+
+                <p class="section-text">美國上市公司採用<span class="highlight-text">公認會計原則 (Generally Accepted Accounting Principles, GAAP)</span>編制財報。GAAP 與台灣採用的 IFRS (國際財務報導準則) 存在若干差異，投資人需注意：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>GAAP (美國)</th>
+                            <th>IFRS (國際/台灣)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>存貨評價方法</td>
+                            <td>允許 LIFO (後進先出)</td>
+                            <td>禁止 LIFO</td>
+                        </tr>
+                        <tr>
+                            <td>研發費用</td>
+                            <td>全部費用化</td>
+                            <td>符合條件可資本化</td>
+                        </tr>
+                        <tr>
+                            <td>財報表達</td>
+                            <td>較具彈性</td>
+                            <td>較為標準化</td>
+                        </tr>
+                        <tr>
+                            <td>資產重估</td>
+                            <td>原則禁止</td>
+                            <td>特定情況允許</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">實務上，多數投資人不需深究會計準則細節，但需理解不同準則可能導致財務數字呈現方式不同，跨國比較時須謹慎。</p>
+            </div>
+        </section>
+
+        <!-- Section 2: 損益表分析 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、損益表深度解析</h2>
+                
+                <p class="section-text">損益表 (Income Statement)，又稱綜合損益表或利潤表，呈現企業在特定期間的經營成果。這是最受投資人關注的財務報表，因為它直接回答了一個核心問題：<span class="highlight-text">這家公司賺了多少錢？</span></p>
+
+                <h3 class="section-subtitle">2.1 損益表結構與核心項目</h3>
+
+                <p class="section-text">標準的損益表採用多步驟格式，從營業收入逐步扣除各項成本費用，最終得出淨利。以下是關鍵項目：</p>
+
+                <div class="reference-block">
+營業收入 (Revenue / Net Sales)
+  減：銷貨成本 (Cost of Goods Sold, COGS)
+= 毛利 (Gross Profit)
+  減：營業費用 (Operating Expenses)
+      - 研發費用 (R&D)
+      - 銷售及管理費用 (SG&A)
+= 營業利益 (Operating Income / EBIT)
+  加減：其他收支 (利息、投資收益等)
+= 稅前淨利 (Income Before Tax)
+  減：所得稅費用 (Income Tax)
+= 淨利 (Net Income)
+                </div>
+
+                <h3 class="section-subtitle">2.2 關鍵指標計算與意義</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">毛利率 (Gross Margin)</div>
+                        <div class="definition-desc">衡量企業產品或服務的基本獲利能力，不受營業費用影響。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">毛利率 = (毛利 ÷ 營業收入) × 100%</div>
+                </div>
+
+                <p class="section-text">高毛利率通常代表企業擁有定價權或成本控制優勢。科技業如蘋果、微軟的毛利率常超過 60%，而零售業沃爾瑪僅約 25%。不同產業毛利率差異極大，應<span class="highlight-text">與同業比較</span>才有意義。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">營業利益率 (Operating Margin)</div>
+                        <div class="definition-desc">反映企業核心業務的獲利能力，扣除所有營業相關成本後的利潤率。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">營業利益率 = (營業利益 ÷ 營業收入) × 100%</div>
+                </div>
+
+                <p class="section-text">營業利益率是評估企業營運效率的關鍵指標。若營業利益率持續下降，可能代表競爭加劇、成本上升或營運效率惡化。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">淨利率 (Net Profit Margin)</div>
+                        <div class="definition-desc">扣除所有費用、稅負後，企業真正賺到的利潤比率。最終獲利能力指標。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">淨利率 = (淨利 ÷ 營業收入) × 100%</div>
+                </div>
+
+                <h3 class="section-subtitle">2.3 每股盈餘 (EPS) 深度解析</h3>
+
+                <p class="section-text">每股盈餘 (Earnings Per Share, EPS) 是最廣為人知的獲利指標，計算公式為：</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">基本 EPS = 淨利 ÷ 流通在外普通股數</div>
+                </div>
+
+                <p class="section-text">然而，投資人需注意<span class="highlight-text">稀釋 EPS (Diluted EPS)</span>的概念。許多公司發行可轉換債券、員工認股權等潛在普通股，若這些工具全部轉換為普通股，將稀釋現有股東權益。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">稀釋 EPS = 調整後淨利 ÷ (流通股數 + 潛在稀釋股數)</div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">為何要看稀釋 EPS？</div>
+                    <div class="info-box-text">稀釋 EPS 反映了最壞情況下的每股獲利，是更保守也更真實的指標。特別是科技公司大量發放股票選擇權給員工，基本 EPS 與稀釋 EPS 可能有顯著差距。</div>
+                    <div class="info-box-text">例如：某科技公司基本 EPS = $5.00，但稀釋 EPS = $4.50，代表若所有選擇權執行，每股獲利將被稀釋 10%。投資人應以稀釋 EPS 作為評估基準。</div>
+                </div>
+
+                <h3 class="section-subtitle">2.4 Non-GAAP 盈餘的陷阱</h3>
+
+                <p class="section-text">近年許多美股公司在財報中額外揭露 Non-GAAP (非公認會計原則) 盈餘，通常會扣除「一次性費用」、「股票薪酬」等項目，使盈餘數字看起來更漂亮。</p>
+
+                <p class="section-text">投資人務必謹慎看待 Non-GAAP 數字：</p>
+
+                <ul class="content-list">
+                    <li>管理層可能選擇性剔除不利項目，美化業績</li>
+                    <li>「一次性」費用若年年出現，就不是真的一次性</li>
+                    <li>股票薪酬是真實成本，不應被忽略</li>
+                    <li>應以 GAAP 盈餘為主，Non-GAAP 僅供參考</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">當管理層過度強調 Non-GAAP 盈餘而淡化 GAAP 盈餘時，投資人應提高警覺。真正優秀的企業，不需要調整盈餘也能展現實力。</div>
+                    <div class="quote-author">— 華倫·巴菲特投資原則</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 資產負債表分析 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、資產負債表深度解析</h2>
+                
+                <p class="section-text">資產負債表 (Balance Sheet) 呈現企業在特定時點的財務狀況，就像一張財務快照。它遵循會計基本方程式：</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">資產 (Assets) = 負債 (Liabilities) + 股東權益 (Shareholders' Equity)</div>
+                </div>
+
+                <p class="section-text">這張報表回答三個關鍵問題：企業擁有什麼？欠了多少錢？股東真正擁有多少價值？</p>
+
+                <h3 class="section-subtitle">3.1 資產結構分析</h3>
+
+                <p class="section-text">資產分為流動資產與非流動資產，理解兩者比例對評估企業財務彈性至關重要。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">流動資產 (Current Assets)</div>
+                        <div class="definition-desc">預期在一年內轉換為現金的資產，包括：現金及約當現金、應收帳款、存貨、短期投資等。流動資產比例高代表變現能力強，財務彈性佳。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">非流動資產 (Non-Current Assets)</div>
+                        <div class="definition-desc">長期持有的資產，包括：不動產廠房設備 (PP&E)、無形資產 (專利、商標、商譽)、長期投資等。重資產產業如製造業，非流動資產比例通常較高。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">3.2 負債結構與償債能力</h3>
+
+                <p class="section-text">負債同樣分為流動負債與非流動負債，過高的負債比例可能帶來財務風險。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">流動負債 (Current Liabilities)</div>
+                        <div class="definition-desc">一年內需償還的債務，包括：應付帳款、短期借款、一年內到期長期負債等。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">非流動負債 (Non-Current Liabilities)</div>
+                        <div class="definition-desc">超過一年的長期債務，包括：長期借款、公司債、租賃負債等。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">3.3 關鍵財務比率</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">流動比率 (Current Ratio)</div>
+                        <div class="definition-desc">衡量企業短期償債能力的指標。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">流動比率 = 流動資產 ÷ 流動負債</div>
+                </div>
+
+                <p class="section-text">一般而言，流動比率 > 1.5 被視為財務健康，代表企業有足夠資產應付短期債務。但不同產業標準不同，零售業因現金週轉快，流動比率 1.0 也可能正常。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">速動比率 (Quick Ratio / Acid Test)</div>
+                        <div class="definition-desc">比流動比率更嚴格的指標，扣除較難變現的存貨。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">速動比率 = (流動資產 - 存貨) ÷ 流動負債</div>
+                </div>
+
+                <p class="section-text">速動比率 > 1.0 代表即使存貨無法立即變現，企業仍有足夠現金應付短期債務。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">負債比率 (Debt Ratio)</div>
+                        <div class="definition-desc">衡量企業財務槓桿程度。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">負債比率 = 總負債 ÷ 總資產</div>
+                </div>
+
+                <p class="section-text">負債比率 < 50% 通常被視為保守，> 70% 則財務風險較高。但同樣需考量產業特性，金融業負債比率天生較高。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">股東權益報酬率 (Return on Equity, ROE)</div>
+                        <div class="definition-desc">衡量企業為股東創造報酬的效率，巴菲特最看重的指標之一。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">ROE = 淨利 ÷ 股東權益 × 100%</div>
+                </div>
+
+                <p class="section-text">ROE > 15% 通常代表優質企業。但需注意，高財務槓桿也能提高 ROE，因此應搭配負債比率一併分析。</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">杜邦分析法 (DuPont Analysis)</div>
+                    <div class="info-box-text">ROE 可拆解為三個組成部分，幫助投資人理解 ROE 來源：</div>
+                    <div class="info-box-text">ROE = 淨利率 × 資產週轉率 × 權益乘數<br>= (淨利/營收) × (營收/總資產) × (總資產/股東權益)</div>
+                    <div class="info-box-text">這個分析能辨別企業是靠高利潤率、高週轉率還是高槓桿創造 ROE。</div>
+                </div>
+
+                <h3 class="section-subtitle">3.4 無形資產與商譽</h3>
+
+                <p class="section-text">美股企業併購頻繁，常在資產負債表上累積大量商譽 (Goodwill)。商譽是併購時支付金額超過被併購公司淨資產公允價值的部分。</p>
+
+                <p class="section-text">投資人需警覺：</p>
+
+                <ul class="content-list">
+                    <li>商譽不會攤銷，但需每年進行減值測試</li>
+                    <li>若被併購業務表現不佳，可能產生巨額商譽減值損失</li>
+                    <li>商譽占總資產比例過高 (>30%) 是警訊</li>
+                    <li>應檢視商譽變化趨勢，頻繁減值代表管理層併購決策不當</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 4: 現金流量表分析 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、現金流量表深度解析</h2>
+                
+                <p class="section-text">現金流量表 (Cash Flow Statement) 是三大報表中最難造假的報表，因為它追蹤的是<span class="highlight-text">真實現金的流入與流出</span>，而非會計帳面數字。許多資深投資人認為這是最重要的財報。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">利潤是意見，現金才是事實。企業可以在損益表上玩弄數字，但現金流量表會說真話。</div>
+                    <div class="quote-author">— 投資界名言</div>
+                </div>
+
+                <h3 class="section-subtitle">4.1 三大現金流量活動</h3>
+
+                <p class="section-text">現金流量表分為三個部分，分別反映企業不同活動產生的現金變化：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">營業活動現金流量 (Operating Cash Flow, OCF)</div>
+                        <div class="definition-desc">企業日常營運產生的現金流量，包括銷售商品收現、支付供應商貨款、支付員工薪資等。這是企業現金的主要來源，健康企業的 OCF 應為正數且持續成長。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">投資活動現金流量 (Investing Cash Flow, ICF)</div>
+                        <div class="definition-desc">長期資產的買賣活動，包括購買設備、廠房、併購其他公司、出售資產等。成長中的企業通常呈現負值 (投資支出大於資產出售)，這是正常現象。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">融資活動現金流量 (Financing Cash Flow, FCF)</div>
+                        <div class="definition-desc">與股東、債權人的資金往來，包括發行股票、舉債、還債、發放股利、買回庫藏股等。此數值正負沒有絕對好壞，需視企業發展階段判斷。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">4.2 營業活動現金流量的重要性</h3>
+
+                <p class="section-text">OCF 是判斷企業獲利品質的關鍵指標。理想情況下，OCF 應該：</p>
+
+                <ul class="numbered-list">
+                    <li>大於淨利：代表盈餘是真正的現金流入，而非帳面獲利</li>
+                    <li>持續為正：企業能靠營運自給自足，不需外部融資</li>
+                    <li>穩定成長：營運狀況健康，獲利能力持續提升</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">當 OCF < 淨利時的警訊</div>
+                    <div class="info-box-text">若企業損益表顯示獲利，但 OCF 卻為負或遠小於淨利，可能存在以下問題：</div>
+                    <div class="info-box-text">1. 應收帳款暴增：客戶延遲付款或壞帳風險提高<br>2. 存貨堆積：產品滯銷，資金卡在庫存<br>3. 盈餘品質差：會計操作美化獲利，但現金沒進來<br>4. 營運週轉惡化：需要更多資金維持營運</div>
+                    <div class="info-box-text">投資人應深入調查原因，持續多季出現此現象是嚴重警訊。</div>
+                </div>
+
+                <h3 class="section-subtitle">4.3 自由現金流量 (Free Cash Flow, FCF)</h3>
+
+                <p class="section-text">自由現金流量是投資人最應關注的現金流指標，代表企業在維持營運與必要投資後，<span class="highlight-text">真正可自由運用的現金</span>。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">自由現金流量 = 營業活動現金流量 - 資本支出</div>
+                </div>
+
+                <p class="section-text">FCF 的用途包括：</p>
+
+                <ul class="content-list">
+                    <li>發放股利給股東</li>
+                    <li>買回庫藏股</li>
+                    <li>償還債務</li>
+                    <li>進行併購</li>
+                    <li>保留作為現金儲備</li>
+                </ul>
+
+                <p class="section-text">持續產生強勁 FCF 的企業，擁有更大的策略彈性與股東回報能力。巴菲特選股時極度重視 FCF，認為這是企業真實價值的來源。</p>
+
+                <h3 class="section-subtitle">4.4 現金流量表的實戰應用</h3>
+
+                <p class="section-text">透過分析三大現金流量的組合，能判斷企業所處的發展階段與財務健康度：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>企業階段</th>
+                            <th>營業活動</th>
+                            <th>投資活動</th>
+                            <th>融資活動</th>
+                            <th>特徵</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>成長期</td>
+                            <td>正</td>
+                            <td>負</td>
+                            <td>正</td>
+                            <td>營運產生現金，大量投資擴張，需外部融資支持</td>
+                        </tr>
+                        <tr>
+                            <td>成熟期</td>
+                            <td>正</td>
+                            <td>負</td>
+                            <td>負</td>
+                            <td>營運穩健，維持性投資，發放股利或買回股票</td>
+                        </tr>
+                        <tr>
+                            <td>衰退期</td>
+                            <td>負</td>
+                            <td>正</td>
+                            <td>負</td>
+                            <td>營運虧損，出售資產求生，償還債務</td>
+                        </tr>
+                        <tr>
+                            <td>危機期</td>
+                            <td>負</td>
+                            <td>正</td>
+                            <td>正</td>
+                            <td>營運失血，出售資產，緊急融資，瀕臨破產</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">投資人應選擇處於成長期或成熟期的優質企業，避開衰退期與危機期的公司。</p>
+            </div>
+        </section>
+
+        <!-- Section 5: 綜合財務分析 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、綜合財務分析與紅旗警訊</h2>
+                
+                <p class="section-text">單獨看任何一張財報都可能產生誤判，優秀的投資人會<span class="highlight-text">交叉比對三大報表</span>，尋找不一致的地方，這些往往是問題所在。</p>
+
+                <h3 class="section-subtitle">5.1 三大報表的內在邏輯</h3>
+
+                <p class="section-text">三大報表並非獨立存在，而是緊密關聯：</p>
+
+                <ul class="numbered-list">
+                    <li>損益表的淨利，會增加資產負債表的保留盈餘 (股東權益的一部分)</li>
+                    <li>損益表的折舊費用，對應資產負債表的固定資產減少</li>
+                    <li>現金流量表的期末現金，等於資產負債表的現金及約當現金</li>
+                    <li>現金流量表會調節損益表淨利與實際現金變化的差異</li>
+                </ul>
+
+                <h3 class="section-subtitle">5.2 財報中的紅旗警訊</h3>
+
+                <p class="section-text">以下是投資人應高度警覺的財報異常訊號：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">應收帳款增速 > 營收增速</span>：可能存在虛增營收或收款困難</li>
+                    <li><span class="highlight-text">存貨增速 > 營收增速</span>：產品滯銷，未來可能面臨跌價損失</li>
+                    <li><span class="highlight-text">頻繁更換會計師事務所</span>：可能存在會計爭議或意見不合</li>
+                    <li><span class="highlight-text">關係人交易金額龐大</span>：利益輸送風險，財報可能失真</li>
+                    <li><span class="highlight-text">連續多季商譽減值</span>：併購決策失敗，管理能力存疑</li>
+                    <li><span class="highlight-text">過度依賴 Non-GAAP 指標</span>：掩飾真實獲利狀況</li>
+                    <li><span class="highlight-text">現金流長期為負</span>：營運無法自給自足，破產風險高</li>
+                    <li><span class="highlight-text">高層大量減持股票</span>：內部人對公司前景缺乏信心</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">案例：安隆醜聞 (Enron Scandal)</div>
+                    <div class="info-box-text">2001 年倒閉的安隆公司是財報造假的經典案例。若仔細分析其財報，會發現多項警訊：複雜的關係人交易、資產負債表外融資、現金流量與盈餘嚴重背離、頻繁調整會計政策等。</div>
+                    <div class="info-box-text">這個案例提醒投資人：過度複雜、難以理解的財報結構，往往是管理層刻意掩蓋問題的手段。巴菲特的名言：「不投資自己不了解的企業」，正是此理。</div>
+                </div>
+
+                <h3 class="section-subtitle">5.3 建立個人財報分析檢查清單</h3>
+
+                <p class="section-text">建議投資人建立標準化的財報分析流程，確保不遺漏重要資訊：</p>
+
+                <ol class="numbered-list">
+                    <li>營收成長率：過去 3-5 年趨勢，是否穩定成長？</li>
+                    <li>毛利率變化：是否維持穩定或提升？與同業比較如何？</li>
+                    <li>營業利益率：扣除營業費用後的真實獲利能力</li>
+                    <li>EPS 成長：稀釋 EPS 是否持續增長？</li>
+                    <li>ROE 水準：是否 > 15%？是否靠過度槓桿達成？</li>
+                    <li>負債比率：是否在合理範圍內？利息覆蓋倍數是否充足？</li>
+                    <li>流動比率與速動比率：短期償債能力是否健康？</li>
+                    <li>營業現金流：是否 > 淨利？是否持續為正？</li>
+                    <li>自由現金流：企業是否產生真實現金？</li>
+                    <li>應收帳款與存貨週轉率：資金運用效率如何？</li>
+                </ol>
+
+                <div class="quote-block">
+                    <div class="quote-text">投資是一門藝術，也是一門科學。財報分析提供科學的基礎，但最終判斷仍需結合商業洞察、產業理解與常識。數字會說話，但也可能說謊，投資人要學會聽懂弦外之音。</div>
+                    <div class="quote-author">— 彼得·林區</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">財報分析是價值投資的基石，也是每位認真投資人的必修課。完成本章學習後，你已掌握：</p>
+
+                <ol class="numbered-list">
+                    <li>美股財報體系 (10-K、10-Q、8-K) 與取得管道，理解 GAAP 會計準則基礎</li>
+                    <li>損益表核心項目，能計算並解讀毛利率、營業利益率、淨利率、EPS 等關鍵指標</li>
+                    <li>資產負債表結構，掌握流動比率、負債比率、ROE 等財務比率的計算與意義</li>
+                    <li>現金流量表三大活動，理解營業現金流與自由現金流的重要性</li>
+                    <li>跨報表分析技巧，能辨識財報中的紅旗警訊，建立個人分析檢查清單</li>
+                </ol>
+
+                <p class="section-text">財報分析能力需要透過大量實戰累積。建議你立即開始練習：選擇 3-5 家你感興趣的美股公司，下載其最新 10-K 報告，運用本章所學進行完整分析。唯有實際動手，才能將知識轉化為投資能力。</p>
+
+                <p class="section-text">下一章，我們將學習價值投資法則與選股策略，將財報分析能力應用到實際選股決策中。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter01.html" class="nav-button">← 上一章：美股市場基礎建構</a>
+            <a href="chapter03.html" class="nav-button next">下一章：價值投資法則與選股策略 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

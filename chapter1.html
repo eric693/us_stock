@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一章：美股市場基礎建構 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">1 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 01</div>
+            <h1 class="chapter-title">美股市場基礎建構</h1>
+            <p class="chapter-subtitle">深入理解美股市場結構、交易機制、開戶流程與稅務規劃，為你的美股投資之路奠定堅實基礎</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">3 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">初階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">4 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 美股市場結構 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、美股市場結構與運作機制</h2>
+                
+                <p class="section-text">美國股票市場是全球規模最大、流動性最強的資本市場。截至 2026 年，美股總市值超過 50 兆美元，約占全球股市總市值的 40%。理解美股市場的基本架構，是所有投資決策的基礎。</p>
+
+                <h3 class="section-subtitle">1.1 主要交易所與市場分類</h3>
+                
+                <p class="section-text">美國股市主要由兩大交易所主導：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">紐約證券交易所 (New York Stock Exchange, NYSE)</div>
+                        <div class="definition-desc">成立於 1792 年，是全球歷史最悠久的證券交易所。採用綜合電子與人工交易模式，上市公司多為傳統產業龍頭、金融機構與大型企業。代表性股票包括：可口可樂 (KO)、沃爾瑪 (WMT)、波克夏海瑟威 (BRK.B) 等。上市門檻較高，要求企業需具備一定規模與獲利能力。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">納斯達克證券市場 (NASDAQ)</div>
+                        <div class="definition-desc">成立於 1971 年，全球首個電子化證券市場。以科技、生技、網路公司為主，交易完全電子化，效率更高。代表性股票包括：蘋果 (AAPL)、微軟 (MSFT)、輝達 (NVDA)、特斯拉 (TSLA)、亞馬遜 (AMZN) 等。相對 NYSE 更適合成長型企業上市。</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">重要觀念：交易所不等於指數</div>
+                    <div class="info-box-text">許多投資新手會混淆「交易所」與「指數」的概念。交易所是股票買賣的場所，而指數是用來衡量市場表現的統計指標。例如，納斯達克 100 指數 (NDX) 是選取在納斯達克交易所上市的 100 家最大非金融公司編制而成，但並非所有在納斯達克上市的公司都包含在此指數中。</div>
+                </div>
+
+                <h3 class="section-subtitle">1.2 三大主要指數解析</h3>
+
+                <p class="section-text">理解美股三大指數是掌握市場脈動的關鍵。這些指數不僅反映市場整體表現，更是無數 ETF 與投資策略的追蹤基準：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>指數名稱</th>
+                            <th>成分股數量</th>
+                            <th>加權方式</th>
+                            <th>代表意義</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>道瓊工業平均指數 (DJIA)</td>
+                            <td>30 檔</td>
+                            <td>價格加權</td>
+                            <td>美國藍籌股代表，歷史最悠久，但代表性較侷限</td>
+                        </tr>
+                        <tr>
+                            <td>標普 500 指數 (S&P 500)</td>
+                            <td>500 檔</td>
+                            <td>市值加權</td>
+                            <td>最廣泛的美股市場指標，涵蓋約 80% 美股市值</td>
+                        </tr>
+                        <tr>
+                            <td>納斯達克綜合指數 (NASDAQ Composite)</td>
+                            <td>3000+ 檔</td>
+                            <td>市值加權</td>
+                            <td>科技股與成長股表現的風向球</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">投資人最常關注的是<span class="highlight-text">標普 500 指數</span>，原因在於其廣泛的市場覆蓋率與市值加權的科學性。這也是為什麼追蹤 S&P 500 的 ETF (如 SPY、VOO、IVV) 成為全球最受歡迎的投資工具。</p>
+
+                <h3 class="section-subtitle">1.3 交易時間與盤前盤後交易</h3>
+
+                <p class="section-text">美股交易時間採用美國東部時間 (ET)，對台灣投資人而言需要特別注意時差。以下是標準交易時段：</p>
+
+                <div class="reference-block">
+正常交易時段：09:30 - 16:00 ET
+換算為台灣時間 (冬令)：22:30 - 05:00 (隔日)
+換算為台灣時間 (夏令)：21:30 - 04:00 (隔日)
+
+盤前交易：04:00 - 09:30 ET
+盤後交易：16:00 - 20:00 ET
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">盤前盤後交易的特性與風險</div>
+                    <div class="info-box-text">盤前盤後交易時段 (Extended Hours Trading) 的流動性遠低於正常交易時段，買賣價差 (Bid-Ask Spread) 較大，價格波動劇烈。許多重要財報會在盤後發布，導致股價在盤後大幅波動。</div>
+                    <div class="info-box-text">對新手投資人而言，建議初期僅在正常交易時段進行交易，待累積足夠經驗後再參與盤前盤後交易。</div>
+                </div>
+
+                <h3 class="section-subtitle">1.4 市場參與者結構</h3>
+
+                <p class="section-text">美股市場參與者極為多元，理解不同參與者的行為模式，有助於判斷市場趨勢：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">機構投資人</span>：包括退休基金、共同基金、對沖基金、保險公司等，持股占比超過 70%，是市場主要力量。</li>
+                    <li><span class="highlight-text">散戶投資人</span>：個人投資者，透過券商進行交易。近年因零手續費與網路券商普及，散戶影響力逐漸提升。</li>
+                    <li><span class="highlight-text">高頻交易商</span>：利用演算法進行毫秒級交易，提供市場流動性，但也可能造成瞬間劇烈波動。</li>
+                    <li><span class="highlight-text">造市商</span>：提供買賣報價，維持市場流動性，從買賣價差中獲利。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: 台股與美股的本質差異 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、台股與美股的本質差異</h2>
+                
+                <p class="section-text">許多台灣投資人習慣台股的操作邏輯後，直接套用到美股投資，往往導致不適應甚至虧損。理解兩個市場的核心差異，是成功投資美股的第一步。</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th>台灣股市</th>
+                            <th>美國股市</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>漲跌幅限制</td>
+                            <td>±10% (部分股票無限制)</td>
+                            <td>無漲跌幅限制</td>
+                        </tr>
+                        <tr>
+                            <td>交易單位</td>
+                            <td>1 張 = 1000 股</td>
+                            <td>1 股起買賣</td>
+                        </tr>
+                        <tr>
+                            <td>交割制度</td>
+                            <td>T+2 交割</td>
+                            <td>T+1 交割 (2024 年後)</td>
+                        </tr>
+                        <tr>
+                            <td>當沖規則</td>
+                            <td>需開通當沖資格</td>
+                            <td>需帳戶淨值 > $25,000</td>
+                        </tr>
+                        <tr>
+                            <td>配息方式</td>
+                            <td>現金股利 + 股票股利</td>
+                            <td>主要為現金股利</td>
+                        </tr>
+                        <tr>
+                            <td>資訊透明度</td>
+                            <td>中文財報，但深度有限</td>
+                            <td>英文財報，揭露極為詳細</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-subtitle">2.1 無漲跌幅限制的影響</h3>
+
+                <p class="section-text">美股沒有漲跌幅限制，這意味著股價可能在單日內暴漲暴跌 20%、30% 甚至更多。2020 年疫情期間，許多股票單日跌幅超過 30%。這種特性帶來兩個重要啟示：</p>
+
+                <ul class="numbered-list">
+                    <li>風險控制更為重要：沒有漲跌停板保護，必須更嚴格執行停損策略</li>
+                    <li>槓桿使用需謹慎：配合無限制波動，槓桿交易風險極高，新手應完全避免</li>
+                </ul>
+
+                <h3 class="section-subtitle">2.2 碎股交易的優勢</h3>
+
+                <p class="section-text">美股可以單股買賣，大幅降低投資門檻。即使是股價高達 $500 的股票 (如 NVDA)，投資人也能以 $500 購買 1 股開始投資。這項特性使得：</p>
+
+                <ul class="content-list">
+                    <li>更容易實現精確的資產配置比例</li>
+                    <li>小資金也能建構多元化投資組合</li>
+                    <li>定期定額投資更為彈性</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">在美股市場，你不需要成為富人才能開始投資。一股一股慢慢買，也能建立屬於自己的投資帝國。</div>
+                    <div class="quote-author">— 美股投資基本原則</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 開戶流程與券商選擇 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、開戶流程與券商選擇實務</h2>
+                
+                <p class="section-text">選擇合適的券商是美股投資的第一個關鍵決策。台灣投資人可透過兩種主要管道進行美股投資：</p>
+
+                <h3 class="section-subtitle">3.1 台灣券商複委託 vs 美國券商直接開戶</h3>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>台灣券商複委託</th>
+                            <th>美國券商</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>開戶難度</td>
+                            <td>簡單，臨櫃或線上辦理</td>
+                            <td>需線上申請，全英文介面</td>
+                        </tr>
+                        <tr>
+                            <td>手續費</td>
+                            <td>較高 (0.15% - 0.5%)</td>
+                            <td>多為零手續費</td>
+                        </tr>
+                        <tr>
+                            <td>最低交易金額</td>
+                            <td>通常需 $3,000 以上</td>
+                            <td>$1 即可交易</td>
+                        </tr>
+                        <tr>
+                            <td>股息預扣稅</td>
+                            <td>30% (無法退稅)</td>
+                            <td>30% (可透過 W-8BEN 表格)</td>
+                        </tr>
+                        <tr>
+                            <td>資金安全</td>
+                            <td>台灣金管會監管</td>
+                            <td>SIPC 保障 (最高 $500,000)</td>
+                        </tr>
+                        <tr>
+                            <td>中文客服</td>
+                            <td>有</td>
+                            <td>多數僅英文客服</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">對於<span class="highlight-text">投資金額小於 $10,000 且英文能力有限</span>的投資人，建議從台灣券商複委託開始。對於<span class="highlight-text">投資金額較大、交易頻率高</span>的投資人，美國券商的成本優勢更為明顯。</p>
+
+                <h3 class="section-subtitle">3.2 主要美國券商比較</h3>
+
+                <p class="section-text">以下是台灣投資人最常使用的美國券商：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">Interactive Brokers (IB 盈透證券)</div>
+                        <div class="definition-desc">全球最大網路券商之一，支援多國市場，手續費低廉，功能強大。適合經驗豐富的投資人。介面較複雜，學習曲線較陡。最低開戶金額無要求，但帳戶資產低於 $2,000 需繳月費 $10。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">Charles Schwab (嘉信理財)</div>
+                        <div class="definition-desc">美國四大券商之一，介面友善，客服優質，適合長期投資者。美股交易零手續費，無最低開戶金額限制。2024 年起提供中文介面，台灣投資人接受度提高。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">Firstrade (第一證券)</div>
+                        <div class="definition-desc">華人券商，完整中文介面與客服，對台灣投資人最友善。美股交易零手續費，無最低開戶金額。功能相對陽春，適合美股投資新手。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">3.3 開戶流程詳解 (以美國券商為例)</h3>
+
+                <p class="section-text">美國券商開戶流程已高度數位化，通常可在 15-30 分鐘內完成線上申請：</p>
+
+                <ol class="numbered-list">
+                    <li>準備文件：護照、台灣身分證、地址證明 (水電帳單或銀行對帳單)</li>
+                    <li>填寫線上申請表：個人資料、財務狀況、投資經驗、稅務資訊</li>
+                    <li>上傳證件照片：護照個人頁面、身分證正反面</li>
+                    <li>簽署 W-8BEN 表格：證明非美國稅務居民，享有台美租稅協定優惠</li>
+                    <li>等待審核：通常 1-3 個工作天即可獲得帳戶核准通知</li>
+                    <li>入金：透過國際電匯將資金匯入券商帳戶</li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="info-box-title">W-8BEN 表格重要性</div>
+                    <div class="info-box-text">W-8BEN 表格是非美國稅務居民必須填寫的文件，用於聲明你不是美國公民或居民。若未填寫此表格，股息預扣稅率可能高達 30% 且無法享有租稅協定優惠。</div>
+                    <div class="info-box-text">此表格有效期限為三年，到期前券商會主動提醒你更新。</div>
+                </div>
+
+                <h3 class="section-subtitle">3.4 入金與出金實務</h3>
+
+                <p class="section-text">資金跨境轉移是美股投資的必要程序，理解匯款機制能節省成本並提升效率：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">國際電匯 (Wire Transfer)</div>
+                        <div class="definition-desc">最常見的入金方式。需向台灣的銀行臨櫃或網銀辦理，提供券商指定的銀行帳號、SWIFT Code、ABA Number 等資訊。手續費約 NT$ 600-1000，匯款金額需申報給央行 (單筆超過 $50,000 或年度累積超過 $500,000)。到帳時間通常 2-5 個工作天。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">ACH 轉帳</div>
+                        <div class="definition-desc">若在美國有銀行帳戶，可使用 ACH (Automated Clearing House) 進行轉帳，手續費低廉或免費，但到帳時間較長 (3-5 天)，且台灣投資人多數無法使用。</div>
+                    </div>
+                </div>
+
+                <p class="section-text">出金流程與入金類似，但需特別注意：</p>
+
+                <ul class="content-list">
+                    <li>資金需在帳戶內滿足 T+1 交割後才能提領</li>
+                    <li>券商可能要求首次出金需等待 30-60 天 (防洗錢規定)</li>
+                    <li>出金手續費各券商不同，部分券商每月提供一次免費出金</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 4: 稅務規劃 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、美股投資稅務規劃</h2>
+                
+                <p class="section-text">稅務是美股投資中最容易被忽略但卻極為重要的環節。正確的稅務規劃能有效提升投資報酬率。台灣投資人投資美股主要涉及三種稅：</p>
+
+                <h3 class="section-subtitle">4.1 股息預扣稅 (Dividend Withholding Tax)</h3>
+
+                <p class="section-text">美國對外國投資人的股息收入徵收 30% 預扣稅。這是<span class="highlight-text">在股息發放時直接扣除</span>，投資人實際收到的股息已是稅後金額。</p>
+
+                <div class="reference-block">
+範例：
+持有 100 股蘋果 (AAPL)，每股配息 $1
+配息總額：$100
+美國預扣稅 (30%)：$30
+實際入帳金額：$70
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">台美租稅協定與預扣稅</div>
+                    <div class="info-box-text">台灣與美國之間並無租稅協定，因此無法降低 30% 的預扣稅率。這與部分國家 (如日本、加拿大) 享有 15% 優惠稅率的情況不同。</div>
+                    <div class="info-box-text">因此，對台灣投資人而言，投資高股息股票的稅務效率相對較低，應將此因素納入選股考量。</div>
+                </div>
+
+                <h3 class="section-subtitle">4.2 資本利得稅 (Capital Gains Tax)</h3>
+
+                <p class="section-text">這是投資美股最大的稅務優勢：<span class="highlight-text">台灣投資人買賣美股的價差獲利，無需向美國政府繳納資本利得稅</span>。</p>
+
+                <p class="section-text">然而，需注意的是：</p>
+
+                <ul class="content-list">
+                    <li>此獲利需向台灣國稅局申報為「海外所得」</li>
+                    <li>若全年海外所得超過 NT$ 1,000,000，需計入基本所得額</li>
+                    <li>基本所得額超過 NT$ 6,700,000 (2026 年標準) 才需繳納基本稅額</li>
+                </ul>
+
+                <h3 class="section-subtitle">4.3 台灣海外所得申報</h3>
+
+                <p class="section-text">根據台灣所得稅法，海外所得需併入基本所得額計算。關鍵門檻如下：</p>
+
+                <div class="reference-block">
+基本所得額 = 綜合所得淨額 + 海外所得 + 其他應計入項目
+
+免稅門檻：
+1. 海外所得 ≤ NT$ 1,000,000 → 免申報
+2. 基本所得額 ≤ NT$ 6,700,000 → 免繳基本稅額
+3. 基本稅額 ≤ 一般所得稅額 → 免補稅
+
+基本稅率：20%
+                </div>
+
+                <p class="section-text">實務上，多數小額投資人的美股獲利不會觸及繳稅門檻。但仍需<span class="highlight-text">誠實申報</span>，避免日後查稅問題。</p>
+
+                <h3 class="section-subtitle">4.4 遺產稅考量</h3>
+
+                <p class="section-text">這是許多投資人忽略的重要議題。若美股投資人不幸身故，其在美國券商帳戶內的資產需向美國政府繳納遺產稅，且<span class="highlight-text">免稅額僅 $60,000</span>，遠低於美國公民的 $13,610,000 免稅額。</p>
+
+                <p class="section-text">規避策略：</p>
+
+                <ul class="numbered-list">
+                    <li>透過投資美股 ETF 而非個股，某些 ETF 註冊地在美國境外，可能不適用美國遺產稅</li>
+                    <li>使用台灣券商複委託，資產不直接登記在美國</li>
+                    <li>資產分散配置，避免全部集中在美國券商</li>
+                    <li>投保足額人壽保險作為遺產稅準備</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">建議做法</div>
+                    <div class="info-box-text">對於資產規模較大的投資人，建議諮詢專業稅務顧問或會計師，制定完整的跨境資產配置與稅務規劃策略。</div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="quote-text">投資的真實報酬，永遠是稅後報酬。忽略稅務規劃的投資人，等同放棄了提升報酬率的重要機會。</div>
+                    <div class="quote-author">— 稅務規劃基本原則</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">完成本章學習後，你已經建立了美股投資的基礎知識架構。讓我們回顧核心要點：</p>
+
+                <ol class="numbered-list">
+                    <li>美股市場由 NYSE 與 NASDAQ 兩大交易所主導，標普 500 指數是最重要的市場指標</li>
+                    <li>美股無漲跌幅限制、可碎股交易，與台股有本質差異，需調整投資思維</li>
+                    <li>券商選擇需考量手續費、服務、語言等因素，小資金可從複委託開始</li>
+                    <li>稅務規劃是提升報酬率的關鍵，需了解股息預扣稅、海外所得申報與遺產稅議題</li>
+                </ol>
+
+                <p class="section-text">這些基礎知識將是你後續學習財報分析、選股策略、風險管理的堅實根基。下一章，我們將深入學習如何閱讀美股財報，掌握企業分析的核心技能。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="index.html" class="nav-button disabled">← 上一章</a>
+            <a href="chapter02.html" class="nav-button next">下一章：財報閱讀與企業分析 →</a>
+        </div>
+        </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

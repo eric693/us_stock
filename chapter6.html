@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六章：技術分析與進出場時機 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--ink);
+        }
+        
+        .case-study-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+        
+        .case-study-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">6 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 06</div>
+            <h1 class="chapter-title">技術分析與進出場時機</h1>
+            <p class="chapter-subtitle">學習 K 線圖、移動平均線、技術指標等分析工具，掌握支撐壓力位判斷、趨勢辨識與交易訊號解讀</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">3 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">中階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 技術分析基礎 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、技術分析的基本原理與應用</h2>
+                
+                <p class="section-text">技術分析是透過研究<span class="highlight-text">價格走勢、成交量與時間</span>來預測未來股價變化的方法。與基本面分析關注企業價值不同，技術分析認為所有資訊都已反映在價格中。</p>
+
+                <h3 class="section-subtitle">1.1 技術分析的三大前提假設</h3>
+                
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">市場行為包容一切</span>：所有影響股價的因素（基本面、政治、心理）都已反映在價格與成交量中，無需深究原因，只需分析價格本身</li>
+                    <li><span class="highlight-text">價格沿趨勢移動</span>：股價並非隨機漫步，而是傾向於延續既有趨勢。上漲趨勢中傾向繼續上漲，下跌趨勢中傾向繼續下跌</li>
+                    <li><span class="highlight-text">歷史會重演</span>：市場參與者的心理與行為模式具有一致性，因此相似的價格型態會重複出現，過去有效的分析方法未來仍然有效</li>
+                </ol>
+
+                <h3 class="section-subtitle">1.2 技術分析 vs 基本面分析</h3>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特徵</th>
+                            <th>技術分析</th>
+                            <th>基本面分析</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>分析對象</td>
+                            <td>價格、成交量、圖表型態</td>
+                            <td>財報、產業、經濟數據</td>
+                        </tr>
+                        <tr>
+                            <td>時間視野</td>
+                            <td>短期到中期 (日到月)</td>
+                            <td>中長期 (季到年)</td>
+                        </tr>
+                        <tr>
+                            <td>目標</td>
+                            <td>判斷進出場時機</td>
+                            <td>判斷投資價值</td>
+                        </tr>
+                        <tr>
+                            <td>優勢</td>
+                            <td>即時、適用所有市場</td>
+                            <td>深入、掌握本質</td>
+                        </tr>
+                        <tr>
+                            <td>劣勢</td>
+                            <td>訊號可能失效、滯後</td>
+                            <td>耗時、難以擇時</td>
+                        </tr>
+                        <tr>
+                            <td>適用對象</td>
+                            <td>短線交易者、波段操作</td>
+                            <td>長期投資者、價值投資</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="info-box-title">技術分析的爭議與實證研究</div>
+                    <div class="info-box-text">學術界對技術分析褒貶不一。效率市場假說 (EMH) 支持者認為技術分析無效，因為歷史價格無法預測未來。</div>
+                    <div class="info-box-text">然而，行為金融學研究發現市場並非完全理性，存在動量效應、過度反應等可預測的異常現象。許多專業交易員仍使用技術分析作為輔助工具。</div>
+                    <div class="info-box-text">實務上，最佳策略是<span class="highlight-text">結合基本面與技術面</span>：用基本面選股，用技術面擇時。</div>
+                </div>
+
+                <h3 class="section-subtitle">1.3 技術分析的應用層次</h3>
+
+                <p class="section-text">技術分析可分為三個層次，由淺入深：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">初階：圖表型態識別</div>
+                        <div class="definition-desc">學習辨識 K 線組合、支撐壓力位、趨勢線等基礎型態。這是技術分析的根基，適合所有投資人學習。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">中階：技術指標應用</div>
+                        <div class="definition-desc">運用移動平均線、RSI、MACD 等指標輔助判斷。需理解指標原理與適用情境，避免盲目依賴。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">高階：多重時間架構分析</div>
+                        <div class="definition-desc">結合日線、週線、月線進行綜合判斷，配合成交量、籌碼分析。需大量實戰經驗累積。</div>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="quote-text">圖表不會說謊，但會說方言。學習技術分析就是學會理解市場的語言。</div>
+                    <div class="quote-author">— 技術分析格言</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: K 線理論 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、K 線理論與價格型態</h2>
+                
+                <p class="section-text">K 線圖 (Candlestick Chart) 起源於 18 世紀日本米市，是技術分析最基礎也最重要的工具。一根 K 線濃縮了四個價格資訊：開盤價、收盤價、最高價、最低價。</p>
+
+                <h3 class="section-subtitle">2.1 K 線的構成與解讀</h3>
+                
+                <p class="section-text">K 線由實體與影線組成：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">實體</span>：開盤價與收盤價之間的矩形。紅色 (或白色) 代表收盤價高於開盤價，綠色 (或黑色) 代表收盤價低於開盤價</li>
+                    <li><span class="highlight-text">上影線</span>：實體上方延伸至最高價的細線，代表上攻受阻</li>
+                    <li><span class="highlight-text">下影線</span>：實體下方延伸至最低價的細線，代表下探後回升</li>
+                </ul>
+
+                <div class="reference-block">
+K 線形態解讀原則：
+
+實體越長 = 多空力道越強
+影線越長 = 轉折訊號越明顯
+實體位置 = 多空勢力對比
+
+紅色長實體 + 短影線 = 強烈上漲
+綠色長實體 + 短影線 = 強烈下跌
+長上影線 + 小實體 = 上攻乏力，可能反轉向下
+長下影線 + 小實體 = 下檔有撐，可能反轉向上
+                </div>
+
+                <h3 class="section-subtitle">2.2 單根 K 線的關鍵型態</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">十字星 (Doji)</div>
+                        <div class="definition-desc">開盤價與收盤價幾乎相同，實體極小。代表多空力量平衡，猶豫不決。在趨勢末端出現時，是重要的反轉警訊。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">錘子線 (Hammer)</div>
+                        <div class="definition-desc">小實體在上方，長下影線 (至少為實體 2 倍)，無或極短上影線。出現在下跌趨勢末端，代表下檔承接力道強，可能反轉向上。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">吊人線 (Hanging Man)</div>
+                        <div class="definition-desc">外觀與錘子線相同，但出現在上漲趨勢末端。代表上攻後遭遇賣壓，可能反轉向下。需配合後續 K 線確認。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">射擊之星 (Shooting Star)</div>
+                        <div class="definition-desc">小實體在下方，長上影線，出現在上漲趨勢頂部。代表上攻遭遇強烈賣壓，反轉向下機率高。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">倒錘子線 (Inverted Hammer)</div>
+                        <div class="definition-desc">小實體在下方，長上影線，出現在下跌趨勢底部。雖然上攻後回落，但代表買盤開始出現，可能是底部訊號。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">2.3 多根 K 線組合型態</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">吞噬型態 (Engulfing Pattern)</div>
+                        <div class="definition-desc"><span class="highlight-text">看漲吞噬</span>：下跌趨勢中，紅色 K 線完全包覆前一根綠色 K 線，代表買盤力道強勁。<span class="highlight-text">看跌吞噬</span>：上漲趨勢中，綠色 K 線完全包覆前一根紅色 K 線，代表賣壓湧現。吞噬幅度越大，反轉訊號越強。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">晨星與夜星 (Morning Star / Evening Star)</div>
+                        <div class="definition-desc"><span class="highlight-text">晨星</span>：三根 K 線組合，第一根長綠、第二根小實體、第三根長紅，出現在底部代表反轉向上。<span class="highlight-text">夜星</span>：相反組合，出現在頂部代表反轉向下。是非常可靠的反轉型態。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">三白兵與三黑鴉 (Three White Soldiers / Three Black Crows)</div>
+                        <div class="definition-desc"><span class="highlight-text">三白兵</span>：連續三根紅色長實體 K 線，每根收盤價都創新高，代表強勁上漲趨勢。<span class="highlight-text">三黑鴉</span>：連續三根綠色長實體，每根收盤創新低，代表強烈下跌趨勢。</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">K 線型態的使用要點</div>
+                    <div class="info-box-text">1. 型態需配合趨勢：同樣的 K 線在不同位置意義不同。錘子線在底部是買入訊號，在頂部則無意義</div>
+                    <div class="info-box-text">2. 需要確認：單一 K 線型態應等待次日確認。例如射擊之星出現後，隔日若跌破則確認反轉</div>
+                    <div class="info-box-text">3. 成交量配合：型態伴隨放量更可靠。吞噬型態若成交量暴增，反轉機率大增</div>
+                    <div class="info-box-text">4. 避免過度詮釋：不是每個型態都會發生作用，需配合其他分析工具綜合判斷</div>
+                </div>
+
+                <h3 class="section-subtitle">2.4 經典價格型態</h3>
+
+                <p class="section-text">除了 K 線組合，更大級別的價格型態也是重要的技術分析工具：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">頭肩頂與頭肩底 (Head and Shoulders)</div>
+                        <div class="definition-desc">最經典的反轉型態。頭肩頂：三個高點，中間最高 (頭)，兩側較低 (肩)，跌破頸線確認反轉。頭肩底則相反。測量目標：頸線到頭部的距離，從突破點向下或向上投射。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">雙重頂與雙重底 (Double Top / Double Bottom)</div>
+                        <div class="definition-desc">價格兩度測試同一水準後反轉。雙重頂 (M 頭)：兩個高點接近，跌破中間低點確認。雙重底 (W 底)：兩個低點接近，突破中間高點確認。比頭肩型態更常見，可靠度略低。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">三角形整理 (Triangle Consolidation)</div>
+                        <div class="definition-desc">包括上升三角、下降三角、對稱三角。代表多空勢力膠著，等待突破。<span class="highlight-text">上升三角</span>：上邊水平、下邊上斜，通常向上突破。<span class="highlight-text">下降三角</span>：下邊水平、上邊下斜，通常向下突破。<span class="highlight-text">對稱三角</span>：上下都收斂，突破方向不確定。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">矩形整理 (Rectangle / Trading Range)</div>
+                        <div class="definition-desc">價格在固定區間內震盪，上下邊界清晰。代表盤整，突破後往往伴隨較大波動。箱型操作策略：低點買、高點賣，直到突破。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">旗形與三角旗 (Flag and Pennant)</div>
+                        <div class="definition-desc">短期整理型態，出現在強勁趨勢中途。旗形：平行四邊形，與趨勢方向相反傾斜。三角旗：小型對稱三角形。都是趨勢延續型態，突破後繼續原趨勢。</div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-title">案例：NVIDIA 頭肩底反轉 (2022-2023)</div>
+                    <div class="case-study-text">2022 年 NVIDIA 從 $346 高點跌至 $108，形成三個階段的底部：</div>
+                    <div class="case-study-text">2022/10 第一肩：跌至 $108 後反彈至 $190<br>2022/12 頭部：再次下探至 $108 測試支撐<br>2023/1 第二肩：小幅回檔至 $140 後反彈</div>
+                    <div class="case-study-text">2023/2 突破頸線 $190，確認頭肩底成立。測量目標：$190 + ($190-$108) = $272</div>
+                    <div class="case-study-text">實際走勢：NVIDIA 在 2023 年 5 月突破 $300，完美達成技術目標。AI 熱潮催化下，更在 2024 年持續飆漲。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 趨勢分析與支撐壓力 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、趨勢分析與支撐壓力位判斷</h2>
+                
+                <p class="section-text">道氏理論 (Dow Theory) 認為<span class="highlight-text">趨勢是技術分析的核心</span>。識別趨勢方向，順勢操作，是獲利的關鍵。</p>
+
+                <h3 class="section-subtitle">3.1 趨勢的分類與定義</h3>
+                
+                <p class="section-text">趨勢可分為三個層級：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">主要趨勢 (Primary Trend)</div>
+                        <div class="definition-desc">持續一年以上的大方向，決定牛市或熊市。最重要但也最難精準把握。長期投資者應順應主要趨勢。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">次級趨勢 (Secondary Trend)</div>
+                        <div class="definition-desc">持續數週至數月的修正或反彈。在主升段中的回檔，或主跌段中的反彈。波段操作者的主要關注對象。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">短期波動 (Minor Trend)</div>
+                        <div class="definition-desc">持續數天至數週的隨機波動。雜訊較多，難以預測，適合短線交易者。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">3.2 趨勢線的繪製與應用</h3>
+
+                <p class="section-text">趨勢線是連接價格低點或高點的直線，用於判斷趨勢方向與支撐壓力：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">上升趨勢線</span>：連接兩個或以上的上升低點，每次回檔不破趨勢線代表上升趨勢持續</li>
+                    <li><span class="highlight-text">下降趨勢線</span>：連接兩個或以上的下降高點，每次反彈不破趨勢線代表下跌趨勢持續</li>
+                    <li><span class="highlight-text">趨勢線突破</span>：有效突破趨勢線代表趨勢可能反轉，需配合成交量與後續走勢確認</li>
+                </ul>
+
+                <div class="reference-block">
+趨勢線繪製原則：
+
+1. 至少需要兩個點才能畫趨勢線
+2. 第三個點觸及時，趨勢線有效性提高
+3. 觸及次數越多，趨勢線越重要
+4. 趨勢線角度不宜過陡 (超過 60 度不可持續)
+5. 稍微調整角度讓更多價格觸及，但不可為了完美而扭曲
+                </div>
+
+                <h3 class="section-subtitle">3.3 支撐與壓力位</h3>
+
+                <p class="section-text">支撐位與壓力位是技術分析中最實用的概念：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">支撐位 (Support)</div>
+                        <div class="definition-desc">價格下跌過程中，遇到買盤承接，多次測試不破的價位。形成原因：前低點、前高點回檔、整數價位、移動平均線、密集成交區。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">壓力位 (Resistance)</div>
+                        <div class="definition-desc">價格上漲過程中，遇到賣壓阻擋，多次測試不過的價位。形成原因：前高點、前低點反彈、整數關卡、移動平均線、套牢區。</div>
+                    </div>
+                </div>
+
+                <p class="section-text">支撐壓力轉換原則：</p>
+
+                <ul class="content-list">
+                    <li>向上突破壓力後，壓力轉為支撐</li>
+                    <li>向下跌破支撐後，支撐轉為壓力</li>
+                    <li>轉換後的支撐壓力通常比原先更強</li>
+                    <li>多次測試的支撐壓力更可靠</li>
+                </ul>
+
+                <div class="case-study">
+                    <div class="case-study-title">實戰案例：特斯拉 $200 支撐位 (2023)</div>
+                    <div class="case-study-text">2023 年特斯拉股價在 $200 附近形成強支撐：</div>
+                    <div class="case-study-text">2023/1：跌至 $101 後反彈，5 月首次站上 $200<br>2023/6-8：三度回測 $200-210 區間，都獲得支撐<br>2023/9：再次回測 $200，形成第四次支撐</div>
+                    <div class="case-study-text">$200 成為關鍵心理價位與技術支撐，每次觸及都吸引買盤進場。投資人可在 $200-210 區間分批買入，設定止損於 $195。</div>
+                    <div class="case-study-text">結果：支撐守住，2024 年持續上漲至 $250+</div>
+                </div>
+
+                <h3 class="section-subtitle">3.4 整數關卡與心理價位</h3>
+
+                <p class="section-text">除了技術形成的支撐壓力，心理因素也會創造關鍵價位：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">整數價位</span>：$100、$200、$500 等整數具有心理意義，常成為支撐壓力</li>
+                    <li><span class="highlight-text">歷史高點</span>：前波段高點是重要壓力，突破代表創新高，心理振奮</li>
+                    <li><span class="highlight-text">52 週高低點</span>：市場關注度高，突破或跌破往往伴隨大波動</li>
+                    <li><span class="highlight-text">IPO 價格</span>：新股的掛牌價常成為心理支撐或壓力</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">支撐壓力不是精確數字</div>
+                    <div class="info-box-text">支撐壓力應視為區間而非精確點位。例如 $200 支撐，實際可能是 $198-202 區間。</div>
+                    <div class="info-box-text">突破或跌破需要「有效」確認：通常定義為收盤價突破 3% 以上，或連續 2-3 日收盤價在突破後位置。</div>
+                    <div class="info-box-text">假突破 (False Breakout) 常見，需警惕。真正的突破應伴隨成交量放大與後續跟進。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 移動平均線與技術指標 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、移動平均線與常用技術指標</h2>
+                
+                <p class="section-text">技術指標是將價格與成交量進行數學運算後的結果，用於過濾雜訊、辨識趨勢、判斷超買超賣。</p>
+
+                <h3 class="section-subtitle">4.1 移動平均線 (Moving Average, MA)</h3>
+                
+                <p class="section-text">移動平均線是最基礎也最重要的技術指標，計算特定期間的平均價格並連成線。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">MA(n) = (P1 + P2 + ... + Pn) ÷ n</div>
+                </div>
+
+                <p class="section-text">常用週期：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">短期均線</span>：5 日、10 日、20 日，反應靈敏但雜訊多</li>
+                    <li><span class="highlight-text">中期均線</span>：50 日、60 日，平衡靈敏度與穩定性</li>
+                    <li><span class="highlight-text">長期均線</span>：120 日、200 日，趨勢判斷最可靠，牛熊分界</li>
+                </ul>
+
+                <p class="section-text">移動平均線的應用：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">趨勢判斷</span>：MA 向上代表上升趨勢，向下代表下跌趨勢。股價在 MA 上方是多頭，下方是空頭</li>
+                    <li><span class="highlight-text">支撐壓力</span>：上升趨勢中 MA 是支撐，下跌趨勢中 MA 是壓力。週期越長支撐壓力越強</li>
+                    <li><span class="highlight-text">黃金交叉與死亡交叉</span>：短期 MA 向上穿越長期 MA 是買入訊號 (黃金交叉)，向下穿越是賣出訊號 (死亡交叉)</li>
+                    <li><span class="highlight-text">多頭排列與空頭排列</span>：5MA > 10MA > 20MA > 60MA 是多頭排列，反之是空頭排列</li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="info-box-title">SMA vs EMA</div>
+                    <div class="info-box-text"><span class="highlight-text">SMA (簡單移動平均)</span>：所有價格權重相同。計算簡單但反應較慢。</div>
+                    <div class="info-box-text"><span class="highlight-text">EMA (指數移動平均)</span>：近期價格權重較高，反應更靈敏。短線交易者偏好 EMA，長期投資者偏好 SMA。</div>
+                    <div class="info-box-text">實務上兩者差異不大，選擇一種堅持使用即可。更重要的是理解均線背後的邏輯而非執著於計算方式。</div>
+                </div>
+
+                <h3 class="section-subtitle">4.2 相對強弱指標 (RSI)</h3>
+
+                <p class="section-text">RSI 衡量價格變動的速度與幅度，用於判斷超買超賣。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">RSI = 100 - [100 ÷ (1 + RS)]<br>RS = 平均上漲幅度 ÷ 平均下跌幅度</div>
+                </div>
+
+                <p class="section-text">RSI 的判斷標準：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">RSI > 70</span>：超買區，可能回檔，考慮減碼</li>
+                    <li><span class="highlight-text">RSI < 30</span>：超賣區，可能反彈，考慮進場</li>
+                    <li><span class="highlight-text">RSI = 50</span>：多空勢均力敵</li>
+                    <li><span class="highlight-text">背離訊號</span>：價格創新高但 RSI 未創新高 (頂背離)，或價格創新低但 RSI 未創新低 (底背離)，是反轉警訊</li>
+                </ul>
+
+                <div class="case-study">
+                    <div class="case-study-title">RSI 背離實例</div>
+                    <div class="case-study-text">2023 年 7 月蘋果股價：<br>第一波高點：$198，RSI = 75<br>第二波高點：$201，RSI = 68</div>
+                    <div class="case-study-text">價格創新高但 RSI 未創新高，形成頂背離。代表上漲動能衰竭，隨後股價回檔至 $170。</div>
+                    <div class="case-study-text">RSI 背離是提前預警訊號，但不代表立即反轉，應配合其他指標確認。</div>
+                </case-study>
+
+                <h3 class="section-subtitle">4.3 MACD 指標</h3>
+
+                <p class="section-text">MACD (Moving Average Convergence Divergence) 是趨勢跟隨與動能指標的結合。</p>
+
+                <div class="reference-block">
+MACD 組成：
+MACD 線 = 12 日 EMA - 26 日 EMA
+訊號線 = MACD 線的 9 日 EMA
+柱狀圖 = MACD 線 - 訊號線
+                </div>
+
+                <p class="section-text">MACD 的應用：</p>
+
+                <ul class="numbered-list">
+                    <li><span class="highlight-text">金叉死叉</span>：MACD 線向上穿越訊號線為金叉 (買入)，向下穿越為死叉 (賣出)</li>
+                    <li><span class="highlight-text">零軸位置</span>：MACD 在零軸上方代表短期均線高於長期均線，多頭格局；反之為空頭</li>
+                    <li><span class="highlight-text">柱狀圖</span>：柱狀圖放大代表趨勢加速，縮小代表趨勢減弱</li>
+                    <li><span class="highlight-text">背離</span>：與 RSI 類似，價格與 MACD 走勢背離是反轉訊號</li>
+                </ul>
+
+                <h3 class="section-subtitle">4.4 布林通道 (Bollinger Bands)</h3>
+
+                <p class="section-text">布林通道由三條線組成，用於判斷價格波動與超買超賣：</p>
+
+                <div class="reference-block">
+中軌 = 20 日移動平均線
+上軌 = 中軌 + (2 × 標準差)
+下軌 = 中軌 - (2 × 標準差)
+                </div>
+
+                <p class="section-text">布林通道的應用原理：</p>
+
+                <ul class="content-list">
+                    <li>統計上，95% 的價格會落在上下軌之間</li>
+                    <li>價格觸及上軌代表超買，觸及下軌代表超賣</li>
+                    <li>通道收窄代表波動縮小，往往預示大行情即將來臨</li>
+                    <li>通道擴張代表波動加劇，趨勢啟動</li>
+                    <li>價格持續沿上軌或下軌運行代表強趨勢，不宜逆勢操作</li>
+                </ul>
+
+                <h3 class="section-subtitle">4.5 成交量分析</h3>
+
+                <p class="section-text">成交量是驗證價格走勢真實性的關鍵。<span class="highlight-text">價格是因，成交量是果</span>。</p>
+
+                <p class="section-text">成交量的判斷原則：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">量價齊揚</span>：上漲伴隨放量，健康的上升趨勢</li>
+                    <li><span class="highlight-text">量價背離</span>：上漲但量縮，缺乏承接，可能反轉</li>
+                    <li><span class="highlight-text">突破放量</span>：突破關鍵壓力時放量，確認有效突破</li>
+                    <li><span class="highlight-text">跌破放量</span>：跌破支撐時放量，確認有效跌破，恐慌賣壓</li>
+                    <li><span class="highlight-text">地量見地價</span>：極度縮量往往出現在底部，代表賣壓耗盡</li>
+                    <li><span class="highlight-text">天量見天價</span>：極度放量往往出現在頂部，代表換手充分</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">技術指標是工具不是答案。沒有任何單一指標能完美預測市場，成功的交易需要綜合判斷。</div>
+                    <div class="quote-author">— 技術分析原則</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: 實戰交易策略 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、技術分析實戰交易策略</h2>
+                
+                <h3 class="section-subtitle">5.1 多重時間架構分析</h3>
+                
+                <p class="section-text">專業交易員不會只看單一時間週期，而是<span class="highlight-text">由大到小，由長到短</span>分析：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">月線</span>：判斷主要趨勢，牛市或熊市</li>
+                    <li><span class="highlight-text">週線</span>：判斷次級趨勢，波段高低點</li>
+                    <li><span class="highlight-text">日線</span>：判斷短期趨勢，尋找進場點</li>
+                    <li><span class="highlight-text">小時線</span>：精確進場時機，短線交易</li>
+                </ol>
+
+                <div class="reference-block">
+實戰流程範例：
+
+1. 月線：確認 AAPL 處於長期上升趨勢
+2. 週線：發現回檔至 200 週均線附近
+3. 日線：出現錘子線，RSI 跌至 35 超賣
+4. 小時線：MACD 金叉，量能放大
+→ 綜合判斷：長期多頭、中期回檔到位、短期反轉訊號出現
+→ 決策：分批進場，設定止損於日線前低
+                </div>
+
+                <h3 class="section-subtitle">5.2 趨勢跟隨策略</h3>
+
+                <p class="section-text">最經典的技術分析策略：<span class="highlight-text">順勢而為，趨勢是你的朋友</span>。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">策略一：均線多頭排列買入法</div>
+                        <div class="definition-desc">進場：5MA > 10MA > 20MA > 60MA 形成多頭排列<br>持有：股價站穩 20MA 之上<br>出場：跌破 20MA 或均線開始糾結<br>適用：中期波段操作，捕捉主升段</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">策略二：突破買入法</div>
+                        <div class="definition-desc">進場：突破前高或盤整區間上緣，伴隨放量<br>加碼：突破後回測支撐不破，形成新平台<br>出場：跌破突破點或後續支撐<br>適用：捕捉新一波趨勢的起點</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">策略三：回檔買入法</div>
+                        <div class="definition-desc">前提：確認上升趨勢中<br>進場：回檔至關鍵支撐 (趨勢線、均線、前低) 獲得支撐<br>確認：出現反轉 K 線或指標超賣回升<br>適用：趨勢中途的加碼點</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">5.3 區間震盪策略</h3>
+
+                <p class="section-text">當市場沒有明確趨勢時，採用區間操作：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">辨識區間</span>：確認上下邊界清晰，至少測試 2 次</li>
+                    <li><span class="highlight-text">低買高賣</span>：接近下緣買入，接近上緣賣出</li>
+                    <li><span class="highlight-text">嚴格紀律</span>：跌破下緣立即停損，突破上緣停止賣出</li>
+                    <li><span class="highlight-text">縮小部位</span>：震盪市獲利空間有限，降低倉位</li>
+                </ul>
+
+                <h3 class="section-subtitle">5.4 風險管理與停損設定</h3>
+
+                <p class="section-text">技術分析最大優勢是提供明確的停損點。沒有停損的技術分析是賭博。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">固定百分比停損</div>
+                        <div class="definition-desc">設定買入價下方 5-10% 為停損點。簡單直接，但未考慮技術位置。適合新手建立紀律。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">技術位停損</div>
+                        <div class="definition-desc">將停損設在關鍵技術位下方：前低、支撐位、趨勢線下方 3-5%。更符合市場結構，但距離可能較大。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">移動停損 (Trailing Stop)</div>
+                        <div class="definition-desc">隨著獲利增加而上移停損點。例如：股價上漲 10%，停損從 -5% 上移至 -3%，鎖定部分利潤。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">時間停損</div>
+                        <div class="definition-desc">設定持有期限，若期限內未達目標或出現買入理由消失，強制出場。避免長期套牢。</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">2% 風險管理法則</div>
+                    <div class="info-box-text">每筆交易的風險不超過總資金的 2%。</div>
+                    <div class="info-box-text">例如：總資金 $100,000，單筆風險上限 $2,000<br>買入價 $100，停損價 $95，風險 $5/股<br>最大持股 = $2,000 ÷ $5 = 400 股</div>
+                    <div class="info-box-text">這確保即使連續錯誤 10 次，也只損失 20%，仍有東山再起的機會。</div>
+                </div>
+
+                <h3 class="section-subtitle">5.5 技術分析的限制與陷阱</h3>
+
+                <p class="section-text">技術分析並非萬能，需認清其限制：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">自我實現預言</span>：當多數人使用相同技術分析，反而使其失效或被主力利用</li>
+                    <li><span class="highlight-text">訊號滯後</span>：多數技術指標是落後指標，反應慢於價格</li>
+                    <li><span class="highlight-text">假訊號頻繁</span>：不是每個金叉、突破都有效，需過濾與確認</li>
+                    <li><span class="highlight-text">無法預測黑天鵝</span>：突發事件 (財報爆雷、戰爭、疫情) 技術分析無法預警</li>
+                    <li><span class="highlight-text">過度優化</span>：回測歷史完美，實戰失效。避免過度曲線擬合</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">技術分析不是尋找聖杯，而是提高勝率。60% 勝率加上嚴格風控，長期就能獲利。</div>
+                    <div class="quote-author">— 交易智慧</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">技術分析是交易的藝術與科學的結合。完成本章學習後，你已掌握：</p>
+
+                <ol class="numbered-list">
+                    <li>技術分析的三大前提假設與基本原理，理解其與基本面分析的互補關係</li>
+                    <li>K 線理論與價格型態，能辨識反轉與延續型態，判斷多空力道</li>
+                    <li>趨勢分析與支撐壓力位判斷，掌握趨勢線繪製與關鍵價位識別</li>
+                    <li>移動平均線、RSI、MACD、布林通道等常用技術指標的原理與應用</li>
+                    <li>實戰交易策略，包括趨勢跟隨、區間操作、多重時間架構分析與風險管理</li>
+                </ol>
+
+                <p class="section-text">技術分析學習的關鍵要點：</p>
+
+                <ul class="content-list">
+                    <li>實踐勝於理論：大量看盤與實戰累積經驗</li>
+                    <li>簡單勝於複雜：掌握 2-3 種指標深入應用，勝過淺嚐 20 種</li>
+                    <li>系統勝於直覺：建立交易系統，嚴格執行</li>
+                    <li>紀律勝於技術：再好的技術，沒有紀律執行都是空談</li>
+                    <li>風控勝於獲利：保護本金是第一要務</li>
+                </ul>
+
+                <p class="section-text">下一章，我們將學習投資組合建構與資產配置，探討如何結合基本面、技術面與風險管理，建立適合自己的完整投資體系。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter05.html" class="nav-button">← 上一章：ETF 投資完整指南</a>
+            <a href="chapter07.html" class="nav-button next">下一章：投資組合建構與資產配置 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

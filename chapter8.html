@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章：風險管理與停損策略 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--ink);
+        }
+        
+        .case-study-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+        
+        .case-study-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">8 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 08</div>
+            <h1 class="chapter-title">風險管理與停損策略</h1>
+            <p class="chapter-subtitle">建立完善風險控制機制，掌握倉位管理、停損停利設定、對沖策略，保護投資本金避免重大損失</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">2.5 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">中階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 風險管理基礎 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、風險管理的核心理念</h2>
+                
+                <p class="section-text">投資的本質是在不確定性中追求報酬。風險管理不是消除風險，而是<span class="highlight-text">控制風險暴露在可承受範圍內</span>，確保即使發生最壞情況，仍能留在市場繼續投資。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">風險來自你不知道自己在做什麼。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+
+                <h3 class="section-subtitle">1.1 風險的分類與識別</h3>
+                
+                <p class="section-text">投資面臨的風險是多維度的，理解不同類型風險是管理的第一步：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">系統性風險 (Systematic Risk)</div>
+                        <div class="definition-desc">影響整體市場的風險，無法透過分散投資消除。包括：經濟衰退、利率變化、通膨、戰爭、疫情等。又稱市場風險或不可分散風險。應對方法：資產配置、對沖工具、降低整體部位。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">非系統性風險 (Unsystematic Risk)</div>
+                        <div class="definition-desc">特定企業或產業的風險，可透過分散投資降低。包括：公司經營失敗、產業競爭、管理層醜聞、產品缺陷等。又稱個別風險或可分散風險。應對方法：持有多檔股票或 ETF。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">流動性風險 (Liquidity Risk)</div>
+                        <div class="definition-desc">無法在合理價格快速買賣的風險。小型股、冷門債券、場外衍生品流動性風險高。市場恐慌時流動性會驟降。應對方法：持有高流動性資產、保持現金緩衝。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">匯率風險 (Currency Risk)</div>
+                        <div class="definition-desc">台灣投資人投資美股面臨美元兌台幣匯率變動風險。即使股價上漲，若美元貶值仍可能虧損。應對方法：接受匯率波動、長期持有、部分對沖。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">心理風險 (Psychological Risk)</div>
+                        <div class="definition-desc">源自人性弱點的風險：恐慌、貪婪、從眾、過度自信。往往是投資虧損的最大元凶。應對方法：建立紀律、遵守系統、記錄反思。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">1.2 風險承受度評估</h3>
+
+                <p class="section-text">投資前需誠實評估自己的風險承受能力，包括財務承受度與心理承受度：</p>
+
+                <div class="reference-block">
+財務承受度評估：
+
+1. 緊急預備金是否充足？(至少 6 個月開支)
+2. 是否有穩定收入來源？
+3. 未來 5 年是否有大筆支出需求？(買房、教育)
+4. 債務負擔如何？
+5. 投資資金虧損 50% 是否影響生活？
+
+心理承受度評估：
+
+1. 投資組合下跌 20% 時會焦慮失眠嗎？
+2. 看到帳面虧損會衝動賣出嗎？
+3. 看到別人賺錢會 FOMO (錯失恐懼) 嗎？
+4. 能接受短期虧損換取長期報酬嗎？
+5. 能獨立思考不受市場情緒影響嗎？
+                </reference-block>
+
+                <p class="section-text">財務承受度低或心理承受度低，都應採用更保守的投資策略。<span class="highlight-text">最大的風險是承擔了超過自己能力的風險</span>。</p>
+
+                <h3 class="section-subtitle">1.3 風險與報酬的平衡</h3>
+
+                <p class="section-text">投資的黃金法則：<span class="highlight-text">高報酬伴隨高風險，低風險對應低報酬</span>。聲稱高報酬低風險的投資通常是詐騙。</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>風險等級</th>
+                            <th>資產類型</th>
+                            <th>預期年化報酬</th>
+                            <th>最大年跌幅</th>
+                            <th>適合對象</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>極低風險</td>
+                            <td>定存、貨幣基金</td>
+                            <td>1-3%</td>
+                            <td>0%</td>
+                            <td>保本為主</td>
+                        </tr>
+                        <tr>
+                            <td>低風險</td>
+                            <td>政府公債</td>
+                            <td>3-5%</td>
+                            <td>-5%</td>
+                            <td>保守投資人</td>
+                        </tr>
+                        <tr>
+                            <td>中等風險</td>
+                            <td>60/40 股債組合</td>
+                            <td>6-8%</td>
+                            <td>-20%</td>
+                            <td>平衡型投資人</td>
+                        </tr>
+                        <tr>
+                            <td>中高風險</td>
+                            <td>全股票組合</td>
+                            <td>8-10%</td>
+                            <td>-40%</td>
+                            <td>積極投資人</td>
+                        </tr>
+                        <tr>
+                            <td>高風險</td>
+                            <td>個股集中投資</td>
+                            <td>10-15%+</td>
+                            <td>-60%+</td>
+                            <td>專業投資人</td>
+                        </tr>
+                        <tr>
+                            <td>極高風險</td>
+                            <td>槓桿、選擇權</td>
+                            <td>-50% ~ +200%</td>
+                            <td>-100%</td>
+                            <td>投機者</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="info-box-title">風險管理的首要原則</div>
+                    <div class="info-box-text">巴菲特的兩條投資規則：</div>
+                    <div class="info-box-text">規則一：永遠不要虧損<br>規則二：永遠不要忘記規則一</div>
+                    <div class="info-box-text">這不是說不能出現虧損（那不可能），而是強調<span class="highlight-text">保護本金</span>的重要性。失去 50% 需要賺 100% 才能回本；失去 75% 需要賺 300% 才能回本。</div>
+                    <div class="info-box-text">因此，風險管理的核心不是追求最高報酬，而是<span class="highlight-text">避免不可挽回的重大損失</span>。</div>
+                </info-box>
+            </div>
+        </section>
+
+        <!-- Section 2: 倉位管理 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、倉位管理策略</h2>
+                
+                <p class="section-text">倉位管理 (Position Sizing) 是風險控制的核心。無論多好的投資標的，若倉位過大，一次失誤就可能導致災難性損失。</p>
+
+                <h3 class="section-subtitle">2.1 固定比例法</h3>
+                
+                <p class="section-text">最簡單直觀的倉位管理方法：<span class="highlight-text">單一持股不超過總資產固定比例</span>。</p>
+
+                <div class="reference-block">
+保守型：單一持股 ≤ 5%
+例：$100,000 資產，每檔股票最多 $5,000
+
+平衡型：單一持股 ≤ 10%
+例：$100,000 資產，每檔股票最多 $10,000
+
+積極型：單一持股 ≤ 20%
+例：$100,000 資產，每檔股票最多 $20,000
+                </reference-block>
+
+                <p class="section-text">優點：簡單易執行，自動分散風險<br>缺點：未考慮個別股票風險差異，所有股票一視同仁</p>
+
+                <h3 class="section-subtitle">2.2 風險平價法 (Risk Parity)</h3>
+
+                <p class="section-text">根據個別資產的波動率調整倉位，使<span class="highlight-text">每個部位對組合風險的貢獻相同</span>。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">風險平價實例</div>
+                    <div class="case-study-text">假設兩檔股票：<br>股票 A：波動率 10%，低風險<br>股票 B：波動率 30%，高風險</div>
+                    <div class="case-study-text">固定比例法：各配置 50%<br>結果：股票 B 貢獻 75% 組合風險，股票 A 僅 25%</div>
+                    <div class="case-study-text">風險平價法：<br>股票 A 配置 75% (30÷40 = 0.75)<br>股票 B 配置 25% (10÷40 = 0.25)<br>結果：兩者對組合風險貢獻相等</div>
+                </div>
+
+                <p class="section-text">優點：更科學的風險控制<br>缺點：需計算波動率，較複雜</p>
+
+                <h3 class="section-subtitle">2.3 凱利公式 (Kelly Criterion)</h3>
+
+                <p class="section-text">數學上最優化的倉位計算方法，來自賭博理論。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">凱利比例 = (勝率 × 賠率 - 敗率) ÷ 賠率<br><br>勝率 = 獲利次數 ÷ 總交易次數<br>敗率 = 1 - 勝率<br>賠率 = 平均獲利 ÷ 平均虧損</div>
+                </div>
+
+                <div class="reference-block">
+實例計算：
+
+歷史數據：
+勝率 = 55%
+敗率 = 45%
+平均獲利 = 15%
+平均虧損 = 10%
+賠率 = 15% ÷ 10% = 1.5
+
+凱利比例 = (0.55 × 1.5 - 0.45) ÷ 1.5
+         = (0.825 - 0.45) ÷ 1.5
+         = 0.375 ÷ 1.5
+         = 0.25 = 25%
+
+建議倉位：25% 資金
+                </reference-block>
+
+                <div class="info-box">
+                    <div class="info-box-title">凱利公式的實務應用</div>
+                    <div class="info-box-text">全倉凱利比例風險極高，實務上應採用<span class="highlight-text">半凱利</span>或<span class="highlight-text">1/4 凱利</span>。</div>
+                    <div class="info-box-text">例如：凱利公式算出 40%，實際倉位應為 20% (半凱利) 或 10% (1/4 凱利)。</div>
+                    <div class="info-box-text">原因：參數估計不準、市場變化、避免過度集中。保守應用凱利公式能兼顧成長與風控。</div>
+                </info-box>
+
+                <h3 class="section-subtitle">2.4 金字塔加碼法</h3>
+
+                <p class="section-text">初始建立小部位，獲利後逐步加碼，虧損則不加碼。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">金字塔加碼實例</div>
+                    <div class="case-study-text">目標總倉位：$10,000<br>買入價：$100</div>
+                    <div class="case-study-text">第一批：買入 $2,500 (25 股) @ $100<br>等待上漲至 $110，獲利 10%</div>
+                    <div class="case-study-text">第二批：買入 $2,500 (22 股) @ $110<br>等待上漲至 $120，再獲利 9%</div>
+                    <div class="case-study-text">第三批：買入 $2,500 (20 股) @ $120<br>等待上漲至 $130</div>
+                    <div class="case-study-text">第四批：買入 $2,500 (19 股) @ $130<br>完成建倉，總成本 $115，當前價 $130，已獲利 13%</div>
+                </div>
+
+                <p class="section-text">優點：確認趨勢後才重壓，降低判斷錯誤損失<br>缺點：漲太快來不及加碼，平均成本較高</p>
+
+                <h3 class="section-subtitle">2.5 分批建倉與減倉</h3>
+
+                <p class="section-text">避免一次性重倉，分批進出降低時機風險：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">建倉</span>：分 3-5 次買入，每次間隔數天或數週</li>
+                    <li><span class="highlight-text">減倉</span>：獲利後分批賣出，保留部分享受後續漲幅</li>
+                    <li><span class="highlight-text">原則</span>：建倉時下跌則加碼，上漲則停止；減倉時上漲則繼續賣，下跌則保留</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 3: 停損策略 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、停損策略與執行</h2>
+                
+                <p class="section-text">停損 (Stop Loss) 是風險管理最重要的工具。<span class="highlight-text">沒有停損的投資如同沒有保險駕駛</span>，遲早會遭遇災難。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">停損是痛苦的，但不停損更痛苦。小虧是風險管理，大虧是沒有風險管理。</div>
+                    <div class="quote-author">— 交易格言</div>
+                </div>
+
+                <h3 class="section-subtitle">3.1 為何需要停損？</h3>
+                
+                <p class="section-text">停損的三大功能：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">限制單筆虧損</span>：避免小虧變大虧，保護本金</li>
+                    <li><span class="highlight-text">心理釋放</span>：承認錯誤後解脫，避免套牢心態</li>
+                    <li><span class="highlight-text">資金釋放</span>：釋出資金投入更好機會</li>
+                </ol>
+
+                <div class="case-study">
+                    <div class="case-study-title">停損的複利效應</div>
+                    <div class="case-study-text">投資人 A：嚴格停損 -5%<br>10 次交易，7 勝 3 敗<br>7 次 +10% = +70%<br>3 次 -5% = -15%<br>淨報酬：+55%</div>
+                    <div class="case-study-text">投資人 B：不設停損<br>10 次交易，7 勝 3 敗<br>7 次 +10% = +70%<br>2 次 -10%、1 次 -40% = -60%<br>淨報酬：+10%</div>
+                    <div class="case-study-text">即使勝率相同，停損紀律使報酬差距達 5.5 倍！</div>
+                </div>
+
+                <h3 class="section-subtitle">3.2 五種停損方法</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">方法一：固定百分比停損</div>
+                        <div class="definition-desc">設定買入價下方固定百分比為停損點。<br>保守：-5%，適合短線交易<br>平衡：-8%，適合波段操作<br>積極：-10%，適合長期持有<br><br>優點：簡單明確，容易執行<br>缺點：未考慮股票波動特性，可能被洗出</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">方法二：技術位停損</div>
+                        <div class="definition-desc">根據技術支撐位設定停損。<br>支撐位下方 3-5%<br>趨勢線下方<br>重要均線 (如 20MA、50MA) 下方<br>前低點下方<br><br>優點：符合市場結構，更精準<br>缺點：需要技術分析能力，有主觀性</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">方法三：ATR 停損 (Average True Range)</div>
+                        <div class="definition-desc">根據股票波動率設定停損。<br>ATR = 過去 14 天平均真實波幅<br>停損點 = 買入價 - (2 × ATR)<br><br>優點：自動適應股票波動特性<br>缺點：需計算 ATR，較複雜</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <def定義-term">方法四：移動停損 (Trailing Stop)</div>
+                        <div class="definition-desc">隨著股價上漲而上移停損點，鎖定利潤。<br>買入價 $100，停損 $95<br>漲至 $110，停損上移至 $104.5 (95 折)<br>漲至 $120，停損上移至 $114<br><br>優點：保護利潤，讓獲利奔跑<br>缺點：正常回檔可能被停出</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">方法五：時間停損</div>
+                        <div class="definition-desc">設定持有期限，到期若未達目標則出場。<br>例如：持有 3 個月，若未上漲 15% 則賣出<br><br>優點：避免無限期套牢<br>缺點：可能錯過慢牛股</div>
+                    </div>
+                </definition-list>
+
+                <h3 class="section-subtitle">3.3 停損執行的關鍵原則</h3>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">買入前設定</span>：進場前就決定停損點，寫下來</li>
+                    <li><span class="highlight-text">絕不移動</span>：停損點只能上移鎖定利潤，絕不下移擴大虧損</li>
+                    <li><span class="highlight-text">機械執行</span>：觸發停損立即執行，不找藉口、不抱幻想</li>
+                    <li><span class="highlight-text">事後不後悔</span>：停損後股價反彈也不後悔，這是風控成本</li>
+                    <li><span class="highlight-text">使用限價停損單</span>：設定 Stop-Limit Order 自動執行</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">停損的心理障礙</div>
+                    <div class="info-box-text">多數投資人知道要停損，但做不到。原因：</div>
+                    <div class="info-box-text">1. 損失厭惡：實現虧損比帳面虧損更痛苦<br>2. 過度自信：相信自己判斷，不願承認錯誤<br>3. 錨定效應：執著於買入價，期待回本<br>4. 僥倖心理：希望奇蹟出現</div>
+                    <div class="info-box-text">克服方法：<br>- 將停損視為保險費，必要成本<br>- 專注於長期勝率，單次虧損無關緊要<br>- 使用自動停損單，避免情緒干擾<br>- 記錄每次停損，檢討改進</div>
+                </info-box>
+
+                <h3 class="section-subtitle">3.4 停利策略</h3>
+
+                <p class="section-text">停損有紀律，停利也需要策略。<span class="highlight-text">讓獲利奔跑，截斷虧損</span>是交易的黃金法則。</p>
+
+                <p class="section-text">停利方法：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">目標價停利</span>：達到預設報酬率 (如 +20%) 分批獲利了結</li>
+                    <li><span class="highlight-text">技術位停利</span>：遇到關鍵壓力、超買訊號時減碼</li>
+                    <li><span class="highlight-text">移動停利</span>：使用移動停損自動鎖定利潤</li>
+                    <li><span class="highlight-text">分批停利</span>：獲利後賣出 1/3，保留 2/3 續抱</li>
+                    <li><span class="highlight-text">永不停利</span>：優質股長期持有，僅在基本面惡化時賣出</li>
+                </ul>
+
+                <p class="section-text">選擇哪種停利方法取決於投資風格。短線交易者應嚴格停利，長期投資者可讓獲利奔跑。</p>
+            </div>
+        </section>
+
+        <!-- Section 4: 對沖策略 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、對沖策略與風險對沖工具</h2>
+                
+                <p class="section-text">對沖 (Hedging) 是透過建立反向部位來降低風險。就像買保險，付出一定成本換取保護。</p>
+
+                <h3 class="section-subtitle">4.1 股票對沖：持有反向 ETF</h3>
+                
+                <p class="section-text">當看好長期但擔心短期回檔時，可持有少量反向 ETF：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">SH</span>：做空標普 500，-1 倍</li>
+                    <li><span class="highlight-text">PSQ</span>：做空納斯達克 100，-1 倍</li>
+                    <li><span class="highlight-text">SQQQ</span>：做空納斯達克 100，-3 倍</li>
+                </ul>
+
+                <div class="reference-block">
+對沖比例範例：
+
+持有 $100,000 美股組合
+擔心短期回檔 10-20%
+買入 $10,000 SH 或 $5,000 SQQQ
+
+若股市跌 15%：
+股票虧損：-$15,000
+SH 獲利：+$1,500 (10% 對沖比例)
+SQQQ 獲利：+$2,250 (5% 對沖比例)
+淨虧損：-$13,500 或 -$12,750
+
+保護效果有限但降低痛苦
+                </reference-block>
+
+                <div class="info-box">
+                    <div class="info-box-title">反向 ETF 的使用警告</div>
+                    <div class="info-box-text">反向 ETF 只適合短期對沖 (數天到數週)，<span class="highlight-text">絕不適合長期持有</span>。</div>
+                    <div class="info-box-text">原因：每日重置機制導致長期衰減。若指數震盪但未大跌，反向 ETF 會持續虧損。</div>
+                    <div class="info-box-text">例如：指數連續 +5%、-5%、+5%、-5%，最終回到原點，但 3 倍反向 ETF 會虧損約 9%。</div>
+                </info-box>
+
+                <h3 class="section-subtitle">4.2 選擇權對沖 (進階策略)</h3>
+
+                <p class="section-text">選擇權是更精確的對沖工具，但需要專業知識。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">保護性賣權 (Protective Put)</div>
+                        <div class="definition-desc">買入股票同時買入賣權 (Put)，設定價格下限。<br>例如：持有 100 股 AAPL @ $180，買入 1 張 $170 賣權<br>若股價跌破 $170，賣權獲利抵銷股票虧損<br>成本：賣權權利金 (保險費)</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">領口策略 (Collar)</div>
+                        <div class="definition-desc">買入賣權保護下檔，同時賣出買權 (Call) 降低成本。<br>例如：持有股票 $180，買入 $170 賣權、賣出 $190 買權<br>保護：最多虧損到 $170<br>代價：最多獲利到 $190，放棄上漲空間</div>
+                    </div>
+                </div>
+
+                <p class="section-text">選擇權策略適合大額投資組合 ($100,000+)，小額投資人成本效益不佳。</p>
+
+                <h3 class="section-subtitle">4.3 資產配置對沖</h3>
+
+                <p class="section-text">最簡單有效的對沖方法：持有負相關資產。</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>對沖資產</th>
+                            <th>與股票相關性</th>
+                            <th>對沖場景</th>
+                            <th>建議配置</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>長期公債 (TLT)</td>
+                            <td>負相關</td>
+                            <td>股災、經濟衰退</td>
+                            <td>20-40%</td>
+                        </tr>
+                        <tr>
+                            <td>黃金 (GLD)</td>
+                            <td>低相關</td>
+                            <td>通膨、貨幣危機</td>
+                            <td>5-10%</td>
+                        </tr>
+                        <tr>
+                            <td>美元現金</td>
+                            <td>零相關</td>
+                            <td>所有風險</td>
+                            <td>10-20%</td>
+                        </tr>
+                        <tr>
+                            <td>防禦型股票 (XLP)</td>
+                            <td>低相關</td>
+                            <td>景氣下滑</td>
+                            <td>10-15%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">這種「被動對沖」透過資產配置實現，無需頻繁操作，適合多數投資人。</p>
+
+                <h3 class="section-subtitle">4.4 動態對沖 vs 靜態對沖</h3>
+
+                <p class="section-text">兩種對沖思維：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">靜態對沖</span>：維持固定配置 (如 60/40)，透過再平衡自動對沖。簡單省心，適合長期投資人</li>
+                    <li><span class="highlight-text">動態對沖</span>：根據市場狀況調整對沖比例。市場昂貴時增加對沖，便宜時減少對沖。需要判斷能力與頻繁操作</li>
+                </ul>
+
+                <p class="section-text">對多數投資人而言，<span class="highlight-text">靜態對沖 + 嚴格停損</span>已足夠應對風險。</p>
+            </div>
+        </section>
+
+        <!-- Section 5: 風險管理檢查清單 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、風險管理檢查清單與實戰應用</h2>
+                
+                <h3 class="section-subtitle">5.1 投資前風險檢查</h3>
+                
+                <div class="reference-block">
+每筆投資前必須回答：
+
+1. 這筆投資最多願意虧損多少？ ($金額 或 %)
+2. 停損點設在哪裡？
+3. 根據停損點，應該買幾股？
+4. 單筆風險是否 ≤ 總資產 2%？
+5. 持有後組合是否過度集中？(單一持股 > 20%)
+6. 理解這項投資的風險嗎？
+7. 虧損後還能睡得著嗎？
+
+以上任一回答「否」或「不確定」→ 不投資
+                </reference-block>
+
+                <h3 class="section-subtitle">5.2 2% 風險法則實戰</h3>
+
+                <p class="section-text">專業交易員的黃金法則：<span class="highlight-text">單筆交易風險不超過總資產 2%</span>。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">2% 法則應用範例</div>
+                    <div class="case-study-text">總資產：$100,000<br>單筆風險上限：$2,000 (2%)</div>
+                    <div class="case-study-text">看好 NVDA，當前價格 $500<br>技術分析：支撐位 $475，設定停損 $470<br>風險：$500 - $470 = $30/股</div>
+                    <div class="case-study-text">計算可買股數：<br>$2,000 ÷ $30 = 66.6 股 → 買入 66 股<br>投入金額：66 × $500 = $33,000</div>
+                    <div class="case-study-text">驗證：若觸發停損<br>虧損：66 × $30 = $1,980<br>占比：$1,980 ÷ $100,000 = 1.98% ✓</div>
+                    <div class="case-study-text">即使 $33,000 重倉，因停損紀律，實際風險僅 2%</div>
+                </case-study>
+
+                <h3 class="section-subtitle">5.3 組合層級風險控制</h3>
+
+                <p class="section-text">除了單筆風險，還需控制組合整體風險：</p>
+
+                <ul class="numbered-list">
+                    <li><span class="highlight-text">總持股數</span>：5-15 檔為佳，太少風險集中，太多難以管理</li>
+                    <li><span class="highlight-text">產業分散</span>：單一產業不超過 30%</li>
+                    <li><span class="highlight-text">相關性檢視</span>：持股相關性過高等同集中，應納入負相關資產</li>
+                    <li><span class="highlight-text">波動率監控</span>：組合波動率超過目標 (如年化 15%) 應降低風險部位</li>
+                    <li><span class="highlight-text">最大回撤限制</span>：組合跌幅達 -20% 應暫停交易，檢討策略</li>
+                </ul>
+
+                <h3 class="section-subtitle">5.4 極端市場的應對</h3>
+
+                <p class="section-text">股災、黑天鵝事件的風險管理：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">事前準備</div>
+                        <div class="definition-desc">1. 保持 10-20% 現金緩衝<br>2. 避免使用槓桿<br>3. 分散不同資產類別<br>4. 設定組合層級停損 (如 -25% 全部出清)</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">事中應對</div>
+                        <div class="definition-desc">1. 嚴格執行停損，不移動停損點<br>2. 不嘗試抄底，等待穩定訊號<br>3. 保護本金，現金為王<br>4. 避免情緒性操作</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">事後檢討</div>
+                        <div class="definition-desc">1. 記錄應對過程<br>2. 分析成功與失誤之處<br>3. 更新風險管理規則<br>4. 調整資產配置</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">5.5 風險管理日誌</h3>
+
+                <p class="section-text">建立風險管理日誌，持續改進：</p>
+
+                <div class="reference-block">
+每次交易記錄：
+
+日期、標的、買入價、停損價、目標價
+買入理由、風險評估
+實際結果、停損/停利執行
+經驗教訓
+
+定期檢討 (每月/每季)：
+
+總報酬率 vs 基準
+勝率、平均獲利、平均虧損
+最大回撤
+停損執行率
+改進方向
+                </reference-block>
+
+                <div class="quote-block">
+                    <div class="quote-text">風險管理不是一次性動作，而是持續的習慣。成功的投資人與失敗的投資人最大差異，在於風險管理的紀律。</div>
+                    <div class="quote-author">— 雷·達里歐 (Ray Dalio)</div>
+                </quote-block>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">風險管理是投資成功的基石，比選股能力更重要。完成本章學習後，你已掌握：</p>
+
+                <ol class="numbered-list">
+                    <li>風險的分類與識別，理解系統性風險、非系統性風險、流動性風險等</li>
+                    <li>倉位管理五大方法：固定比例、風險平價、凱利公式、金字塔加碼、分批建倉</li>
+                    <li>停損策略與執行，掌握五種停損方法與克服心理障礙的技巧</li>
+                    <li>對沖策略，包括反向 ETF、選擇權、資產配置對沖</li>
+                    <li>完整風險管理檢查清單與 2% 風險法則實戰應用</li>
+                </ol>
+
+                <p class="section-text">風險管理的核心原則：</p>
+
+                <ul class="content-list">
+                    <li>保護本金第一：失去 50% 需賺 100% 才能回本</li>
+                    <li>控制單筆風險：2% 法則確保連敗不致命</li>
+                    <li>嚴格執行停損：紀律勝過聰明</li>
+                    <li>分散降低風險：唯一免費午餐</li>
+                    <li>持續記錄檢討：從錯誤中學習成長</li>
+                </ul>
+
+                <p class="section-text">記住：<span class="highlight-text">優秀的投資人不是預測能力最強的，而是風險管理最好的</span>。在市場存活比在市場致富更重要，只有存活下來，才有機會致富。</p>
+
+                <p class="section-text">下一章，我們將學習總體經濟與市場週期判斷，探討如何透過經濟指標與市場訊號把握大趨勢，為投資決策提供宏觀視角。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter07.html" class="nav-button">← 上一章：投資組合建構與資產配置</a>
+            <a href="chapter09.html" class="nav-button next">下一章：總體經濟與市場週期判斷 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

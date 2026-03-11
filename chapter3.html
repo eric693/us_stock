@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三章：價值投資法則與選股策略 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--ink);
+        }
+        
+        .case-study-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+        
+        .case-study-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">3 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 03</div>
+            <h1 class="chapter-title">價值投資法則與選股策略</h1>
+            <p class="chapter-subtitle">深入巴菲特、葛拉漢的價值投資哲學，掌握安全邊際、內在價值評估與護城河分析，建立長期投資思維</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">3 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">中階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 價值投資核心哲學 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、價值投資核心哲學與歷史脈絡</h2>
+                
+                <p class="section-text">價值投資是當今最成功且經得起時間考驗的投資方法論。從 1934 年班傑明·葛拉漢 (Benjamin Graham) 出版《證券分析》至今，價值投資創造了無數投資傳奇，包括華倫·巴菲特 (Warren Buffett)、查理·蒙格 (Charlie Munger)、賽斯·卡拉曼 (Seth Klarman) 等投資大師。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">投資的第一原則是不要虧損，第二原則是永遠記住第一原則。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+
+                <h3 class="section-subtitle">1.1 什麼是價值投資？</h3>
+                
+                <p class="section-text">價值投資的核心信念可以濃縮為一句話：<span class="highlight-text">以低於內在價值的價格買入優質企業，長期持有直到價值回歸</span>。這個看似簡單的概念，蘊含三個關鍵要素：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">內在價值評估</span>：企業的真實價值不等於股價，需透過基本面分析計算其內在價值</li>
+                    <li><span class="highlight-text">安全邊際</span>：以遠低於內在價值的價格買入，確保即使估算錯誤仍有緩衝空間</li>
+                    <li><span class="highlight-text">長期持有</span>：市場短期是投票機，長期是稱重機，耐心等待價值回歸</li>
+                </ol>
+
+                <h3 class="section-subtitle">1.2 價值投資與投機的本質差異</h3>
+
+                <p class="section-text">葛拉漢在《智慧型股票投資人》中明確區分投資與投機：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特徵</th>
+                            <th>價值投資</th>
+                            <th>投機</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>決策依據</td>
+                            <td>企業基本面與內在價值</td>
+                            <td>股價走勢與市場情緒</td>
+                        </tr>
+                        <tr>
+                            <td>時間視野</td>
+                            <td>3-5 年以上長期持有</td>
+                            <td>短期交易，追求快速獲利</td>
+                        </tr>
+                        <tr>
+                            <td>風險態度</td>
+                            <td>保守，強調安全邊際</td>
+                            <td>激進，追求高報酬</td>
+                        </tr>
+                        <tr>
+                            <td>分析方法</td>
+                            <td>深入研究財報與產業</td>
+                            <td>技術分析與市場預測</td>
+                        </tr>
+                        <tr>
+                            <td>情緒管理</td>
+                            <td>理性獨立，逆向思考</td>
+                            <td>跟隨群眾，易受情緒影響</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="info-box-title">市場先生的寓言</div>
+                    <div class="info-box-text">葛拉漢創造了「市場先生」的經典比喻：想像你與市場先生共同持有一家企業的股份。市場先生每天都會報價，願意買入或賣出你的股份。有時他過度樂觀，報價高得離譜；有時他過度悲觀，報價低得荒謬。</div>
+                    <div class="info-box-text">聰明的投資人會在市場先生過度悲觀時買入，在過度樂觀時賣出，而不是被他的情緒波動所影響。你可以忽略市場先生的報價，專注企業本身的價值。</div>
+                    <div class="info-box-text">這個寓言提醒我們：股價波動不代表企業價值變化，而是反映市場情緒的變化。</div>
+                </div>
+
+                <h3 class="section-subtitle">1.3 價值投資的演進：從葛拉漢到巴菲特</h3>
+
+                <p class="section-text">價值投資經歷了重要的演進過程：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">葛拉漢時代：煙屁股投資法</div>
+                        <div class="definition-desc">葛拉漢專注於尋找「便宜貨」，即股價低於淨資產價值的公司。這些公司可能經營不善，但因價格極度低估而具有投資價值，就像地上的煙屁股，雖然只剩一口，但免費抽還是划算。這種方法在 1930-1950 年代效果卓越，但隨著市場效率提升，機會越來越少。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">巴菲特時代：品質優先</div>
+                        <div class="definition-desc">受查理·蒙格影響，巴菲特轉向「以合理價格買入優質企業」的策略。重點不再只是便宜，而是尋找具有持久競爭優勢（護城河）的偉大企業。即使價格不那麼便宜，只要企業品質夠好，長期仍能創造驚人回報。可口可樂、美國運通、蘋果都是這種策略的經典案例。</div>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="quote-text">以合理的價格買入一家優秀的公司，遠勝於以便宜的價格買入一家平庸的公司。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 安全邊際原則 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、安全邊際：價值投資的基石</h2>
+                
+                <p class="section-text">安全邊際 (Margin of Safety) 是葛拉漢最重要的投資原則，也是價值投資的核心防禦機制。這個概念借鑒自工程學：建造橋樑時，如果預計承重 10 噸，工程師會設計成承重 20 噸，額外的 10 噸就是安全邊際。</p>
+
+                <h3 class="section-subtitle">2.1 安全邊際的定義與計算</h3>
+
+                <p class="section-text">在投資領域，安全邊際是指<span class="highlight-text">買入價格與內在價值之間的差距</span>。具體公式為：</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">安全邊際 = [(內在價值 - 買入價格) ÷ 內在價值] × 100%</div>
+                </div>
+
+                <p class="section-text">例如：某企業內在價值為每股 $100，目前市價 $60，則安全邊際為 40%。</p>
+
+                <p class="section-text">傳統價值投資者要求的安全邊際標準：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">保守型投資人</span>：安全邊際至少 50%</li>
+                    <li><span class="highlight-text">積極型投資人</span>：安全邊際至少 30-40%</li>
+                    <li><span class="highlight-text">優質企業</span>：可接受較低安全邊際 (20-30%)，因估值相對準確</li>
+                </ul>
+
+                <h3 class="section-subtitle">2.2 為什麼需要安全邊際？</h3>
+
+                <p class="section-text">安全邊際提供三層保護：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">估算誤差保護</span>：內在價值評估不可能百分百準確，安全邊際確保即使高估價值，仍不至於虧損</li>
+                    <li><span class="highlight-text">不確定性保護</span>：企業經營環境、產業競爭、總體經濟都會變化，安全邊際提供緩衝空間</li>
+                    <li><span class="highlight-text">時間價值保護</span>：價值回歸可能需要數年，安全邊際確保等待期間仍有合理報酬</li>
+                </ol>
+
+                <div class="case-study">
+                    <div class="case-study-title">案例分析：2008 年金融危機中的安全邊際</div>
+                    <div class="case-study-text">2008 年金融海嘯期間，許多優質企業股價腰斬。以富國銀行 (Wells Fargo) 為例，股價從 2007 年高點 $37 跌至 2009 年低點 $8，跌幅超過 78%。</div>
+                    <div class="case-study-text">巴菲特在 2008-2009 年間大量買入富國銀行股票，平均成本約 $20-25。他計算富國銀行的內在價值約 $40-50，即使在最悲觀情況下也有 50% 以上的安全邊際。</div>
+                    <div class="case-study-text">結果：到 2013 年，富國銀行股價回升至 $45，巴菲特獲利超過一倍。更重要的是，即使他的估值有誤差，巨大的安全邊際仍確保了投資不會虧損。</div>
+                </div>
+
+                <h3 class="section-subtitle">2.3 安全邊際的實務應用</h3>
+
+                <p class="section-text">實際投資時，安全邊際應如何應用？</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">分批建倉策略</div>
+                    <div class="info-box-text">即使發現具有安全邊際的標的，也不應一次性重壓。建議採用分批建倉策略：</div>
+                    <div class="info-box-text">第一批：安全邊際 30% 時買入 1/3 部位<br>第二批：安全邊際 40% 時加碼 1/3 部位<br>第三批：安全邊際 50% 時加碼最後 1/3 部位</div>
+                    <div class="info-box-text">這種策略確保即使判斷錯誤，仍能控制損失；若股價持續下跌，則能以更低價格累積更多籌碼。</div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="quote-text">安全邊際的功能，是讓你不需要知道未來會發生什麼。</div>
+                    <div class="quote-author">— 班傑明·葛拉漢</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 內在價值評估 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、內在價值評估方法論</h2>
+                
+                <p class="section-text">計算企業內在價值是價值投資最核心也最困難的技能。不同於股價是市場給出的數字，內在價值需要投資人自行估算。本節介紹三種主要評估方法。</p>
+
+                <h3 class="section-subtitle">3.1 折現現金流量法 (DCF Model)</h3>
+
+                <p class="section-text">這是理論上最嚴謹的估值方法，核心邏輯是：<span class="highlight-text">企業的價值等於其未來所有現金流量的現值總和</span>。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">內在價值 = Σ [FCF(t) ÷ (1+r)^t] + 終值 ÷ (1+r)^n</div>
+                </div>
+
+                <p class="section-text">其中：<br>FCF(t) = 第 t 年的自由現金流量<br>r = 折現率（通常使用加權平均資金成本 WACC）<br>n = 預測年數<br>終值 = 永續年金價值</p>
+
+                <p class="section-text">DCF 模型的實務步驟：</p>
+
+                <ol class="numbered-list">
+                    <li>預測未來 5-10 年的自由現金流量</li>
+                    <li>確定合理的折現率（通常 8-12%）</li>
+                    <li>計算終值（假設永續成長率 2-3%）</li>
+                    <li>將所有現金流折現加總</li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="info-box-title">DCF 模型的優缺點</div>
+                    <div class="info-box-text">優點：理論嚴謹，反映企業真實價值創造能力<br>缺點：對假設極度敏感，微小的參數變化會導致估值巨幅波動</div>
+                    <div class="info-box-text">巴菲特曾說：「DCF 是唯一正確的估值方法，但也是最容易被誤用的方法。」關鍵在於假設的合理性。</div>
+                </div>
+
+                <h3 class="section-subtitle">3.2 本益比法 (P/E Ratio Approach)</h3>
+
+                <p class="section-text">相對估值法中最常用的方法，透過比較同業本益比來評估合理股價。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">合理股價 = 每股盈餘 (EPS) × 合理本益比</div>
+                </div>
+
+                <p class="section-text">如何確定合理本益比？</p>
+
+                <ul class="content-list">
+                    <li>參考同產業平均本益比</li>
+                    <li>考慮企業成長率（PEG 比率）</li>
+                    <li>分析歷史本益比區間</li>
+                    <li>評估企業品質給予溢價或折價</li>
+                </ul>
+
+                <div class="reference-block">
+範例計算：
+假設某科技公司 EPS = $5.00
+同業平均本益比 = 25 倍
+該公司品質優於同業，給予 10% 溢價
+合理本益比 = 25 × 1.1 = 27.5 倍
+合理股價 = $5.00 × 27.5 = $137.5
+
+目前市價 = $100
+安全邊際 = ($137.5 - $100) / $137.5 = 27.3%
+                </div>
+
+                <h3 class="section-subtitle">3.3 淨資產價值法 (Book Value Approach)</h3>
+
+                <p class="section-text">這是葛拉漢偏好的保守估值法，特別適用於資產密集型產業。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">內在價值 = 每股淨資產 (Book Value per Share)</div>
+                </div>
+
+                <p class="section-text">葛拉漢的嚴格標準：</p>
+
+                <ul class="content-list">
+                    <li>股價 < 每股淨資產 × 0.67（安全邊際 33%）</li>
+                    <li>股價 < 流動資產淨值（扣除所有負債後的流動資產）</li>
+                </ul>
+
+                <p class="section-text">此方法在現代應用受限，因為：</p>
+
+                <ul class="content-list">
+                    <li>科技公司、服務業的價值主要來自無形資產，非帳面淨資產</li>
+                    <li>帳面價值受會計政策影響，可能與市場價值脫節</li>
+                    <li>市場效率提升，極度低估的機會減少</li>
+                </ul>
+
+                <p class="section-text">但對金融股、房地產等資產密集產業仍具參考價值。</p>
+
+                <h3 class="section-subtitle">3.4 綜合評估與交叉驗證</h3>
+
+                <p class="section-text">實務上，應<span class="highlight-text">綜合運用多種方法進行交叉驗證</span>，而非依賴單一模型。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">實戰案例：可口可樂估值 (簡化版)</div>
+                    <div class="case-study-text">假設巴菲特在 2025 年評估可口可樂，以下是三種方法的結果：</div>
+                    <div class="case-study-text">1. DCF 法：預測未來 10 年平均 FCF = $100 億，折現率 9%，終值成長率 2.5%，計算得內在價值約 $65/股</div>
+                    <div class="case-study-text">2. 本益比法：預測 EPS = $2.50，合理本益比 25 倍（考慮品牌溢價），得出合理價 = $62.5/股</div>
+                    <div class="case-study-text">3. 淨資產法：每股淨資產 = $7，但品牌價值遠超帳面，此法不適用</div>
+                    <div class="case-study-text">綜合評估：取 DCF 與本益比法平均，內在價值約 $63-65/股。目前市價 $58，安全邊際約 8-11%，仍在合理買入範圍。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 護城河分析 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、護城河分析：尋找持久競爭優勢</h2>
+                
+                <p class="section-text">「護城河」(Economic Moat) 是巴菲特最重要的選股標準。這個中世紀城堡的比喻生動說明：偉大的企業就像擁有寬廣護城河的城堡，能長期抵禦競爭者的攻擊，持續創造超額利潤。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">我們尋找的是一座被寬闊護城河保護的偉大城堡，城堡裡住著誠實而有才能的公爵。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+
+                <h3 class="section-subtitle">4.1 五種經典護城河類型</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">品牌力量 (Brand Power)</div>
+                        <div class="definition-desc">強大的品牌讓消費者願意支付溢價，或在同價位優先選擇該品牌。典型例子：蘋果、可口可樂、Nike、Louis Vuitton。品牌護城河的特徵是高毛利率、強大定價權、低廣告成本比（相對營收）。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">網路效應 (Network Effects)</div>
+                        <div class="definition-desc">用戶越多，服務價值越高，形成正向循環。後進者難以撼動領先地位。典型例子：Facebook、Visa、Mastercard、Microsoft。網路效應的黃金標準是：新用戶的加入會為既有用戶創造價值。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">轉換成本 (Switching Costs)</div>
+                        <div class="definition-desc">客戶轉換供應商的成本極高（金錢、時間、學習曲線、風險），因此傾向持續使用現有服務。典型例子：企業軟體（SAP、Oracle）、銀行帳戶、醫療設備。特徵是高客戶留存率、穩定的經常性收入。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">成本優勢 (Cost Advantage)</div>
+                        <div class="definition-desc">透過規模經濟、獨特技術、地理位置等因素，擁有同業無法比擬的低成本結構。典型例子：Costco、沃爾瑪、台積電。特徵是在維持品質前提下，能以更低價格提供產品或服務。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">專利與法規保護 (Intangible Assets)</div>
+                        <div class="definition-desc">透過專利、政府許可、法規門檻等形成合法壟斷。典型例子：製藥公司的專利藥、公用事業的特許經營權、機場的獨佔經營權。需注意保護期限與到期後的競爭風險。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">4.2 護城河的寬度與深度評估</h3>
+
+                <p class="section-text">不是所有護城河都具有同等保護力。評估護城河需考慮兩個維度：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>護城河等級</th>
+                            <th>特徵</th>
+                            <th>代表企業</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>寬闊護城河</td>
+                            <td>多重護城河疊加，20 年內難以被突破</td>
+                            <td>蘋果、Google、Visa</td>
+                        </tr>
+                        <tr>
+                            <td>中等護城河</td>
+                            <td>單一或雙重護城河，10 年內相對安全</td>
+                            <td>星巴克、Nike、Adobe</td>
+                        </tr>
+                        <tr>
+                            <td>窄小護城河</td>
+                            <td>護城河存在但脆弱，5 年內可能被侵蝕</td>
+                            <td>多數傳統零售、一般製造業</td>
+                        </tr>
+                        <tr>
+                            <td>無護城河</td>
+                            <td>完全競爭市場，無持久優勢</td>
+                            <td>航空業、餐飲業、大宗商品</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-subtitle">4.3 護城河的動態變化</h3>
+
+                <p class="section-text">護城河並非永恆不變，可能因科技進步、商業模式創新、消費習慣改變而被侵蝕或拓寬。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">護城河消失案例：柯達 (Kodak)</div>
+                    <div class="case-study-text">柯達曾擁有強大的品牌護城河與技術專利，在底片時代幾乎壟斷市場。但數位相機的興起徹底改變遊戲規則，柯達的護城河在新技術面前毫無防禦力。</div>
+                    <div class="case-study-text">教訓：技術變革可能摧毀看似堅固的護城河。投資人必須持續評估護城河是否面臨顛覆性威脅。</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-title">護城河拓寬案例：亞馬遜 (Amazon)</div>
+                    <div class="case-study-text">亞馬遜從線上書店起家，逐步建立多重護城河：規模優勢（物流網路）、網路效應（第三方賣家平台）、轉換成本（Prime 會員）、成本優勢（AWS 雲端服務）。</div>
+                    <div class="case-study-text">每增加一項護城河，競爭者追趕的難度就呈指數級增長。這就是護城河疊加的威力。</div>
+                </div>
+
+                <h3 class="section-subtitle">4.4 護城河的量化指標</h3>
+
+                <p class="section-text">如何客觀判斷企業是否擁有護城河？以下財務指標可作為佐證：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">ROE > 15% 且持續 10 年以上</span>：代表企業能持續創造超額回報</li>
+                    <li><span class="highlight-text">毛利率 > 40% 且穩定</span>：具備定價權或成本優勢</li>
+                    <li><span class="highlight-text">客戶留存率 > 90%</span>：高轉換成本或網路效應的證據</li>
+                    <li><span class="highlight-text">市場占有率領先且持續擴大</span>：競爭優勢持續強化</li>
+                    <li><span class="highlight-text">自由現金流持續強勁</span>：不需大量資本支出維持競爭力</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: 價值投資選股檢查清單 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、價值投資選股檢查清單</h2>
+                
+                <p class="section-text">綜合前面所學,建立一套系統化的選股流程。以下是經過實戰驗證的價值投資檢查清單：</p>
+
+                <h3 class="section-subtitle">5.1 第一階段：企業品質篩選</h3>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">商業模式是否易於理解？</span>若無法用簡單語言解釋企業如何賺錢，不要投資</li>
+                    <li><span class="highlight-text">是否擁有可辨識的護城河？</span>至少具備一種護城河類型</li>
+                    <li><span class="highlight-text">產業前景如何？</span>避開正在衰退的夕陽產業</li>
+                    <li><span class="highlight-text">管理層品格與能力</span>：誠實、理性、股東導向</li>
+                    <li><span class="highlight-text">財務穩健性</span>：負債比率 < 50%，流動比率 > 1.5</li>
+                </ol>
+
+                <h3 class="section-subtitle">5.2 第二階段：獲利能力驗證</h3>
+
+                <ol class="numbered-list">
+                    <li>ROE > 15% 且連續 5 年以上</li>
+                    <li>毛利率 > 30% 且穩定或提升</li>
+                    <li>營業利益率 > 10%</li>
+                    <li>自由現金流持續為正</li>
+                    <li>EPS 成長率 > 10% (過去 5 年平均)</li>
+                </ol>
+
+                <h3 class="section-subtitle">5.3 第三階段：估值與安全邊際</h3>
+
+                <ol class="numbered-list">
+                    <li>使用 DCF、本益比等方法計算內在價值</li>
+                    <li>確認安全邊際至少 30%</li>
+                    <li>檢查本益比是否低於同業平均</li>
+                    <li>確認股價處於歷史估值區間的低位</li>
+                    <li>計算買入後的預期年化報酬率 > 15%</li>
+                </ol>
+
+                <h3 class="section-subtitle">5.4 第四階段：風險評估</h3>
+
+                <ul class="content-list">
+                    <li>是否存在重大訴訟或監管風險？</li>
+                    <li>企業是否過度依賴單一客戶或供應商？</li>
+                    <li>產業是否面臨顛覆性技術威脅？</li>
+                    <li>會計政策是否保守？是否存在財報疑慮？</li>
+                    <li>管理層是否有不當行為記錄？</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">重要提醒：否決權的運用</div>
+                    <div class="info-box-text">這個檢查清單的任何一項若出現嚴重問題，都應行使否決權，放棄該投資機會。</div>
+                    <div class="info-box-text">例如：即使企業財務數字漂亮、估值便宜，但若管理層誠信有問題，就應果斷放棄。寧可錯失機會，也不要承擔不必要的風險。</div>
+                </div>
+
+                <h3 class="section-subtitle">5.5 持續追蹤與賣出時機</h3>
+
+                <p class="section-text">買入只是開始，持續追蹤同樣重要。何時該賣出？</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">目標價格達成</span>：股價達到或超過內在價值，安全邊際消失</li>
+                    <li><span class="highlight-text">基本面惡化</span>：護城河被侵蝕、獲利能力持續下滑、管理層變質</li>
+                    <li><span class="highlight-text">發現更好機會</span>：找到更具吸引力的投資標的</li>
+                    <li><span class="highlight-text">原始投資邏輯改變</span>：當初買入的理由不再成立</li>
+                </ul>
+
+                <p class="section-text">不應賣出的時機：</p>
+
+                <ul class="content-list">
+                    <li>單純因為股價上漲而賣出</li>
+                    <li>因短期業績波動而恐慌賣出</li>
+                    <li>受市場情緒影響而盲目跟隨</li>
+                    <li>為了節稅而賣出優質持股</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">我們最喜歡的持股期間是：永遠。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">價值投資是一套完整的投資哲學與方法論，而非單純的技巧。完成本章學習後，你已掌握：</p>
+
+                <ol class="numbered-list">
+                    <li>價值投資的核心理念：以低於內在價值的價格買入優質企業，長期持有等待價值回歸</li>
+                    <li>安全邊際原則：投資最重要的保護機制，至少要求 30% 以上的安全邊際</li>
+                    <li>內在價值評估：DCF 法、本益比法、淨資產法等估值工具的應用與交叉驗證</li>
+                    <li>護城河分析：五種經典護城河類型，如何評估護城河的寬度與持久性</li>
+                    <li>系統化選股流程：從企業品質篩選到估值分析的完整檢查清單</li>
+                </ol>
+
+                <p class="section-text">價值投資不是尋找快速致富的捷徑，而是一條需要耐心、紀律與持續學習的道路。它要求投資人具備：</p>
+
+                <ul class="content-list">
+                    <li>獨立思考的勇氣，不隨波逐流</li>
+                    <li>情緒管理的能力，在市場恐慌時保持理性</li>
+                    <li>長期視野，不被短期波動影響</li>
+                    <li>持續學習，不斷精進分析能力</li>
+                </ul>
+
+                <p class="section-text">下一章，我們將學習成長股投資與科技股分析，探討如何在快速變化的科技產業中尋找投資機會，這將是價值投資理念在現代市場的延伸應用。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter02.html" class="nav-button">← 上一章：財報閱讀與企業分析</a>
+            <a href="chapter04.html" class="nav-button next">下一章：成長股投資與科技股分析 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

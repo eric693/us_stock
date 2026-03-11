@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第七章：投資組合建構與資產配置 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--ink);
+        }
+        
+        .case-study-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+        
+        .case-study-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">7 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 07</div>
+            <h1 class="chapter-title">投資組合建構與資產配置</h1>
+            <p class="chapter-subtitle">深入馬可維茲投資組合理論，學習風險分散、資產配置、再平衡策略，建構最適投資組合</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">3 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">中階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 現代投資組合理論 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、現代投資組合理論基礎</h2>
+                
+                <p class="section-text">1952 年，哈利·馬可維茲 (Harry Markowitz) 發表論文《投資組合選擇》，開創了現代投資組合理論 (Modern Portfolio Theory, MPT)。這套理論徹底改變了投資界對風險與報酬的理解，他也因此獲得 1990 年諾貝爾經濟學獎。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">不要把所有雞蛋放在同一個籃子裡。</div>
+                    <div class="quote-author">— 投資界古老智慧，馬可維茲用數學證明</div>
+                </quote-block>
+
+                <h3 class="section-subtitle">1.1 核心概念：風險與報酬</h3>
+                
+                <p class="section-text">MPT 的第一個重要觀念：投資人關心的不只是報酬，還有風險。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">預期報酬 (Expected Return)</div>
+                        <div class="definition-desc">投資組合在未來可能獲得的平均報酬率。計算方式是各資產報酬的加權平均。假設投資 60% 股票 (預期報酬 10%)、40% 債券 (預期報酬 4%)，組合預期報酬 = 0.6×10% + 0.4×4% = 7.6%</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">風險 (Risk)</div>
+                        <div class="definition-desc">以標準差衡量報酬的波動程度。標準差越大，報酬不確定性越高，風險越大。股票標準差通常 15-20%，債券 5-8%，現金接近 0%。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">風險調整後報酬 (Risk-Adjusted Return)</div>
+                        <div class="definition-desc">單位風險下的報酬，常用夏普比率 (Sharpe Ratio) 衡量。夏普比率 = (投資組合報酬 - 無風險利率) ÷ 標準差。數值越高，投資效率越好。</div>
+                    </div>
+                </div>
+
+                <div class="formula-block">
+                    <div class="formula-text">夏普比率 = (Rp - Rf) ÷ σp<br>Rp = 投資組合報酬率<br>Rf = 無風險利率<br>σp = 投資組合標準差</div>
+                </div>
+
+                <h3 class="section-subtitle">1.2 分散投資的數學原理</h3>
+
+                <p class="section-text">MPT 最重要的發現：<span class="highlight-text">組合的風險不等於各資產風險的加權平均</span>。</p>
+
+                <p class="section-text">關鍵在於<span class="highlight-text">相關係數 (Correlation)</span>：</p>
+
+                <ul class="content-list">
+                    <li>相關係數 = +1：兩資產完全同向波動，無分散效果</li>
+                    <li>相關係數 = 0：兩資產獨立，有分散效果</li>
+                    <li>相關係數 = -1：兩資產完全反向波動，分散效果最佳</li>
+                </ul>
+
+                <div class="case-study">
+                    <div class="case-study-title">分散效果實例</div>
+                    <div class="case-study-text">假設兩檔股票 A 與 B：<br>A：預期報酬 12%，標準差 20%<br>B：預期報酬 12%，標準差 20%</div>
+                    <div class="case-study-text">情境一：相關係數 = +1 (同產業股票)<br>50% A + 50% B 組合：報酬 12%，標準差仍是 20%<br>→ 沒有降低風險</div>
+                    <div class="case-study-text">情境二：相關係數 = 0 (不相關產業)<br>50% A + 50% B 組合：報酬 12%，標準差降至 14.1%<br>→ 風險降低 29%，報酬不變</div>
+                    <div class="case-study-text">情境三：相關係數 = -1 (避險資產)<br>50% A + 50% B 組合：報酬 12%，標準差降至 0%<br>→ 完全消除風險</div>
+                </div>
+
+                <p class="section-text">這個例子說明：選擇<span class="highlight-text">低相關或負相關</span>的資產組合，能在維持報酬的同時大幅降低風險。這就是分散投資的威力。</p>
+
+                <h3 class="section-subtitle">1.3 效率前緣 (Efficient Frontier)</h3>
+
+                <p class="section-text">給定一組資產，透過不同配置比例，可以形成無數個投資組合。其中，<span class="highlight-text">在相同風險下報酬最高，或相同報酬下風險最低的組合</span>，連成一條曲線，稱為效率前緣。</p>
+
+                <p class="section-text">效率前緣的特性：</p>
+
+                <ul class="content-list">
+                    <li>位於效率前緣上的組合是最優選擇</li>
+                    <li>效率前緣下方的組合是次優，應該避免</li>
+                    <li>效率前緣通常是向上凸的曲線</li>
+                    <li>理性投資人應選擇效率前緣上符合自己風險偏好的點</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">理論與實務的差距</div>
+                    <div class="info-box-text">MPT 基於幾個假設：投資人理性、市場有效、報酬呈常態分布、可精確估計預期報酬與相關係數。</div>
+                    <div class="info-box-text">現實中這些假設並不完全成立。投資人並非完全理性，市場存在非效率，極端事件頻率高於常態分布預測，未來報酬難以精確估計。</div>
+                    <div class="info-box-text">儘管如此，MPT 提供的分散投資框架仍是資產配置的基石，只是需要在實務應用時保持彈性。</div>
+                </info-box>
+            </div>
+        </section>
+
+        <!-- Section 2: 資產類別與配置策略 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、主要資產類別與配置策略</h2>
+                
+                <p class="section-text">建構投資組合的第一步是理解各資產類別的特性，然後根據投資目標與風險承受度決定配置比例。</p>
+
+                <h3 class="section-subtitle">2.1 四大資產類別</h3>
+                
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">股票 (Equities)</div>
+                        <div class="definition-desc">長期報酬最高的資產類別，歷史年化報酬約 10%。但波動性大，單年可能暴漲 30% 或暴跌 40%。適合長期投資，承受得住短期波動的投資人。細分為：美國大型股、小型股、國際已開發市場股、新興市場股等。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">債券 (Bonds)</div>
+                        <div class="definition-desc">提供穩定收息，波動性遠低於股票。歷史年化報酬約 5-6%。與股票通常呈負相關或低相關，是組合的穩定器。細分為：政府公債、投資等級公司債、高收益債、國際債券等。利率上升時債券價格下跌，需注意利率風險。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">房地產 (Real Estate / REITs)</div>
+                        <div class="definition-desc">透過 REITs 投資商業地產，提供穩定配息與通膨對沖。與股債相關性適中，有助於分散。歷史年化報酬約 8-9%。受利率影響較大，升息環境表現較差。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">現金與約當現金 (Cash)</div>
+                        <div class="definition-desc">包括貨幣市場基金、短期公債。幾乎無風險，但報酬率低，僅略高於通膨。主要作用是保持流動性，應付緊急需求，或等待投資機會。不宜長期持有過高比例。</div>
+                    </div>
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>資產類別</th>
+                            <th>歷史年化報酬</th>
+                            <th>波動率 (標準差)</th>
+                            <th>最大年跌幅</th>
+                            <th>主要風險</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>美國大型股</td>
+                            <td>10%</td>
+                            <td>15%</td>
+                            <td>-37% (2008)</td>
+                            <td>市場風險、景氣循環</td>
+                        </tr>
+                        <tr>
+                            <td>美國小型股</td>
+                            <td>12%</td>
+                            <td>20%</td>
+                            <td>-33% (2008)</td>
+                            <td>流動性、破產風險</td>
+                        </tr>
+                        <tr>
+                            <td>國際已開發股</td>
+                            <td>8%</td>
+                            <td>17%</td>
+                            <td>-43% (2008)</td>
+                            <td>匯率、地緣政治</td>
+                        </tr>
+                        <tr>
+                            <td>新興市場股</td>
+                            <td>9%</td>
+                            <td>25%</td>
+                            <td>-53% (2008)</td>
+                            <td>政治、匯率、流動性</td>
+                        </tr>
+                        <tr>
+                            <td>美國綜合債券</td>
+                            <td>5%</td>
+                            <td>6%</td>
+                            <td>-13% (2022)</td>
+                            <td>利率、信用</td>
+                        </tr>
+                        <tr>
+                            <td>REITs</td>
+                            <td>9%</td>
+                            <td>18%</td>
+                            <td>-37% (2008)</td>
+                            <td>利率、房地產週期</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-subtitle">2.2 經典資產配置策略</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">60/40 組合</div>
+                        <div class="definition-desc">60% 股票 + 40% 債券，是最經典的平衡型配置。過去 30 年年化報酬約 8-9%，最大年跌幅約 -20%。適合中等風險承受度的投資人。2022 年股債雙跌打破了這個組合的穩定性，引發對傳統配置的反思。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">耶魯捐贈基金模型</div>
+                        <div class="definition-desc">大衛·史文森 (David Swensen) 管理的耶魯大學捐贈基金採用高度分散策略：30% 美國股、15% 國際股、5% 新興市場股、15% 美國債、15% REITs、20% 另類投資。過去 20 年年化報酬超過 10%。強調另類資產與國際分散。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">全天候組合 (All Weather Portfolio)</div>
+                        <div class="definition-desc">橋水基金創辦人達里歐 (Ray Dalio) 提出：30% 美國股、40% 長期公債、15% 中期公債、7.5% 黃金、7.5% 商品。設計目標是在各種經濟環境下都能穩定表現。波動率極低但報酬也相對溫和，約 7-8%。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">簡化三基金組合</div>
+                        <div class="definition-desc">約翰·柏格提倡：60% 美國全市場股票 + 20% 國際股票 + 20% 美國債券。極簡、低成本、全球分散。適合不想花太多時間管理的投資人。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">2.3 根據生命階段調整配置</h3>
+
+                <p class="section-text">投資組合應隨年齡、財務狀況、投資目標動態調整。</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>生命階段</th>
+                            <th>年齡範圍</th>
+                            <th>建議股債比</th>
+                            <th>配置重點</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>累積期</td>
+                            <td>25-40 歲</td>
+                            <td>80-90% 股票</td>
+                            <td>積極成長，承受波動，定期定額</td>
+                        </tr>
+                        <tr>
+                            <td>增長期</td>
+                            <td>40-55 歲</td>
+                            <td>70-80% 股票</td>
+                            <td>持續成長，適度分散，增加國際配置</td>
+                        </tr>
+                        <tr>
+                            <td>保護期</td>
+                            <td>55-65 歲</td>
+                            <td>50-60% 股票</td>
+                            <td>降低波動，平衡成長與保護</td>
+                        </tr>
+                        <tr>
+                            <td>提領期</td>
+                            <td>65+ 歲</td>
+                            <td>30-40% 股票</td>
+                            <td>收息為主，保護本金，流動性</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="info-box-title">彈性調整的重要性</div>
+                    <div class="info-box-text">上述建議是一般性原則，實際配置應考慮個人情況：</div>
+                    <div class="info-box-text">財務狀況良好、工作穩定、無負債者：可提高股票比例<br>財務壓力大、收入不穩定、有負債者：應提高現金與債券比例<br>風險承受度高、投資經驗豐富者：可更積極<br>風險厭惡、失眠會擔心者：應更保守</div>
+                    <div class="info-box-text">記住：<span class="highlight-text">最好的配置是你能長期堅持的配置</span>。過於激進導致恐慌賣出，遠比保守配置更糟。</div>
+                </info-box>
+            </div>
+        </section>
+
+        <!-- Section 3: 再平衡策略 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、再平衡策略與執行</h2>
+                
+                <p class="section-text">資產配置不是一次性決策，而是需要持續維護的動態過程。<span class="highlight-text">再平衡</span> (Rebalancing) 是維持目標配置的關鍵機制。</p>
+
+                <h3 class="section-subtitle">3.1 為何需要再平衡？</h3>
+                
+                <p class="section-text">市場波動會使投資組合偏離目標配置：</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">再平衡實例</div>
+                    <div class="case-study-text">2023 年初目標配置：$600,000 股票 (60%) + $400,000 債券 (40%) = $1,000,000</div>
+                    <div class="case-study-text">2023 年底股票大漲 25%，債券持平：<br>$750,000 股票 (65.2%) + $400,000 債券 (34.8%) = $1,150,000</div>
+                    <div class="case-study-text">問題：股票比例上升至 65.2%，超過目標 60%，風險暴露增加</div>
+                    <div class="case-study-text">再平衡動作：賣出 $60,000 股票，買入 $60,000 債券<br>結果：$690,000 股票 (60%) + $460,000 債券 (40%)</div>
+                </div>
+
+                <p class="section-text">再平衡的三大效益：</p>
+
+                <ul class="numbered-list">
+                    <li><span class="highlight-text">風險控制</span>：防止單一資產比例過高，維持風險水準</li>
+                    <li><span class="highlight-text">強制紀律</span>：自動執行「賣高買低」，克服人性弱點</li>
+                    <li><span class="highlight-text">報酬提升</span>：研究顯示定期再平衡能提升 0.3-0.5% 年化報酬</li>
+                </ul>
+
+                <h3 class="section-subtitle">3.2 三種再平衡方法</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">方法一：時間觸發再平衡 (Time-Based Rebalancing)</div>
+                        <div class="definition-desc">固定週期檢視並調整，如每季、每半年或每年一次。<br>優點：簡單固定，容易執行<br>缺點：可能在配置偏離不大時無謂交易，或偏離過大時反應遲鈍<br>建議：多數投資人適合每年再平衡一次，通常選在年底</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">方法二：門檻觸發再平衡 (Threshold-Based Rebalancing)</div>
+                        <div class="definition-desc">當任一資產偏離目標超過設定門檻 (如 5% 或 10%) 時立即調整。<br>優點：更精確控制風險，避免過度偏離<br>缺點：需要持續監控，可能頻繁交易<br>建議：設定 5% 絕對偏離或 25% 相對偏離 (目標 60% 股票，偏離至 65% 即觸發)</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">方法三：現金流再平衡 (Cash Flow Rebalancing)</div>
+                        <div class="definition-desc">利用新資金投入或配息收入調整配置，不需賣出。<br>優點：無交易成本，無稅務影響<br>缺點：需要持續現金流入，調整速度較慢<br>建議：優先採用此法，不足時再搭配其他方法</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">3.3 再平衡的實務考量</h3>
+
+                <p class="section-text">再平衡並非越頻繁越好，需考慮交易成本與稅務影響：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">交易成本</span>：每次再平衡涉及買賣，產生手續費與價差成本。ETF 投資組合成本較低，個股組合成本較高</li>
+                    <li><span class="highlight-text">稅務影響</span>：賣出獲利資產需繳資本利得稅。台灣投資人賣出美股雖免美國稅，但需申報海外所得。應盡量在免稅額度內再平衡</li>
+                    <li><span class="highlight-text">彈性空間</span>：不需要調整至精確的目標比例。在目標上下 2-3% 範圍內都可接受</li>
+                    <li><span class="highlight-text">市場極端時刻</span>：股災時股票比例大幅下降，此時再平衡等同逢低加碼，需要勇氣與紀律</li>
+                </ul>
+
+                <div class="reference-block">
+再平衡檢查清單：
+
+1. 確認當前各資產實際比例
+2. 計算與目標比例的偏離幅度
+3. 判斷是否達到再平衡門檻
+4. 計算需買賣的金額
+5. 考慮交易成本與稅務影響
+6. 優先使用新資金或配息調整
+7. 執行交易，記錄再平衡日期
+8. 設定下次檢視時間
+                </reference-block>
+
+                <h3 class="section-subtitle">3.4 不同帳戶類型的再平衡策略</h3>
+
+                <p class="section-text">對美國居民而言，應優先在退休帳戶 (401k, IRA) 內再平衡，因為免稅。對台灣投資人而言：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">一般券商帳戶</span>：賣出獲利需申報海外所得，應在免稅額度內操作</li>
+                    <li><span class="highlight-text">複委託帳戶</span>：同上，但資產不計入美國遺產稅</li>
+                    <li><span class="highlight-text">優先順序</span>：先用新資金調整 > 賣虧損資產 > 最後才賣獲利資產</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 4: 分散投資進階策略 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、分散投資的進階策略</h2>
+                
+                <h3 class="section-subtitle">4.1 跨資產類別分散</h3>
+                
+                <p class="section-text">除了股債配置，還可納入其他資產類別提升分散效果：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">黃金與貴金屬</div>
+                        <div class="definition-desc">傳統避險資產，與股票通常呈負相關或低相關。通膨加速或地緣政治危機時表現突出。但長期報酬率低於股票，僅約 4-5%。建議配置 5-10%，透過 GLD (黃金 ETF) 或實體黃金持有。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">大宗商品</div>
+                        <div class="definition-desc">包括能源、農產品、工業金屬等。與股票相關性低，是通膨對沖工具。但波動極大且長期報酬不佳。建議配置 0-5%，透過商品 ETF 持有。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">加密貨幣</div>
+                        <div class="definition-desc">新興資產類別，波動性極高。比特幣過去 10 年年化報酬超過 100%，但單年可能暴跌 70%。與傳統資產相關性低。高風險承受度投資人可配置 1-5%，但需做好歸零心理準備。</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">另類資產的配置原則</div>
+                    <div class="info-box-text">另類資產應視為「衛星部位」而非核心配置：</div>
+                    <div class="info-box-text">1. 合計不超過投資組合 10-15%<br>2. 僅投入能承受全部損失的資金<br>3. 深入理解後再投資，不跟風炒作<br>4. 定期檢視，及時停損</div>
+                </info-box>
+
+                <h3 class="section-subtitle">4.2 地域分散</h3>
+
+                <p class="section-text">不要把所有資產都放在單一國家，即使是美國：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>市場</th>
+                            <th>建議配置</th>
+                            <th>代表 ETF</th>
+                            <th>特點</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>美國</td>
+                            <td>50-70%</td>
+                            <td>VTI, SPY</td>
+                            <td>最大最成熟市場，流動性最佳</td>
+                        </tr>
+                        <tr>
+                            <td>國際已開發</td>
+                            <td>20-30%</td>
+                            <td>VEA, IEFA</td>
+                            <td>歐洲日本加拿大，穩定但成長慢</td>
+                        </tr>
+                        <tr>
+                            <td>新興市場</td>
+                            <td>5-15%</td>
+                            <td>VWO, IEMG</td>
+                            <td>中國印度巴西，成長快但波動大</td>
+                        </tr>
+                        <tr>
+                            <td>前緣市場</td>
+                            <td>0-5%</td>
+                            <td>FM</td>
+                            <td>越南泰國等，高風險高報酬</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">地域分散的考量：</p>
+
+                <ul class="content-list">
+                    <li>降低單一國家風險 (政治、經濟、貨幣)</li>
+                    <li>捕捉不同區域的成長機會</li>
+                    <li>匯率分散 (但也帶來匯率風險)</li>
+                    <li>國際股票費用率通常略高，需考慮成本</li>
+                </ul>
+
+                <h3 class="section-subtitle">4.3 產業與因子分散</h3>
+
+                <p class="section-text">即使投資美國大型股，也應注意產業與風格分散：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">產業分散</div>
+                        <div class="definition-desc">S&P 500 涵蓋 11 大產業，但科技股占比超過 25%。若看好科技但想避免過度集中，可配置 50% 全市場 ETF + 15% 科技類股 ETF，而非 100% 科技 ETF。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">市值分散</div>
+                        <div class="definition-desc">大型股穩定但成長慢，小型股波動大但長期報酬高。配置 70% 大型股 + 30% 小型股能平衡成長與穩定。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">風格分散</div>
+                        <div class="definition-desc">成長股與價值股在不同時期表現迥異。2010-2020 成長股大勝，2022 後價值股反撲。配置 60% 成長 + 40% 價值能降低風格輪動風險。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">因子投資</div>
+                        <div class="definition-desc">學術研究發現某些因子長期有超額報酬：價值、動能、品質、小型股、低波動。可配置 10-20% 於因子 ETF (Smart Beta)，但需理解其原理與風險。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">4.4 時間分散：定期定額的威力</h3>
+
+                <p class="section-text">除了資產分散，<span class="highlight-text">時間分散</span>也是降低風險的重要策略。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">單筆投資 vs 定期定額比較</div>
+                    <div class="case-study-text">情境：2022 年初有 $120,000 想投資 S&P 500</div>
+                    <div class="case-study-text">策略 A：單筆全部投入<br>投入時點：1/3 收盤 $4,796<br>年底價格：$3,839<br>虧損：20%，帳面剩 $96,000</div>
+                    <div class="case-study-text">策略 B：定期定額 12 個月<br>每月投入 $10,000，平均成本 $4,100<br>年底價值：$112,500<br>虧損：僅 6.3%</div>
+                    <div class="case-study-text">定期定額在下跌市場中能有效降低平均成本，減少虧損。但在上漲市場中，單筆投入報酬更高。</div>
+                </div>
+
+                <p class="section-text">定期定額的適用時機：</p>
+
+                <ul class="content-list">
+                    <li>市場處於高位，擔心立即回檔</li>
+                    <li>投資經驗不足，心理壓力大</li>
+                    <li>每月有固定收入，分批投入</li>
+                    <li>無法判斷市場時機</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: 組合監控與調整 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、投資組合監控與長期維護</h2>
+                
+                <h3 class="section-subtitle">5.1 定期檢視的關鍵指標</h3>
+                
+                <p class="section-text">建立投資組合後，需要定期監控但不過度干預。建議每季檢視以下指標：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">資產配置偏離度</span>：各資產類別當前比例與目標比例的差距</li>
+                    <li><span class="highlight-text">組合總報酬</span>：與基準指數 (如 60/40 組合) 比較，評估表現</li>
+                    <li><span class="highlight-text">波動率變化</span>：標準差是否在預期範圍內，風險是否可控</li>
+                    <li><span class="highlight-text">個別持股異常</span>：是否有單一持股占比過高 (超過 10%) 需要減碼</li>
+                    <li><span class="highlight-text">費用檢視</span>：總費用率是否維持在合理水準 (< 0.3%)</li>
+                </ol>
+
+                <h3 class="section-subtitle">5.2 何時需要調整投資組合？</h3>
+
+                <p class="section-text">並非所有變化都需要調整，以下情況才考慮改變配置：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">生命階段改變</div>
+                        <div class="definition-desc">結婚、生子、買房、退休等重大人生事件，影響風險承受度與投資目標。例如：即將退休前 5 年，應逐步降低股票比例至 40-50%。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">財務狀況重大變化</div>
+                        <div class="definition-desc">失業、遺產繼承、創業等。財務壓力增加時應提高流動性，財務改善時可更積極。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">風險承受度改變</div>
+                        <div class="definition-desc">2020 年股災時若徹夜難眠，代表配置過於激進。2022 年下跌若泰然自若，可能太保守。根據實際心理反應調整。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">投資策略優化</div>
+                        <div class="definition-desc">發現更低成本的 ETF、學到新的配置理念等。但不應頻繁改變策略，一年至多調整一次。</div>
+                    </div>
+                </div>
+
+                <p class="section-text">不應調整的情況：</p>
+
+                <ul class="content-list">
+                    <li>短期市場波動 (單月漲跌)</li>
+                    <li>媒體恐慌報導</li>
+                    <li>親友建議或市場熱點</li>
+                    <li>單一資產短期表現不佳</li>
+                </ul>
+
+                <h3 class="section-subtitle">5.3 避免過度交易</h3>
+
+                <p class="section-text">投資組合管理的大敵是<span class="highlight-text">過度干預</span>。研究顯示，交易頻率與報酬呈負相關。</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">Vanguard 研究：交易頻率與報酬</div>
+                    <div class="info-box-text">Vanguard 分析數百萬帳戶發現：</div>
+                    <div class="info-box-text">交易次數最少的 20% 投資人：年化報酬 7.5%<br>交易次數最多的 20% 投資人：年化報酬 4.3%<br>差距：3.2% 年化報酬</div>
+                    <div class="info-box-text">過度交易的損害來自：交易成本、不當擇時、追高殺低、稅務損失。</div>
+                    <div class="info-box-text">最佳策略：<span class="highlight-text">買入持有，定期再平衡，長期不動</span>。</div>
+                </info-box>
+
+                <h3 class="section-subtitle">5.4 記錄與學習</h3>
+
+                <p class="section-text">維護投資日誌，記錄關鍵決策與理由：</p>
+
+                <div class="reference-block">
+投資日誌應記錄：
+
+1. 資產配置決策與理由
+2. 每次再平衡的時間、金額、原因
+3. 重大調整的背景與考量
+4. 市場極端時刻的心理狀態
+5. 錯誤決策的反思
+6. 成功決策的經驗總結
+
+季度檢視：
+- 組合表現 vs 基準
+- 是否達成階段目標
+- 需要調整之處
+- 下季度重點
+                </reference-block>
+
+                <p class="section-text">透過記錄與反思，逐步精進投資決策能力，建立適合自己的投資體系。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">成功的投資不是打敗市場，而是建立並堅持一套適合自己的資產配置策略。</div>
+                    <div class="quote-author">— 查爾斯·艾利斯 (Charles Ellis)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">投資組合建構與資產配置是投資成功的基石，遠比選股擇時更重要。完成本章學習後，你已掌握：</p>
+
+                <ol class="numbered-list">
+                    <li>現代投資組合理論基礎，理解風險、報酬、相關係數與效率前緣的概念</li>
+                    <li>四大資產類別特性與經典配置策略 (60/40、耶魯模型、全天候組合)</li>
+                    <li>再平衡的三種方法與實務考量，掌握維持目標配置的技巧</li>
+                    <li>進階分散策略，包括跨資產類別、地域、產業、時間的多維度分散</li>
+                    <li>組合監控與長期維護原則，避免過度交易，堅持長期策略</li>
+                </ol>
+
+                <p class="section-text">資產配置的核心原則：</p>
+
+                <ul class="content-list">
+                    <li>配置決定 90% 報酬：資產配置比個股選擇更重要</li>
+                    <li>分散是唯一免費午餐：降低風險不犧牲報酬</li>
+                    <li>紀律執行再平衡：克服人性，強制買低賣高</li>
+                    <li>長期持有不動搖：頻繁交易是報酬殺手</li>
+                    <li>適合自己最重要：能長期堅持的配置才是最佳配置</li>
+                </ul>
+
+                <p class="section-text">下一章，我們將學習風險管理與停損策略，探討如何在追求報酬的同時，建立完善的風險控制機制，保護投資本金。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter06.html" class="nav-button">← 上一章：技術分析與進出場時機</a>
+            <a href="chapter08.html" class="nav-button next">下一章：風險管理與停損策略 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

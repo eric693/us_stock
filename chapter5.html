@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五章：ETF 投資完整指南 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--ink);
+        }
+        
+        .case-study-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+        
+        .case-study-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">5 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 05</div>
+            <h1 class="chapter-title">ETF 投資完整指南</h1>
+            <p class="chapter-subtitle">系統性學習 ETF 投資策略，從 SPY、QQQ 到產業型 ETF，建構低成本多元化投資組合</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">2.5 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">初階到中階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: ETF 基礎知識 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、ETF 基礎知識與運作機制</h2>
+                
+                <p class="section-text">ETF (Exchange Traded Fund，指數股票型基金) 是過去 30 年最重要的金融創新之一，徹底改變了投資大眾參與市場的方式。理解 ETF 的本質與運作機制，是善用這項工具的前提。</p>
+
+                <h3 class="section-subtitle">1.1 什麼是 ETF？</h3>
+                
+                <p class="section-text">ETF 是一種<span class="highlight-text">在證券交易所上市交易的投資基金</span>，結合了共同基金與股票的特性：</p>
+
+                <ul class="content-list">
+                    <li>像共同基金一樣持有一籃子證券，提供分散投資</li>
+                    <li>像股票一樣在交易所交易，可隨時買賣</li>
+                    <li>多數追蹤特定指數，採被動管理策略</li>
+                    <li>費用率遠低於主動管理型基金</li>
+                    <li>透明度高，每日公布持股明細</li>
+                </ul>
+
+                <h3 class="section-subtitle">1.2 ETF vs 共同基金 vs 個股</h3>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特徵</th>
+                            <th>ETF</th>
+                            <th>共同基金</th>
+                            <th>個股</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>交易方式</td>
+                            <td>盤中隨時交易</td>
+                            <td>每日收盤後以淨值交易</td>
+                            <td>盤中隨時交易</td>
+                        </tr>
+                        <tr>
+                            <td>最低投資金額</td>
+                            <td>一股起買 (約 $30-500)</td>
+                            <td>通常 $1,000-3,000</td>
+                            <td>一股起買</td>
+                        </tr>
+                        <tr>
+                            <td>費用率</td>
+                            <td>極低 (0.03%-0.75%)</td>
+                            <td>較高 (0.5%-2%)</td>
+                            <td>無管理費，僅交易成本</td>
+                        </tr>
+                        <tr>
+                            <td>分散程度</td>
+                            <td>高 (持有數十至數千檔)</td>
+                            <td>高</td>
+                            <td>無，集中風險</td>
+                        </tr>
+                        <tr>
+                            <td>透明度</td>
+                            <td>每日公布持股</td>
+                            <td>季度公布</td>
+                            <td>完全透明</td>
+                        </tr>
+                        <tr>
+                            <td>稅務效率</td>
+                            <td>高</td>
+                            <td>較低</td>
+                            <td>自行掌控</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-subtitle">1.3 ETF 的創造與贖回機制</h3>
+
+                <p class="section-text">ETF 能維持市價貼近淨值，關鍵在於<span class="highlight-text">創造與贖回機制</span> (Creation and Redemption Mechanism)：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">授權參與者</span> (Authorized Participants, AP)：大型金融機構，能直接與 ETF 發行商交易</li>
+                    <li><span class="highlight-text">創造單位</span>：當 ETF 市價 > 淨值，AP 買入成分股，交給發行商創造新 ETF 單位，在市場上賣出套利</li>
+                    <li><span class="highlight-text">贖回單位</span>：當 ETF 市價 < 淨值，AP 在市場買入 ETF，向發行商贖回成分股，賣出套利</li>
+                    <li><span class="highlight-text">套利機制</span>：這個過程自動平衡供需，使 ETF 市價始終貼近淨值</li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="info-box-title">為何 ETF 稅務效率高？</div>
+                    <div class="info-box-text">共同基金贖回時，基金必須賣出持股變現給贖回者，產生資本利得稅，由所有持有人共同承擔。</div>
+                    <div class="info-box-text">ETF 的贖回是以實物交割 (in-kind)，AP 拿回的是成分股而非現金，不產生應稅事件。這使 ETF 持有人能延遲稅負，直到自己賣出 ETF 時才需繳稅。</div>
+                </div>
+
+                <h3 class="section-subtitle">1.4 ETF 的發展歷史</h3>
+
+                <p class="section-text">ETF 的演進歷程：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">1993</span>：首檔 ETF SPY 在美國問世，追蹤 S&P 500 指數</li>
+                    <li><span class="highlight-text">2000 年代</span>：產業型、國際型 ETF 大量湧現</li>
+                    <li><span class="highlight-text">2010 年代</span>：主題型、Smart Beta、主動管理型 ETF 興起</li>
+                    <li><span class="highlight-text">2020 年代</span>：ESG、加密貨幣、單一股票 ETF 等創新產品</li>
+                </ul>
+
+                <p class="section-text">截至 2026 年，全球 ETF 資產規模超過 $12 兆美元，美國市場占比約 70%。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">對大多數投資人而言，持有低成本的指數基金是最明智的股票投資方式。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 主要 ETF 類型解析 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、主要 ETF 類型與代表標的</h2>
+                
+                <p class="section-text">ETF 種類繁多，超過 3,000 檔在美國交易所掛牌。理解不同類型的特性，是建構投資組合的基礎。</p>
+
+                <h3 class="section-subtitle">2.1 大盤指數型 ETF</h3>
+
+                <p class="section-text">追蹤主要市場指數，是最基礎也最重要的 ETF 類型：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">SPY / VOO / IVV - 標普 500 指數 ETF</div>
+                        <div class="definition-desc">追蹤美國最重要的 500 家大型企業，代表美股整體表現。SPY 是全球規模最大、流動性最高的 ETF，資產規模超過 $5,000 億。VOO 與 IVV 追蹤相同指數，但費用率更低 (0.03% vs SPY 的 0.09%)。適合作為核心持倉。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">QQQ - 納斯達克 100 指數 ETF</div>
+                        <div class="definition-desc">追蹤納斯達克最大的 100 家非金融公司，科技股占比超過 50%。波動度高於 SPY，但長期報酬也更高。過去 10 年年化報酬約 18%，遠超 S&P 500 的 12%。適合看好科技產業的投資人。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">VTI - 全美股市 ETF</div>
+                        <div class="definition-desc">追蹤整個美國股市，包含大、中、小型股共約 4,000 檔股票。比 S&P 500 涵蓋更廣，費用率僅 0.03%。是最完整的美股市場暴露。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">DIA - 道瓊工業平均指數 ETF</div>
+                        <div class="definition-desc">追蹤道瓊 30 檔成分股。因僅 30 檔且採價格加權，代表性較差，規模與流動性遠不如 SPY。除非特殊需求，一般不建議選擇。</div>
+                    </div>
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>ETF</th>
+                            <th>費用率</th>
+                            <th>成分股數</th>
+                            <th>日均成交量</th>
+                            <th>適合對象</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SPY</td>
+                            <td>0.09%</td>
+                            <td>500</td>
+                            <td>極高</td>
+                            <td>短線交易者</td>
+                        </tr>
+                        <tr>
+                            <td>VOO</td>
+                            <td>0.03%</td>
+                            <td>500</td>
+                            <td>高</td>
+                            <td>長期投資者</td>
+                        </tr>
+                        <tr>
+                            <td>QQQ</td>
+                            <td>0.20%</td>
+                            <td>100</td>
+                            <td>極高</td>
+                            <td>科技成長偏好</td>
+                        </tr>
+                        <tr>
+                            <td>VTI</td>
+                            <td>0.03%</td>
+                            <td>4000+</td>
+                            <td>高</td>
+                            <td>完整市場暴露</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-subtitle">2.2 產業型 ETF</h3>
+
+                <p class="section-text">聚焦特定產業，讓投資人表達對產業前景的看法：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">XLK - 科技類股 ETF</div>
+                        <div class="definition-desc">追蹤 S&P 500 科技類股，包含蘋果、微軟、NVIDIA 等巨頭。適合看好科技產業但不想承擔單一個股風險的投資人。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">XLF - 金融類股 ETF</div>
+                        <div class="definition-desc">持有銀行、保險、券商等金融股。與利率高度相關，升息環境受益，降息環境承壓。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">XLE - 能源類股 ETF</div>
+                        <div class="definition-desc">投資石油、天然氣等能源公司。與原油價格高度連動，屬週期性強的防禦性產業。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">XLV - 醫療保健 ETF</div>
+                        <div class="definition-desc">包含製藥、生技、醫療設備公司。防禦性高，受經濟週期影響小，長期穩健成長。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">2.3 主題型 ETF</h3>
+
+                <p class="section-text">針對特定投資主題或趨勢設計：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">SOXX / SMH</span>：半導體 ETF，受惠 AI 與晶片需求</li>
+                    <li><span class="highlight-text">ARKK</span>：ARK 創新科技 ETF，主動管理，聚焦顛覆性創新</li>
+                    <li><span class="highlight-text">ICLN</span>：潔淨能源 ETF，投資太陽能、風能、電動車</li>
+                    <li><span class="highlight-text">FINX</span>：金融科技 ETF，涵蓋支付、區塊鏈、數位銀行</li>
+                    <li><span class="highlight-text">HACK</span>：網路資安 ETF，資安需求持續成長</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">主題型 ETF 的風險警示</div>
+                    <div class="info-box-text">主題型 ETF 通常費用率較高 (0.5%-0.75%)，且高度集中於特定主題，波動性大。</div>
+                    <div class="info-box-text">許多主題是短期炒作，如 2021 年元宇宙 ETF 大漲後隨即暴跌。投資前需評估主題是否具備長期基本面支撐，而非僅是市場炒作。</div>
+                    <div class="info-box-text">建議主題型 ETF 不超過投資組合 10-15%，避免過度集中風險。</div>
+                </div>
+
+                <h3 class="section-subtitle">2.4 國際市場 ETF</h3>
+
+                <p class="section-text">提供美國以外市場的投資機會：</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">VEA - 已開發市場 ETF</div>
+                        <div class="definition-desc">投資歐洲、日本、加拿大等已開發國家，分散美股風險。費用率 0.05%，是國際配置的核心選擇。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">VWO - 新興市場 ETF</div>
+                        <div class="definition-desc">涵蓋中國、印度、巴西、台灣等新興經濟體。成長潛力高但波動大，政治風險不容忽視。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">EWT - 台灣 ETF</div>
+                        <div class="definition-desc">專注投資台灣股市，台積電占比超過 20%。適合看好台灣科技產業的投資人。</div>
+                    </div>
+                </ul>
+
+                <h3 class="section-subtitle">2.5 債券與固定收益 ETF</h3>
+
+                <p class="section-text">提供穩定收息與資產配置平衡：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">AGG</span>：美國綜合債券 ETF，涵蓋公債、公司債、MBS</li>
+                    <li><span class="highlight-text">BND</span>：總體債券市場 ETF，Vanguard 版本，費用率更低</li>
+                    <li><span class="highlight-text">TLT</span>：20 年期以上美國公債 ETF，對利率極度敏感</li>
+                    <li><span class="highlight-text">LQD</span>：投資等級公司債 ETF，收益率高於公債</li>
+                    <li><span class="highlight-text">HYG</span>：高收益債 (垃圾債) ETF，高收益但違約風險高</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 3: ETF 選擇標準 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、ETF 選擇的六大評估標準</h2>
+                
+                <p class="section-text">市場上數千檔 ETF，品質參差不齊。選擇優質 ETF 需要系統性評估，以下是六個關鍵標準。</p>
+
+                <h3 class="section-subtitle">3.1 費用率 (Expense Ratio)</h3>
+
+                <p class="section-text">費用率是<span class="highlight-text">每年從資產中扣除的管理費用</span>，直接侵蝕報酬。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">30 年後實際報酬 = 年報酬率 - 費用率</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-title">費用率的長期影響</div>
+                    <div class="case-study-text">假設投資 $100,000，年報酬率 8%，投資 30 年：</div>
+                    <div class="case-study-text">費用率 0.05% (VOO)：最終資產 $982,000</div>
+                    <div class="case-study-text">費用率 0.50% (一般主動基金)：最終資產 $798,000</div>
+                    <div class="case-study-text">差異：$184,000，相當於 18.7% 的報酬被費用吃掉！</div>
+                </div>
+
+                <p class="section-text">費用率標準：</p>
+
+                <ul class="content-list">
+                    <li>大盤指數 ETF：< 0.10% 為佳，< 0.05% 為優</li>
+                    <li>產業型 ETF：< 0.30% 可接受</li>
+                    <li>主題型 ETF：< 0.60% 可考慮，但需有充分理由</li>
+                    <li>主動管理型 ETF：< 0.75%，且應有顯著超額報酬</li>
+                </ul>
+
+                <h3 class="section-subtitle">3.2 資產規模 (AUM - Assets Under Management)</h3>
+
+                <p class="section-text">資產規模影響 ETF 的流動性與存續風險：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">$1 億以下</span>：流動性差，面臨清算風險，避開</li>
+                    <li><span class="highlight-text">$1-5 億</span>：勉強可接受，但需謹慎</li>
+                    <li><span class="highlight-text">$5-50 億</span>：健康規模，流動性充足</li>
+                    <li><span class="highlight-text">$50 億以上</span>：大型 ETF，交易成本最低</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="info-box-title">為何 ETF 會清算？</div>
+                    <div class="info-box-text">當 ETF 資產規模過小，管理費收入無法覆蓋營運成本，發行商會選擇清算 ETF。</div>
+                    <div class="info-box-text">清算時投資人會拿回資金，不會血本無歸，但被迫實現資本利得需繳稅，且必須重新部署資金，造成不便。</div>
+                    <div class="info-box-text">因此應避免投資規模過小的 ETF，除非有特殊投資需求且願意承擔清算風險。</div>
+                </div>
+
+                <h3 class="section-subtitle">3.3 追蹤誤差 (Tracking Error)</h3>
+
+                <p class="section-text">追蹤誤差衡量 ETF 報酬與指數報酬的偏離程度。優質 ETF 應能精準追蹤指數。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">追蹤誤差 = ETF 實際報酬 - 指數報酬</div>
+                </div>
+
+                <p class="section-text">造成追蹤誤差的原因：</p>
+
+                <ul class="content-list">
+                    <li>費用率：永久性的負向追蹤誤差</li>
+                    <li>現金拖累：ETF 需保留少量現金應付贖回</li>
+                    <li>交易成本：調整持股產生的買賣價差與手續費</li>
+                    <li>取樣複製：部分 ETF 不完全持有所有成分股</li>
+                    <li>股利再投資時間差：收到股利到再投資之間的時間落差</li>
+                </ul>
+
+                <p class="section-text">評估標準：年度追蹤誤差 < 0.20% 為優秀，< 0.50% 可接受。</p>
+
+                <h3 class="section-subtitle">3.4 買賣價差 (Bid-Ask Spread)</h3>
+
+                <p class="section-text">買賣價差是交易時的隱藏成本，尤其對頻繁交易者影響大。</p>
+
+                <div class="reference-block">
+範例：
+某 ETF 的買價 (Bid) = $100.00
+賣價 (Ask) = $100.10
+買賣價差 = $0.10 (0.10%)
+
+若買入後立即賣出，立刻虧損 0.10%
+                </div>
+
+                <p class="section-text">影響買賣價差的因素：</p>
+
+                <ul class="content-list">
+                    <li>ETF 交易量：大型 ETF 如 SPY 價差僅 $0.01 (0.002%)，小型 ETF 可能達 0.5% 以上</li>
+                    <li>成分股流動性：持有冷門小型股的 ETF 價差較大</li>
+                    <li>市場波動：波動劇烈時，價差會擴大</li>
+                    <li>交易時段：開盤與收盤前後價差較大</li>
+                </ul>
+
+                <p class="section-text">建議：長期投資者選擇價差 < 0.10% 的 ETF；短線交易者應選擇 < 0.05%。</p>
+
+                <h3 class="section-subtitle">3.5 股利配息政策</h3>
+
+                <p class="section-text">ETF 的配息方式與頻率影響稅務與複利效應：</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>配息方式</th>
+                            <th>特點</th>
+                            <th>適合對象</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>累積型 (Accumulating)</td>
+                            <td>自動再投資，不發放現金</td>
+                            <td>長期成長，避免稅務拖累</td>
+                        </tr>
+                        <tr>
+                            <td>配息型 (Distributing)</td>
+                            <td>定期發放現金股利</td>
+                            <td>需要現金流的退休族</td>
+                        </tr>
+                        <tr>
+                            <td>季配息</td>
+                            <td>每季發放一次</td>
+                            <td>平衡現金流與稅務</td>
+                        </tr>
+                        <tr>
+                            <td>月配息</td>
+                            <td>每月發放</td>
+                            <td>固定收入需求者</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">美股 ETF 多為配息型，投資人收到股利後需自行決定是否再投資。對台灣投資人而言，需注意 30% 股息預扣稅。</p>
+
+                <h3 class="section-subtitle">3.6 發行商信譽</h3>
+
+                <p class="section-text">選擇信譽良好的大型發行商，降低 ETF 清算風險：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">Vanguard</span>：費用率最低，指數投資先驅，旗下 VOO、VTI 等是長期投資首選</li>
+                    <li><span class="highlight-text">BlackRock (iShares)</span>：全球最大 ETF 發行商，產品線最完整，SPY、IVV 等流動性極佳</li>
+                    <li><span class="highlight-text">State Street (SPDR)</span>：發行首檔 ETF SPY，在產業型 ETF 領域領先</li>
+                    <li><span class="highlight-text">Invesco</span>：QQQ 發行商，科技與主題型 ETF 專家</li>
+                    <li><span class="highlight-text">Schwab</span>：費用率極低，適合成本敏感投資人</li>
+                </ul>
+
+                <p class="section-text">避開新成立、小型、不知名發行商的 ETF，除非有特殊投資需求。</p>
+            </div>
+        </section>
+
+        <!-- Section 4: ETF 投資組合建構 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、ETF 投資組合建構策略</h2>
+                
+                <p class="section-text">單一 ETF 已能提供良好分散，但透過多檔 ETF 組合，能更精確地符合個人投資目標與風險承受度。</p>
+
+                <h3 class="section-subtitle">4.1 核心衛星策略 (Core-Satellite)</h3>
+
+                <p class="section-text">這是最經典的 ETF 組合策略：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">核心部位 (70-80%)</span>：投資大盤指數 ETF，如 VOO 或 VTI，提供穩定基礎</li>
+                    <li><span class="highlight-text">衛星部位 (20-30%)</span>：投資產業型、主題型 ETF，追求超額報酬</li>
+                </ul>
+
+                <div class="case-study">
+                    <div class="case-study-title">保守型組合範例</div>
+                    <div class="case-study-text">70% VOO (標普 500) - 核心穩定持倉</div>
+                    <div class="case-study-text">15% VEA (國際已開發市場) - 地域分散</div>
+                    <div class="case-study-text">10% AGG (美國綜合債券) - 降低波動</div>
+                    <div class="case-study-text">5% VNQ (房地產 REITs) - 收息與通膨對沖</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-title">積極成長型組合範例</div>
+                    <div class="case-study-text">60% QQQ (納斯達克 100) - 科技成長核心</div>
+                    <div class="case-study-text">15% XLK (科技類股) - 加碼科技產業</div>
+                    <div class="case-study-text">10% SOXX (半導體) - 主題押注</div>
+                    <div class="case-study-text">10% VWO (新興市場) - 成長潛力</div>
+                    <div class="case-study-text">5% ARKK (創新科技) - 顛覆性機會</div>
+                </div>
+
+                <h3 class="section-subtitle">4.2 三基金組合 (Three-Fund Portfolio)</h3>
+
+                <p class="section-text">Vanguard 創辦人約翰·柏格 (John Bogle) 提倡的極簡組合：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">美國股市 ETF</span>：VTI 或 VOO (60-70%)</li>
+                    <li><span class="highlight-text">國際股市 ETF</span>：VEA 或 VXUS (20-30%)</li>
+                    <li><span class="highlight-text">債券市場 ETF</span>：BND 或 AGG (10-20%)</li>
+                </ol>
+
+                <p class="section-text">這個組合簡單、低成本、全球分散，適合不想花太多時間管理投資的人。調整三者比例即可配合不同風險偏好。</p>
+
+                <h3 class="section-subtitle">4.3 年齡導向配置 (Age-Based Allocation)</h3>
+
+                <p class="section-text">傳統法則：<span class="highlight-text">債券配置比例 = 年齡</span></p>
+
+                <div class="reference-block">
+30 歲：70% 股票 + 30% 債券
+50 歲：50% 股票 + 50% 債券
+70 歲：30% 股票 + 70% 債券
+                </div>
+
+                <p class="section-text">現代修正版：因壽命延長與低利率環境，建議<span class="highlight-text">債券比例 = 年齡 - 20</span></p>
+
+                <div class="reference-block">
+30 歲：90% 股票 + 10% 債券
+50 歲：70% 股票 + 30% 債券
+70 歲：50% 股票 + 50% 債券
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">目標日期基金 vs 自建組合</div>
+                    <div class="info-box-text">目標日期基金 (Target Date Fund) 如 Vanguard 的 TDF 系列，會隨時間自動調整股債比例，降低風險。</div>
+                    <div class="info-box-text">優點：完全自動化，無需人工調整<br>缺點：費用率較高 (0.12% vs 自建組合 0.05%)，缺乏彈性</div>
+                    <div class="info-box-text">對願意自行管理的投資人，自建三基金組合更優；對完全不想管理的人，目標日期基金是合理選擇。</div>
+                </div>
+
+                <h3 class="section-subtitle">4.4 再平衡策略</h3>
+
+                <p class="section-text">市場波動會使組合偏離目標配置，定期再平衡能維持風險水準並強制「低買高賣」。</p>
+
+                <p class="section-text">再平衡方法：</p>
+
+                <ul class="numbered-list">
+                    <li><span class="highlight-text">定期再平衡</span>：每季或每年檢視一次，調回目標比例</li>
+                    <li><span class="highlight-text">門檻再平衡</span>：當任一資產偏離目標超過 5-10%，立即調整</li>
+                    <li><span class="highlight-text">現金流再平衡</span>：新資金投入時，買入偏低的資產</li>
+                </ul>
+
+                <div class="case-study">
+                    <div class="case-study-title">再平衡實例</div>
+                    <div class="case-study-text">目標配置：60% 股票 + 40% 債券<br>初始投資：$60,000 股票 + $40,000 債券 = $100,000</div>
+                    <div class="case-study-text">一年後股票大漲 20%，債券持平：<br>$72,000 股票 (64.3%) + $40,000 債券 (35.7%) = $112,000</div>
+                    <div class="case-study-text">再平衡：賣出 $4,840 股票，買入債券<br>結果：$67,160 股票 (60%) + $44,840 債券 (40%)</div>
+                    <div class="case-study-text">效果：自動「賣高」股票、「買低」債券，降低風險暴露</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: ETF 投資實務技巧 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、ETF 投資實務技巧與常見陷阱</h2>
+                
+                <h3 class="section-subtitle">5.1 交易時機與技巧</h3>
+
+                <p class="section-text">雖然 ETF 可盤中交易，但並非任何時間都適合交易：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">避開開盤前 30 分鐘</span>：價格波動大，買賣價差寬</li>
+                    <li><span class="highlight-text">避開收盤前 15 分鐘</span>：同樣波動劇烈</li>
+                    <li><span class="highlight-text">最佳交易時段</span>：10:00-15:30 ET，流動性最佳</li>
+                    <li><span class="highlight-text">使用限價單</span>：指定價格買賣，避免被套在不利價位</li>
+                    <li><span class="highlight-text">長期投資者</span>：不必在意日內波動，任何時間買入皆可</li>
+                </ul>
+
+                <h3 class="section-subtitle">5.2 定期定額 vs 單筆投資</h3>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>策略</th>
+                            <th>優點</th>
+                            <th>缺點</th>
+                            <th>適合對象</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>定期定額 (DCA)</td>
+                            <td>平均成本、降低擇時風險、紀律投資</td>
+                            <td>若市場持續上漲，報酬低於單筆</td>
+                            <td>月光族、不擅擇時、心理壓力低</td>
+                        </tr>
+                        <tr>
+                            <td>單筆投資 (Lump Sum)</td>
+                            <td>歷史數據顯示長期報酬更高</td>
+                            <td>若買在高點，短期帳面虧損大</td>
+                            <td>有大筆閒置資金、心理素質強</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">研究顯示，在 60-70% 的情況下，單筆投資長期報酬優於定期定額，因為市場長期向上。但定期定額提供的心理安慰與紀律投資價值不容忽視。</p>
+
+                <h3 class="section-subtitle">5.3 常見錯誤與陷阱</h3>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">陷阱一：追逐過去績效</div>
+                        <div class="definition-desc">看到某 ETF 去年大漲 100% 就追高買入。過去績效不代表未來，高報酬通常伴隨高風險。應評估基本面而非單看漲幅。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">陷阱二：過度分散</div>
+                        <div class="definition-desc">持有 15-20 檔 ETF，以為更安全。實際上許多 ETF 重疊度高，反而增加管理複雜度與費用。5-8 檔精選 ETF 已足夠分散。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">陷阱三：忽略費用率</div>
+                        <div class="definition-desc">0.5% 費用率「看起來不多」。但 30 年累積影響巨大。同類型 ETF 應優先選擇低費用率版本。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">陷阱四：槓桿與反向 ETF</div>
+                        <div class="definition-desc">如 TQQQ (3 倍做多 QQQ)、SQQQ (3 倍做空 QQQ)。這類 ETF 設計用於單日交易，長期持有會因複利衰減嚴重偏離預期。絕對不適合長期投資。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">陷阱五：溢價買入</div>
+                        <div class="definition-desc">某些冷門 ETF 市價可能高於淨值 2-5%，買入即虧損。交易前應檢查 ETF 的折溢價狀況，避免溢價超過 1% 時買入。</div>
+                    </div>
+                </ul>
+
+                <h3 class="section-subtitle">5.4 稅務優化策略</h3>
+
+                <p class="section-text">對台灣投資人的 ETF 稅務建議：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">資本利得免稅</span>：買賣價差獲利無需向美國繳稅，僅需申報台灣海外所得</li>
+                    <li><span class="highlight-text">股息 30% 預扣稅</span>：無法避免，但可選擇低配息或累積型 ETF 降低影響</li>
+                    <li><span class="highlight-text">遺產稅風險</span>：超過 $60,000 需繳美國遺產稅，可考慮分散至複委託帳戶</li>
+                    <li><span class="highlight-text">稅務虧損收割</span>：年底若有帳面虧損，可賣出實現虧損，用於抵稅 (美國居民適用，台灣人不適用)</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">不要讓稅尾搖狗。投資決策應基於基本面與策略，稅務優化是次要考量。</div>
+                    <div class="quote-author">— 投資智慧</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">本章總結</h2>
+                
+                <p class="section-text">ETF 是現代投資人最強大的工具之一，提供低成本、高效率、充分分散的投資方案。完成本章學習後，你已掌握：</p>
+
+                <ol class="numbered-list">
+                    <li>ETF 的運作機制、創造贖回過程與稅務優勢，理解其優於傳統基金之處</li>
+                    <li>主要 ETF 類型，從大盤指數、產業、主題到國際市場的完整認識</li>
+                    <li>選擇優質 ETF 的六大標準：費用率、規模、追蹤誤差、價差、配息、發行商</li>
+                    <li>組合建構策略，包括核心衛星、三基金組合、年齡導向配置與再平衡</li>
+                    <li>實務交易技巧、常見陷阱與稅務優化方法</li>
+                </ol>
+
+                <p class="section-text">ETF 投資的核心原則：</p>
+
+                <ul class="content-list">
+                    <li>簡單勝過複雜：3-5 檔精選 ETF 組合足以應付多數需求</li>
+                    <li>成本至上：費用率差異長期影響巨大</li>
+                    <li>長期持有：ETF 適合買入持有，非短線交易</li>
+                    <li>定期檢視：每季或每年檢視組合，必要時再平衡</li>
+                    <li>持續學習：ETF 市場不斷創新，保持知識更新</li>
+                </ul>
+
+                <p class="section-text">下一章，我們將學習技術分析與進出場時機，探討如何透過圖表與指標判斷買賣時點，為你的 ETF 與個股投資增添短期交易的維度。</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter04.html" class="nav-button">← 上一章：成長股投資與科技股分析</a>
+            <a href="chapter06.html" class="nav-button next">下一章：技術分析與進出場時機 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

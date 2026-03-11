@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十章：投資心理學與長期致富之道 | 美股投資實戰課程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F1E8;
+            --beige-dark: #E8E2D5;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --red: #C8102E;
+            --red-light: #E6314D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--beige);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            border-bottom-color: var(--red);
+        }
+        
+        .chapter-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 3px solid var(--ink);
+        }
+        
+        .chapter-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.25rem;
+            color: var(--ink-light);
+            font-weight: 400;
+            max-width: 700px;
+        }
+        
+        .chapter-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--beige-dark);
+            display: flex;
+            gap: 3rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .meta-label {
+            color: var(--ink-light);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .highlight-text {
+            color: var(--red);
+            font-weight: 600;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+        }
+        
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+        
+        .comparison-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--beige-dark);
+        }
+        
+        .comparison-table td {
+            font-size: 1rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* List Styles */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .content-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+        
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            color: var(--red);
+        }
+        
+        /* Definition List */
+        .definition-list {
+            margin: 2rem 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 2rem;
+        }
+        
+        .definition-term {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        
+        .definition-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--ink-light);
+        }
+        
+        /* Code/Reference Block */
+        .reference-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--ink);
+        }
+        
+        /* Formula Block */
+        .formula-block {
+            background: var(--beige-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--red);
+            text-align: center;
+        }
+        
+        .formula-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 2;
+        }
+        
+        /* Quote */
+        .quote-block {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--red);
+            background: var(--beige-dark);
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: normal;
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: var(--beige-dark);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--ink);
+        }
+        
+        .case-study-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+        
+        .case-study-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Footer */
+        .chapter-navigation {
+            padding: 4rem 0 3rem;
+            border-top: 3px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ink);
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ink);
+        }
+        
+        .nav-button:hover {
+            background: transparent;
+            color: var(--ink);
+        }
+        
+        .nav-button.next {
+            background: var(--red);
+            border-color: var(--red);
+        }
+        
+        .nav-button.next:hover {
+            background: transparent;
+            color: var(--red);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--beige-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .chapter-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">← 返回課程目錄</a>
+                <span class="chapter-indicator">10 / 10</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="chapter-number">Chapter 10</div>
+            <h1 class="chapter-title">投資心理學與長期致富之道</h1>
+            <p class="chapter-subtitle">克服人性弱點、建立正確心態、掌握複利威力、堅持長期投資，完成投資人的終極修煉</p>
+            <div class="chapter-meta">
+                <div class="meta-item">
+                    <span class="meta-label">學習時長</span>
+                    <span class="meta-value">3 小時</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">難度等級</span>
+                    <span class="meta-value">中階到高階</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">核心概念</span>
+                    <span class="meta-value">5 個主題</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: 行為金融學 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">一、行為金融學：理解人性的弱點</h2>
+                
+                <p class="section-text">傳統金融學假設投資人理性、市場有效。但現實中，人類充滿非理性偏誤。<span class="highlight-text">行為金融學</span> (Behavioral Finance) 研究心理因素如何影響投資決策，解釋了許多市場異象。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">投資不是智商遊戲。一旦智商超過 25，需要的是情緒控制與理性思考的能力。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </div>
+
+                <h3 class="section-subtitle">1.1 認知偏誤</h3>
+                
+                <p class="section-text">人類大腦演化來處理生存問題，不是為了投資。許多直覺反應在市場中反而有害。</p>
+
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">損失厭惡 (Loss Aversion)</div>
+                        <div class="definition-desc">失去 $100 的痛苦遠大於獲得 $100 的快樂，約為 2-2.5 倍。導致投資人不願停損、長期套牢虧損股，卻急於賣出獲利股。正確做法應相反：讓獲利奔跑、截斷虧損。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">確認偏誤 (Confirmation Bias)</div>
+                        <div class="definition-desc">傾向尋找支持既有觀點的資訊，忽略反對證據。買入某股票後，只看多方消息，忽略警訊。克服方法：主動尋找反對意見、定期檢討錯誤、保持開放心態。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">錨定效應 (Anchoring Effect)</div>
+                        <div class="definition-desc">過度依賴第一個資訊。股票買在 $100，跌至 $60，投資人執著於 $100「成本」，期待回本。但成本是沉沒成本，不應影響未來決策。應問：若今天有 $60 現金，會買這檔股票嗎？</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">過度自信 (Overconfidence)</div>
+                        <div class="definition-desc">高估自己的能力與知識。研究顯示 80% 投資人認為自己優於平均，這在數學上不可能。過度自信導致過度交易、集中持股、忽視風險。謙卑是投資美德。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">從眾效應 (Herding Behavior)</div>
+                        <div class="definition-desc">跟隨群眾行動給人安全感。泡沫時期人人談論股票，覺得不參與就吃虧 (FOMO)。恐慌時期爭相逃命。歷史上每次泡沫都源於從眾。逆向思考是解藥：別人貪婪時恐懼，別人恐懼時貪婪。</div>
+                    </div>
+                    
+                    <div class="definition-item">
+                        <div class="definition-term">後見之明偏誤 (Hindsight Bias)</div>
+                        <div class="definition-desc">事後覺得「我早就知道」。2008 年股災後說「早該看出泡沫」，但事前並未行動。這種偏誤阻礙學習。記錄決策過程與理由，事後客觀檢討，才能真正進步。</div>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle">1.2 情緒週期與市場週期</h3>
+
+                <p class="section-text">投資人情緒與市場走勢高度相關，但總是<span class="highlight-text">滯後且過度</span>。</p>
+
+                <div class="reference-block">
+投資人情緒週期：
+
+樂觀 → 興奮 → 狂熱 → 欣快 → 焦慮 → 否認 
+→ 恐懼 → 絕望 → 恐慌 → 投降 → 沮喪 
+→ 希望 → 放心 → 樂觀 (循環)
+
+危險點：
+- 欣快：最多人進場，通常是頂部
+- 投降：最多人出場，通常是底部
+
+機會點：
+- 絕望到恐慌：價值投資人開始進場
+- 否認到焦慮：警覺風險，逐步減碼
+                </reference-block>
+
+                <div class="case-study">
+                    <div class="case-study-title">2020-2021 迷因股狂潮</div>
+                    <div class="case-study-text">2021 年初 GameStop (GME) 從 $20 暴漲至 $483，漲幅 2315%。散戶透過 Reddit 論壇號召軋空對沖基金，掀起「迷因股革命」。</div>
+                    <div class="case-study-text">情緒分析：<br>樂觀：散戶發現對沖基金做空 GME<br>興奮：股價開始上漲，論壇討論熱烈<br>狂熱：媒體報導，更多人湧入<br>欣快：$483 高點，相信「這次不一樣」</div>
+                    <div class="case-study-text">結果：2 週內暴跌至 $40，多數追高者套牢虧損 90%。2023 年股價 $20，回到原點。</div>
+                    <div class="case-study-text">教訓：極度狂熱是危險訊號。當計程車司機都在談論股票，該離場了。</div>
+                </case-study>
+
+                <h3 class="section-subtitle">1.3 克服心理偏誤的方法</h3>
+
+                <p class="section-text">認識偏誤是第一步，更重要是建立機制對抗。</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">建立投資系統</span>：制定明確規則，機械執行，減少情緒干擾。例如：買入前寫下理由與停損點，觸發自動執行</li>
+                    <li><span class="highlight-text">記錄投資日誌</span>：記錄每筆交易的決策過程、情緒狀態、結果。定期回顧找出模式，從錯誤中學習</li>
+                    <li><span class="highlight-text">延遲決策</span>：感到強烈衝動時，等 24-48 小時再行動。多數衝動決策是錯誤的</li>
+                    <li><span class="highlight-text">尋求反面意見</span>：主動找尋看空理由，挑戰自己的觀點。與持不同看法者討論</li>
+                    <li><span class="highlight-text">設定自動化</span>：使用停損單、定期定額、自動再平衡，減少人為干預</li>
+                    <li><span class="highlight-text">限制資訊攝取</span>：避免盯盤、少看財經新聞、不參與股市論壇。噪音越多，決策越差</li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="info-box-title">查理·蒙格的心理檢查清單</div>
+                    <div class="info-box-text">蒙格建議投資前自問：</div>
+                    <div class="info-box-text">1. 我是否過度自信？<br>2. 我在尋找確認偏誤嗎？<br>3. 我受近期經驗影響嗎？<br>4. 我在跟風嗎？<br>5. 我因損失厭惡而不願停損嗎？<br>6. 我被錨定在成本價嗎？<br>7. 如果角色互換，我還會這樣想嗎？</div>
+                    <div class="info-box-text">若任一答案「是」，暫緩決策，重新思考。</div>
+                </info-box>
+            </div>
+        </section>
+
+        <!-- Section 2: 複利的威力 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">二、複利的魔力與時間的價值</h2>
+                
+                <p class="section-text">愛因斯坦稱複利為「世界第八大奇蹟」。理解複利是長期致富的關鍵。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">複利是世界第八大奇蹟。理解它的人賺取它，不理解的人支付它。</div>
+                    <div class="quote-author">— 阿爾伯特·愛因斯坦</div>
+                </quote-block>
+
+                <h3 class="section-subtitle">2.1 複利公式與威力</h3>
+                
+                <div class="formula-block">
+                    <div class="formula-text">FV = PV × (1 + r)^n<br><br>FV = 終值<br>PV = 現值<br>r = 年報酬率<br>n = 年數</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-title">$10,000 的成長軌跡</div>
+                    <div class="case-study-text">初始投資 $10,000，不同報酬率與時間的結果：</div>
+                    <div class="case-study-text">年報酬 8%：<br>10 年 → $21,589<br>20 年 → $46,610<br>30 年 → $100,627<br>40 年 → $217,245</div>
+                    <div class="case-study-text">年報酬 10%：<br>10 年 → $25,937<br>20 年 → $67,275<br>30 年 → $174,494<br>40 年 → $452,593</div>
+                    <div class="case-study-text">年報酬 12%：<br>10 年 → $31,058<br>20 年 → $96,463<br>30 年 → $299,599<br>40 年 → $930,510</div>
+                    <div class="case-study-text">差異：40 年後，8% vs 12% 相差 4.3 倍！小幅報酬差距，長期產生巨大差異。</div>
+                </case-study>
+
+                <h3 class="section-subtitle">2.2 72 法則：快速估算</h3>
+
+                <p class="section-text">72 法則：資產翻倍所需年數 ≈ 72 ÷ 年報酬率</p>
+
+                <div class="reference-block">
+實例：
+6% 報酬：72 ÷ 6 = 12 年翻倍
+8% 報酬：72 ÷ 8 = 9 年翻倍
+10% 報酬：72 ÷ 10 = 7.2 年翻倍
+12% 報酬：72 ÷ 12 = 6 年翻倍
+
+反推：
+想 10 年翻倍：需要 72 ÷ 10 = 7.2% 報酬
+想 5 年翻倍：需要 72 ÷ 5 = 14.4% 報酬
+                </reference-block>
+
+                <h3 class="section-subtitle">2.3 時間是複利的朋友</h3>
+
+                <p class="section-text">複利曲線呈指數成長，<span class="highlight-text">前期緩慢，後期爆發</span>。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">兩個投資人的故事</div>
+                    <div class="case-study-text">投資人 A：25 歲開始，每月投入 $500，投資 10 年共 $60,000，之後不再投入。35-65 歲放著不動。</div>
+                    <div class="case-study-text">投資人 B：35 歲開始，每月投入 $500，投資 30 年共 $180,000。</div>
+                    <div class="case-study-text">假設年報酬 10%，65 歲時：<br>A：$1,114,000 (投入 $60,000)<br>B：$1,036,000 (投入 $180,000)</div>
+                    <div class="case-study-text">A 投入金額僅 B 的 1/3，但最終更多！因為多了 10 年複利時間。</div>
+                    <div class="case-study-text">教訓：<span class="highlight-text">早開始比投入多更重要</span>。時間是最寶貴的資產。</div>
+                </case-study>
+
+                <h3 class="section-subtitle">2.4 複利的敵人</h3>
+
+                <p class="section-text">有三個因素會侵蝕複利效果：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">費用</span>：主動基金 1.5% 費用率 vs 指數基金 0.1%，40 年差距達 30%</li>
+                    <li><span class="highlight-text">稅務</span>：頻繁交易產生資本利得稅，複利基數減少</li>
+                    <li><span class="highlight-text">通膨</span>：3% 通膨會吃掉 8% 報酬的 37.5%，實質報酬僅 5%</li>
+                </ul>
+
+                <div class="formula-block">
+                    <div class="formula-text">實質報酬率 = 名目報酬率 - 通膨率 - 費用率 - 稅率</div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">巴菲特的滾雪球比喻</div>
+                    <div class="info-box-text">「人生就像滾雪球，重要的是找到濕漉漉的雪和長長的坡。」</div>
+                    <div class="info-box-text">濕雪 = 高報酬率<br>長坡 = 長時間<br>雪球 = 資產</div>
+                    <div class="info-box-text">巴菲特 90 歲，但 99% 財富是 50 歲後累積的，因為複利後期爆發。</div>
+                </info-box>
+            </div>
+        </section>
+
+        <!-- Section 3: 長期投資哲學 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">三、長期投資的核心理念</h2>
+                
+                <p class="section-text">短期市場不可預測，但長期市場向上。堅持長期投資是致富的唯一確定道路。</p>
+
+                <h3 class="section-subtitle">3.1 時間消化波動</h3>
+                
+                <p class="section-text">持有時間越長，虧損機率越低。</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>持有期間</th>
+                            <th>正報酬機率</th>
+                            <th>平均報酬</th>
+                            <th>最差情況</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 天</td>
+                            <td>53%</td>
+                            <td>0.03%</td>
+                            <td>-23%</td>
+                        </tr>
+                        <tr>
+                            <td>1 個月</td>
+                            <td>63%</td>
+                            <td>0.7%</td>
+                            <td>-29%</td>
+                        </tr>
+                        <tr>
+                            <td>1 年</td>
+                            <td>74%</td>
+                            <td>9%</td>
+                            <td>-37%</td>
+                        </tr>
+                        <tr>
+                            <td>5 年</td>
+                            <td>88%</td>
+                            <td>9.5%</td>
+                            <td>-11%</td>
+                        </tr>
+                        <tr>
+                            <td>10 年</td>
+                            <td>94%</td>
+                            <td>10%</td>
+                            <td>-3%</td>
+                        </tr>
+                        <tr>
+                            <td>20 年</td>
+                            <td>100%</td>
+                            <td>10.5%</td>
+                            <td>+3%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">結論：持有 S&P 500 超過 20 年，歷史上從未虧損。時間是風險的解藥。</p>
+
+                <h3 class="section-subtitle">3.2 不要試圖擇時</h3>
+
+                <p class="section-text">市場擇時 (Market Timing) 理論上能提升報酬，實務上幾乎不可能。</p>
+
+                <div class="case-study">
+                    <div class="case-study-title">錯過最佳交易日的影響</div>
+                    <div class="case-study-text">1993-2023 年投資 S&P 500，30 年：</div>
+                    <div class="case-study-text">完全投入：年化報酬 10.0%，$10,000 → $174,494</div>
+                    <div class="case-study-text">錯過最佳 10 天：年化報酬 6.1%，$10,000 → $59,381 (-66%)</div>
+                    <div class="case-study-text">錯過最佳 20 天：年化報酬 3.5%，$10,000 → $28,192 (-84%)</div>
+                    <div class="case-study-text">錯過最佳 30 天：年化報酬 1.4%，$10,000 → $15,282 (-91%)</div>
+                    <div class="case-study-text">最佳交易日往往出現在最糟時刻。2020/3/24 (疫情恐慌) 單日漲 9.4%，是 30 年最佳日之一。若因恐慌離場，就錯過反彈。</div>
+                    <div class="case-study-text">教訓：<span class="highlight-text">保持投入，不要進出</span>。錯過少數關鍵日會毀掉長期報酬。</div>
+                </case-study>
+
+                <h3 class="section-subtitle">3.3 股災是機會不是災難</h3>
+
+                <p class="section-text">對長期投資人，股災是買入機會。</p>
+
+                <div class="reference-block">
+歷史股災回顧：
+
+1987 黑色星期一：單日跌 22%
+→ 1 年後：+23%
+→ 5 年後：+117%
+
+2000-2002 網路泡沫：累計跌 49%
+→ 2007：超越前高
+
+2008 金融海嘯：累計跌 57%
+→ 2013：超越前高
+→ 2020：漲 3 倍
+
+2020 疫情崩盤：1 個月跌 34%
+→ 5 個月：回到前高
+→ 2021：新高 +100%
+
+2022 升息衰退恐慌：跌 25%
+→ 2023-2024：新高
+                </reference-block>
+
+                <p class="section-text">每次股災，事後看都是買點。但當下總覺得「這次不一樣」。</p>
+
+                <div class="quote-block">
+                    <div class="quote-text">在別人貪婪時恐懼，在別人恐懼時貪婪。</div>
+                    <div class="quote-author">— 華倫·巴菲特</div>
+                </quote-block>
+
+                <h3 class="section-subtitle">3.4 買入持有 vs 頻繁交易</h3>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特徵</th>
+                            <th>買入持有</th>
+                            <th>頻繁交易</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>年交易次數</td>
+                            <td>1-5 次</td>
+                            <td>50-200 次</td>
+                        </tr>
+                        <tr>
+                            <td>交易成本</td>
+                            <td>極低</td>
+                            <td>累積 1-3%</td>
+                        </tr>
+                        <tr>
+                            <td>稅務效率</td>
+                            <td>高，延遲繳稅</td>
+                            <td>低，頻繁實現利得</td>
+                        </tr>
+                        <tr>
+                            <td>時間投入</td>
+                            <td>每季 1 小時</td>
+                            <td>每日數小時</td>
+                        </tr>
+                        <tr>
+                            <td>壓力程度</td>
+                            <td>低</td>
+                            <td>極高</td>
+                        </tr>
+                        <tr>
+                            <td>長期報酬</td>
+                            <td>接近市場報酬</td>
+                            <td>通常低於市場</td>
+                        </tr>
+                        <tr>
+                            <td>成功率</td>
+                            <td>80-90%</td>
+                            <td>< 20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="section-text">數據殘酷但清晰：<span class="highlight-text">頻繁交易是財富殺手</span>。長期持有是 99% 投資人的最佳策略。</p>
+            </div>
+        </section>
+
+        <!-- Section 4: 建立投資紀律 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">四、建立投資紀律與堅持執行</h2>
+                
+                <p class="section-text">知道正確做法與實際執行之間有巨大鴻溝。建立紀律是成功關鍵。</p>
+
+                <h3 class="section-subtitle">4.1 制定投資政策聲明</h3>
+                
+                <p class="section-text">投資政策聲明 (Investment Policy Statement, IPS) 是個人投資憲法，理性時制定，恐慌時遵守。</p>
+
+                <div class="reference-block">
+投資政策聲明範本：
+
+投資目標：
+- 長期目標：退休時累積 $1,000,000
+- 時間範圍：30 年
+- 目標報酬：8-10% 年化報酬
+
+風險承受度：
+- 可承受最大年跌幅：30%
+- 緊急預備金：$30,000 (6 個月開支)
+- 投資資金來源：月薪扣除開支
+
+資產配置：
+- 目標：70% 股票 + 25% 債券 + 5% 現金
+- 再平衡：年度檢視，偏離 >10% 時調整
+- 股票：60% 美國、30% 國際、10% 新興市場
+
+投資工具：
+- 核心：指數 ETF (VOO、VEA、VWO、BND)
+- 禁止：個股、槓桿、選擇權、加密貨幣
+
+交易紀律：
+- 每月定期定額 $2,000
+- 禁止盯盤，每季檢視一次
+- 股災跌 >20% 時額外投入
+- 不參與短線交易
+
+檢討機制：
+- 每年 12 月檢討績效
+- 每 5 年檢討目標與配置
+- 記錄所有決策與理由
+                </reference-block>
+
+                <h3 class="section-subtitle">4.2 自動化投資</h3>
+
+                <p class="section-text">自動化減少人為干預，提高執行率。</p>
+
+                <ul class="numbered-list">
+                    <li><span class="highlight-text">自動扣款</span>：設定每月固定日期從薪資帳戶轉入投資帳戶</li>
+                    <li><span class="highlight-text">自動買入</span>：定期定額自動購買 ETF</li>
+                    <li><span class="highlight-text">股利再投資</span>：設定 DRIP (Dividend Reinvestment Plan)</li>
+                    <li><span class="highlight-text">自動再平衡</span>：使用 Target Date Fund 或 Robo-Advisor</li>
+                </ul>
+
+                <p class="section-text">自動化的威力：研究顯示，401k 自動扣款參與率 90%，需主動加入者僅 40%。移除決策點能大幅提高執行。</p>
+
+                <h3 class="section-subtitle">4.3 建立防火牆</h3>
+
+                <p class="section-text">設置機制防止衝動決策：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">冷靜期</span>：任何非計劃性交易必須等待 48 小時</li>
+                    <li><span class="highlight-text">問責夥伴</span>：找信任的人當投資教練，重大決策前諮詢</li>
+                    <li><span class="highlight-text">限制交易次數</span>：每月最多 1 次調整</li>
+                    <li><span class="highlight-text">停用即時報價</span>：刪除看盤 App，僅季度登入</li>
+                    <li><span class="highlight-text">資訊斷食</span>：不看財經新聞、不參與論壇、不聽明牌</li>
+                </ul>
+
+                <h3 class="section-subtitle">4.4 持續學習與進化</h3>
+
+                <p class="section-text">投資是終身學習的旅程。</p>
+
+                <div class="reference-block">
+持續進步的方法：
+
+閱讀經典：
+- 《智慧型股票投資人》葛拉漢
+- 《漫步華爾街》墨基爾
+- 《投資最重要的事》霍華·馬克斯
+- 《窮查理的普通常識》查理·蒙格
+- 《非常潛力股》菲利普·費雪
+
+定期檢討：
+- 記錄每筆交易理由
+- 季度檢討績效與決策
+- 年度總結學到的教訓
+- 分析成功與失敗案例
+
+實戰練習：
+- 模擬投資組合
+- 參加投資讀書會
+- 研究歷史案例
+- 追蹤投資大師持股
+
+保持謙卑：
+- 承認錯誤
+- 接受市場不可預測
+- 尊重不同觀點
+- 永遠保持學習心態
+                </reference-block>
+            </div>
+        </section>
+
+        <!-- Section 5: 人生財富規劃 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">五、投資與人生：完整財富規劃</h2>
+                
+                <p class="section-text">投資不是人生目的，而是實現目標的工具。完整的財富規劃整合投資與人生。</p>
+
+                <h3 class="section-subtitle">5.1 人生不同階段的策略</h3>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>階段</th>
+                            <th>年齡</th>
+                            <th>重點</th>
+                            <th>策略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>財富累積期</td>
+                            <td>25-40</td>
+                            <td>提升收入、積極儲蓄</td>
+                            <td>定期定額、80-90% 股票、投資自己</td>
+                        </tr>
+                        <tr>
+                            <td>財富增值期</td>
+                            <td>40-55</td>
+                            <td>資產成長、風險控制</td>
+                            <td>維持投入、70-80% 股票、分散配置</td>
+                        </tr>
+                        <tr>
+                            <td>財富保護期</td>
+                            <td>55-65</td>
+                            <td>保護本金、穩定成長</td>
+                            <td>降低股票至 50-60%、增加債券、檢視退休準備</td>
+                        </tr>
+                        <tr>
+                            <td>財富提領期</td>
+                            <td>65+</td>
+                            <td>產生收入、保護購買力</td>
+                            <td>30-40% 股票、高股息策略、4% 提領法則</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-subtitle">5.2 財務自由的定義</h3>
+
+                <p class="section-text">財務自由不是億萬富翁，而是<span class="highlight-text">被動收入 > 生活開支</span>。</p>
+
+                <div class="formula-block">
+                    <div class="formula-text">財務自由所需資產 = 年開支 × 25<br>(基於 4% 安全提領率)</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-title">財務自由計算</div>
+                    <div class="case-study-text">年開支 $40,000：<br>需要資產：$40,000 × 25 = $1,000,000</div>
+                    <div class="case-study-text">年開支 $60,000：<br>需要資產：$60,000 × 25 = $1,500,000</div>
+                    <div class="case-study-text">年開支 $100,000：<br>需要資產：$100,000 × 25 = $2,500,000</div>
+                    <div class="case-study-text">降低開支與增加資產同樣重要。從 $100,000 降至 $60,000 年開支，所需資產減少 $1,000,000。</div>
+                </case-study>
+
+                <h3 class="section-subtitle">5.3 財富的真正意義</h3>
+
+                <p class="section-text">錢是工具不是目的。真正的財富是：</p>
+
+                <ul class="content-list">
+                    <li><span class="highlight-text">時間自由</span>：不被工作綁架，做自己想做的事</li>
+                    <li><span class="highlight-text">選擇權</span>：有說不的能力，不受經濟壓力迫使做不想做的事</li>
+                    <li><span class="highlight-text">安全感</span>：有緩衝應對意外，不為錢焦慮</li>
+                    <li><span class="highlight-text">幫助他人</span>：有能力回饋社會、幫助需要的人</li>
+                    <li><span class="highlight-text">體驗與回憶</span>：金錢買不到快樂，但能創造美好體驗</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">複雜的事情簡單做，你就是專家。簡單的事情重複做，你就是行家。重複的事情用心做，你就是贏家。</div>
+                    <div class="quote-author">— 投資智慧</div>
+                </quote-block>
+
+                <h3 class="section-subtitle">5.4 給投資新手的終極建議</h3>
+
+                <p class="section-text">完成十週課程後，最重要的行動建議：</p>
+
+                <ol class="numbered-list">
+                    <li><span class="highlight-text">立即開始</span>：不要等「準備好」。最佳時機是 10 年前，次佳時機是現在</li>
+                    <li><span class="highlight-text">簡單就好</span>：三基金組合 (美股 ETF + 國際股 ETF + 債券 ETF) 足以應付大部分需求</li>
+                    <li><span class="highlight-text">自動化一切</span>：定期定額、自動再平衡、股利再投資</li>
+                    <li><span class="highlight-text">長期持有</span>：買入優質資產，持有 20-30 年，讓複利發揮魔力</li>
+                    <li><span class="highlight-text">持續學習</span>：但不要讓學習阻礙行動。邊做邊學</li>
+                    <li><span class="highlight-text">控制情緒</span>：建立系統、記錄決策、避免衝動</li>
+                    <li><span class="highlight-text">保持耐心</span>：財富累積需要時間。不要期待快速致富</li>
+                    <li><span class="highlight-text">享受過程</span>：投資是人生一部分，不是全部。平衡生活</li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="info-box-title">最後的提醒</div>
+                    <div class="info-box-text">投資成功的秘訣不是複雜的策略或神秘的技巧，而是：</div>
+                    <div class="info-box-text">1. 儘早開始<br>2. 持續投入<br>3. 分散風險<br>4. 控制成本<br>5. 長期持有<br>6. 保持紀律<br>7. 控制情緒<br>8. 永不放棄</div>
+                    <div class="info-box-text">這八個原則看似簡單，但 99% 的人做不到。如果你能堅持，你已經贏了。</div>
+                </info-box>
+            </div>
+        </section>
+
+        <!-- Final Summary Section -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">課程總結：你的投資之旅才剛開始</h2>
+                
+                <p class="section-text">恭喜完成美股投資實戰課程！你已經學習了：</p>
+
+                <div class="reference-block">
+十週課程回顧：
+
+第一章：美股市場基礎建構
+第二章：財報閱讀與企業分析
+第三章：價值投資法則與選股策略
+第四章：成長股投資與科技股分析
+第五章：ETF 投資完整指南
+第六章：技術分析與進出場時機
+第七章：投資組合建構與資產配置
+第八章：風險管理與停損策略
+第九章：總體經濟與市場週期判斷
+第十章：投資心理學與長期致富之道
+                </reference-block>
+
+                <p class="section-text">你已經掌握從基礎到進階的完整知識體系。但記住：</p>
+
+                <ul class="content-list">
+                    <li>知識不等於智慧，學習不等於成功</li>
+                    <li>真正的學習來自實戰與反思</li>
+                    <li>最重要的是開始行動並堅持下去</li>
+                    <li>投資是馬拉松不是短跑</li>
+                    <li>成功屬於有耐心、有紀律、能堅持的人</li>
+                </ul>
+
+                <div class="quote-block">
+                    <div class="quote-text">投資成功的關鍵不是知道什麼，而是知道自己不知道什麼，並在不知道的情況下仍能做出明智決策。</div>
+                    <div class="quote-author">— 霍華·馬克斯</div>
+                </div>
+
+                <p class="section-text">現在，闔上書本，打開券商帳戶，開始你的投資之旅。</p>
+
+                <p class="section-text">祝你投資順利，財富自由！</p>
+
+                <div class="reference-block">
+記住這些永恆的投資真理：
+
+時間是你最好的朋友
+複利是世界第八大奇蹟
+市場長期向上
+分散降低風險
+成本侵蝕報酬
+情緒是敵人
+紀律是關鍵
+耐心終有回報
+學習永無止境
+行動創造未來
+                </reference-block>
+            </div>
+        </section>
+    </main>
+
+    <div class="chapter-navigation">
+        <div class="container">
+            <a href="chapter09.html" class="nav-button">← 上一章：總體經濟與市場週期判斷</a>
+            <a href="index.html" class="nav-button next">返回課程目錄</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                © 2026 美股投資實戰課程 | 專業投資教育平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
